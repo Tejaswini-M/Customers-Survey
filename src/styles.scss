@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f1f4f6 !important;
+    font-family: MarkPro;
+    color:black;
+}
+.bg-white {
+    background-color: white !important;
+    box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
+    border-bottom: 1px solid #ddd;
+}
+.dflt-padding {
+    padding: 3%;
+}
+.font-bold {
+    font-family: MarkPro-Bold;
+}
+.white-text {
+    color:#FFFFFF;
+}
+.yellow-text {
+    color: #FDCC08;
+}
+.blue-text {
+    color: #00A3AD;
+}
+.center-align {
+    text-align: center;
+}
