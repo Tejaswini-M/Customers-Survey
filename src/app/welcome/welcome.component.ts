@@ -14,7 +14,6 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.config.getUserData().subscribe(data => {
-      console.log(data);
       this.firstName=data.firstName;
     })
   }

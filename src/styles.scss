@@ -27,3 +27,13 @@ body {
 .center-align {
     text-align: center;
 }
+button {
+    background-color: #FDCC08;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.flex-display {
+    display:flex;
+    flex-direction: row;
+}

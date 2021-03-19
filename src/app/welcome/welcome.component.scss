@@ -4,15 +4,9 @@
     height: 300px;
     background-repeat: no-repeat;
 }
-.flex-display {
-    display:flex;
-    flex-direction: row;
-}
-.heading{
+.heading {
+    font-size:350%;
     padding: 5%;
-}
-.heading > h1 {
-    font-size:260%;
 }
 .bottom-content {
     margin:0 20%;
@@ -29,18 +23,16 @@
     width: 100%;
 }
 button {
-    background-color: #FDCC08;
-    border: none;
     height: 40px;
     width: 50%;
-    outline: none;
-    cursor: pointer;
 }
 .right img {
     height: 100%;
     width: 100%;
 }
-
+.margin-top-bottom {
+    margin:30px auto;
+}
 /* Responsive Styles */
  @media screen and (max-width: 767px) {
      .bottom-content {
