@@ -63,7 +63,9 @@ export class QuestionComponent implements OnInit{
     moveItemInArray(this.components, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
   }
- 
+  deleteComponent(i:any) {
+    this.components.splice(i,1);
+  }
 
 }
 export const dynamicComponents = [MultiSelectComponent, YesNoComponent, MatrixComponent,

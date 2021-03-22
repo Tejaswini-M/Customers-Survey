@@ -10,35 +10,43 @@
         <div *ngFor="let cmp of components; let i=index" cdkDrag class="box bg-white">
             <div *ngIf="cmp.componentType.name=='YesNoComponent'">
                 <app-yes-no></app-yes-no>
-                
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='RankingComponent'">
                 <app-ranking></app-ranking>
-               
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='RatingScaleComponent'">
                 <app-rating-scale></app-rating-scale>
-               
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='MultiSelectComponent'">
                 <app-multi-select></app-multi-select>
-                
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='MatrixComponent'">
                 <app-matrix></app-matrix>
-                
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='MixedTypeComponent'">
                 <app-mixed-type></app-mixed-type>
-                
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'">
                 <app-image-choice></app-image-choice>
-                
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
             <div *ngIf="cmp.componentType.name=='OpenEndedComponent'">
                 <app-open-ended></app-open-ended>
-                
+                <div>{{i}}</div>
+                <button (click)="deleteComponent(i)">Delete Component</button>
             </div>
         </div>
     </div>

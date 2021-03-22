@@ -1,1 +1,31 @@
-<p>multi-select works!</p>
+<div class ="container">
+    <div [hidden]="submitted">
+        <h3 class="center-align">Multi Select/Multiple Choice Questions</h3>
+        <!-- <form #mulForm="ngForm"> -->
+            <div class= "mul-qns">
+                <label>Enter your question</label>
+                <input type="text"  [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
+                <table>
+                    <tr><label>Enter your answer</label></tr>
+                    <tr>
+                        <button (click)="addTable()">Add row</button>
+                    </tr>
+                    <tr *ngFor="let item of model.tabs; let i=index">
+                        <td><input type="text" [(ngModel)] ="item.value" name="ans" #ans="ngModel" required></td>
+                        <td><button (click)="deleteRow(i)">delete</button></td>
+                        <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
+                    </tr>
+                </table>
+            </div>
+            <button [disabled]="qns.invalid" (click)="onSubmit()">Save</button>
+        <!-- </form> -->
+    </div>
+    <div [hidden]="!submitted" cdkDropList (cdkDropListDropped)="drop($event)">
+        <h1>{{model.qns}}</h1>
+        <div *ngFor="let tab of model.tabs" cdkDrag>
+            <button *ngIf="tab.value">{{tab.value}}</button>
+        </div>
+        <button (click)="submitted=false">Edit</button>
+    </div>
+</div>
