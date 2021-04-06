@@ -1,0 +1,60 @@
+.container {
+  width: 950px;
+  cursor: pointer;
+}
+
+.input{
+  width: 700px;
+  margin: 20px;
+  padding: 5px 10px;
+}
+.row{
+  margin: 13px;
+  padding: 5px 30px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.input1{
+  width: 350px;
+  margin: 20px;
+  padding: 5px 10px;
+}
+
+.value{
+  width: 250px;
+  padding: 5px 30px;
+}
+.comment{
+  min-width: fit-content; 
+  font-weight: 500;
+  height: 34px;
+  font-size: 14px;
+  margin: 45px;
+  padding: 10px;
+}
+
+.button {
+  height:40px;
+  width:200px;
+  margin: 15px;
+  background-color:#00a3ad;
+}
+
+.btn-tab{
+  margin: 5px;
+  padding: 5px;
+  color: #000000;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 14px;
+  /* width: 10%; */
+  overflow: hidden;
+  /* flex-direction: row; */
+  float: left;
+}
+.radio input[type=radio], .radio-inline input[type=radio] {
+  /* position: absolute; */
+  margin-top: 4px\9;
+  /* margin-left: -20px; */
+}

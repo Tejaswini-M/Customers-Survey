@@ -1,0 +1,35 @@
+<div class ="container">
+    <div [hidden]="submitted">
+        <!-- <h3 class="center-align">Mixed Type Questions</h3> -->
+            <div class= "mul-ques">
+                <label style="font-weight: 500; font-size: 14px;">Enter your question</label>
+                <input type="text"  [(ngModel)] ="model.ques" name="ques" #ques="ngModel" required class="input">
+                <div *ngIf="ques.invalid && ques.touched" class="error-message">Please enter question</div>
+                <table>
+                    <!-- <tr><label style="font-weight: 450;">Enter your answer</label></tr> -->
+                    <tr>
+                        <button (click)="addTable()" class="row">Add row</button>
+                    </tr>
+                    <tr *ngFor="let item of model.muls; let i=index">
+                        <td><input type="text" [(ngModel)] ="item.value" name="ans" #ans="ngModel" required class="value"></td>
+                        <td><button (click)="deleteRow(i)" class="row">delete</button></td>
+                        <div *ngIf="ans.invalid && ans.touched" class="error-message" style="margin: 10px;
+                        padding: 5px;">Please enter answer</div>
+                    </tr>
+                </table>
+            </div>
+            <button [disabled]="ques.invalid" (click)="onSubmit()" class="row">Save</button>
+    </div>
+    <div [hidden]="!submitted" cdkDropList (cdkDropListDropped)="drop($event)">
+        <h4 class="center-align">{{model.ques}}</h4>
+        <div class="radio">
+            <div *ngFor="let mul of model.muls" cdkDrag>
+                <mat-radio-button  class="btn-tab" *ngIf="mul.value">{{mul.value}}</mat-radio-button>
+            </div>
+        </div>
+        <div class="comment">Any Comments ? 
+            <input class="input1">
+        </div>
+        <button (click)="submitted=false" class="row">Edit</button>
+    </div>
+</div>

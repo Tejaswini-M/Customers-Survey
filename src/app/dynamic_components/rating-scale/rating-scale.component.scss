@@ -1,0 +1,64 @@
+.container {
+  width: 950px;
+  cursor: pointer;
+}
+ .section {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  .input{
+    width: 700px;
+    margin: 20px;
+    padding: 5px 10px;
+  }
+  
+  .margin {
+    margin: 4px;
+    width: 70px;
+  }
+  
+  .mat-slider-horizontal {
+    width: 400px;
+  }
+  
+  .mat-slider-vertical {
+    height: 300px;
+  }
+  
+  .mat-card + .mat-card {
+    margin-top: 8px;
+  }
+
+  .content{
+    width: 640px;
+    height: 100px;
+    margin: 30px 20px 20px 120px;
+    box-shadow: none;
+  }
+  .number{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+  }
+
+  .mat-form-field{
+    width: auto;
+  }
+
+  .save{
+    margin: 13px;
+    padding: 5px 30px;
+    font-size: 13px;
+    border-radius: 3px;
+
+  }
+  .edit{
+    margin: 13px;
+    padding: 5px 30px;
+    font-size: 13px;
+    border-radius: 3px;
+  }
+
+  
