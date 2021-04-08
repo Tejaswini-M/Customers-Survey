@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatrixComponent implements OnInit {
 
-
-
   muls=[
     { id:1, value:'',status:null},
     { id:2, value:'',status:null},
@@ -27,14 +25,14 @@ export class MatrixComponent implements OnInit {
   submitted = false;
   constructor() { }
 
-  ngOnInit(): void {
-   
+  ngOnInit(): void {   
   }
 
     addTable() {
-      const obj =  { id:Number, value:'',status:null};
-      // this.model.muls.push(obj);
+      const obj =  { id:this.model.muls.length+1 , value:'', status:null};
+      this.model.muls.push(obj);
     }
+
     deleteRow(i:any) {
       this.model.muls.splice(i,1);
     }
