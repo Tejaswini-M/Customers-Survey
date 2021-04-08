@@ -9,7 +9,18 @@ export class YesNoComponent implements OnInit {
 
   constructor() { }
 
+  submitted = false;
+  model:any;
+  tab:any;
+
   ngOnInit(): void {
   }
-
+  onSubmit() {
+    console.log("value");
+    this.submitted =true;
+  }
+  captureSentiment(sentiment:any) {
+    console.log(sentiment);
+    return sentiment=='like' ? this.tab=sentiment :  this.tab=sentiment;
+  }
 }

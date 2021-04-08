@@ -68,5 +68,13 @@ export class QuestionComponent implements OnInit{
   }
 
 }
-export const dynamicComponents = [MultiSelectComponent, YesNoComponent, MatrixComponent,
-RatingScaleComponent, RankingComponent, OpenEndedComponent, MixedTypeComponent, ImageChoiceComponent];
+export const dynamicComponents = [
+  {name:MultiSelectComponent,isDisable:false,comp:'Multi Select Component'}, 
+  {name:YesNoComponent,isDisable:false,comp:'YesNo Component'}, 
+  {name:MatrixComponent,isDisable:false,comp:'Matrix Component'},
+  {name:RatingScaleComponent,isDisable:false,comp:'Rating Scale Component'},
+  {name:RankingComponent,isDisable:false,comp:'Ranking Component'}, 
+  {name:OpenEndedComponent,isDisable:false,comp:'Open Ended Component'}, 
+  {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type Component'},
+  {name:ImageChoiceComponent,isDisable:false,comp:'Image Choice Component'}
+];

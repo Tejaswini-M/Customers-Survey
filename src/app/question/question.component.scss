@@ -1,10 +1,8 @@
 .content {
-    margin: 0 15%;
-}
-.dynamic {
-    flex-wrap: wrap;
-    max-width: 100%;
-    margin:0 auto;
+    display: flex;
+    margin: 25px 20%;
+    flex-direction: column;
+    align-items: center;
 }
 .btns button {
     height:40px;
@@ -13,23 +11,37 @@
     background-color:#00a3ad;
 }
 .list {
-    max-width: 100%;
+    //max-width:100%;
     min-height: 60px;
     display: block;
     border-radius: 4px;
     overflow: hidden;
 }
+.box button {
+    margin-top:10px;
+}
 .box {
     padding: 20px 10px;
     border-bottom: solid 1px #E3E9EC;
+    flex-wrap: wrap;
+    justify-content: center;
     color: #000000;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    cursor: move;
     font-size: 14px;
+}
+.box div {
+    position:relative;
+}
+.box i{
+    cursor: move;
+}
+.box i.disable {
+    position: absolute;
+    cursor: not-allowed !important;
 }
 .cdk-drag-preview {
     box-sizing: border-box;

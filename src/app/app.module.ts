@@ -40,6 +40,6 @@ import { ImageChoiceComponent } from './dynamic_components/image-choice/image-ch
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MultiSelectComponent, YesNoComponent, MatrixComponent]
+  entryComponents: []
 })
 export class AppModule { }

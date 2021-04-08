@@ -17,12 +17,13 @@ export class MultiSelectComponent implements OnInit {
   model = {
     qns:'',
     tabs:[
-      { id:'', value:''},
-      { id:'', value:''},
-      { id:'', value:''}
+      { id:'', value:'',selected:false},
+      { id:'', value:'',selected:false},
+      { id:'', value:'',selected:false}
     ]
   }
   submitted = false;
+  selectedTab:any=[];
   constructor() { }
 
   ngOnInit(): void {
@@ -30,7 +31,7 @@ export class MultiSelectComponent implements OnInit {
   }
 
   addTable() {
-    const obj =  { id:'', value:''};
+    const obj =  { id:'', value:'',selected:false};
     this.model.tabs.push(obj);
   }
   deleteRow(i:any) {
@@ -46,6 +47,11 @@ export class MultiSelectComponent implements OnInit {
     //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
+  }
+
+  selectOption(value:any,i:number){
+    this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
+    console.log(this.selectedTab);
   }
 
 }

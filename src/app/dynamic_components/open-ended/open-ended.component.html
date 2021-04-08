@@ -1,1 +1,28 @@
-<p>open-ended works!</p>
+<div class ="container">
+    <div *ngIf="!submitted">
+        <h3 class="center-align">Open Ended Question</h3>
+        <!-- <form #mulForm="ngForm"> -->
+            <div class= "mul-qns">
+                <div class="text-btns">
+                    <button (click)="type='long'" [ngClass]="{'active':type==='long'}">Long Text</button>
+                    <button (click)="type='short'" [ngClass]="{'active':type==='short'}">Short Text</button>
+                </div>
+                
+                <div>
+                    <label>Enter your question</label>
+                    <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model" name="qns" #qns="ngModel" required>
+                    <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
+                </div>
+            </div>
+            <button [disabled]="qns.invalid" (click)="onSubmit()">Save</button>
+        <!-- </form> -->
+    </div>
+    <div *ngIf="submitted">
+        <h3>{{model}}</h3>
+        <input type="text" placeholder="please type here..." *ngIf="type=='short'">
+        <textarea rows="5" placeholder="please type here..." *ngIf="type=='long'"></textarea>
+        <button (click)="submitted=false">Edit</button>
+    </div>
+</div>
+
+
