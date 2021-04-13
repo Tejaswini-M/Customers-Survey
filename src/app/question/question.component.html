@@ -1,0 +1,59 @@
+<div class="content">
+    <h1 class="center-align">Create Survey</h1>
+    <div class="dynamic flex-display">
+        <div *ngFor="let qns of qnsType" class="btns">
+            <button (click)="loadComponent(qns.name)">{{qns.comp}}</button>
+        </div>
+    </div>
+    <!-- <form [formGroup]="masterForm" (ngSubmit)="onSave()"> -->
+    <div cdkDropList class="list bg-white" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
+        <!-- <ng-container #appDynamic></ng-container> -->
+        <div *ngFor="let cmp of components; let i=index" class="box" cdkDrag>
+            <div *ngIf="cmp.componentType.name=='YesNoComponent'">
+                <app-yes-no></app-yes-no>
+                <!-- <div><i *ngIf="!cmp.isDisable" class="disable">reorder</i>
+                     <i  cdkDragHandle class="">reorder</i>
+                </div>
+                <input type="checkbox" (change)="cmp.isDisable=!cmp.isDisable"> -->
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='RankingComponent'">
+                <app-ranking></app-ranking>
+                
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='RatingScaleComponent'">
+                <app-rating-scale></app-rating-scale>
+                
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='MultiSelectComponent'">
+                <app-multi-select></app-multi-select>
+                
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='MatrixComponent'">
+                <app-matrix></app-matrix>
+
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='MixedTypeComponent'">
+                <app-mixed-type></app-mixed-type>
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'">
+                <app-image-choice></app-image-choice>
+
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+            <div *ngIf="cmp.componentType.name=='OpenEndedComponent'">
+                <app-open-ended></app-open-ended>
+
+                <button (click)="deleteComponent(i)">Delete Component</button>
+            </div>
+        </div>
+    </div>
+    <button (click)="onSave()" *ngIf="components.length>0">Submit</button>
+    <!-- </form> -->
+    <!-- masterForm = {{ masterForm.value | json }} -->
+</div>

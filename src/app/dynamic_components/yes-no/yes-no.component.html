@@ -1,0 +1,28 @@
+<div class ="container">
+    <div *ngIf="!submitted">
+        <h3 class="center-align">Yes/No Question</h3>
+        <!-- <form #mulForm="ngForm"> -->
+            <div class= "mul-qns">
+                <label>Enter your question</label>
+                <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
+            </div>
+            <button [disabled]="qns.invalid" (click)="onSubmit()">Save</button>
+        <!-- </form> -->
+    </div>
+    <div *ngIf="submitted">
+        <h3 class="center-align">{{model.qns}}</h3>
+        <div class="thumb flex-display dynamic">
+            <div (click)="captureSentiment('like')" [ngClass]="{'active':tab==='like'}">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+                <span class="naming">Yes</span>
+            </div>
+            <div (click)="captureSentiment('dislike')" [ngClass]="{'active':tab==='dislike'}">
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <span class="naming">No</span>
+            </div>
+        </div>
+        <button (click)="submitted=false">Edit</button>
+    </div>
+</div>
+
