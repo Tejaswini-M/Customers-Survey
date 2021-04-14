@@ -1,1 +1,47 @@
-<p>matrix works!</p>
+<div class ="container">
+    <div [hidden]="submitted">
+        <!-- <h3 class="center-align">Multi Select/Multiple Choice Questions</h3> -->
+            <div class= "mul-ques">
+                <label style="font-weight: 500; font-size: 14px;">Enter your question</label>
+                <input type="text"  [(ngModel)] ="model.ques" name="ques" #ques="ngModel" required class="input">
+                <div *ngIf="ques.invalid && ques.touched" class="error-message">Please enter question</div>
+                <table>
+                    <tr>
+                        <button (click)="addTable()" class="row">Add row</button>
+                    </tr>                  
+                    <tr *ngFor="let item of model.muls; let i=index">
+                        <td><input type="text" [(ngModel)] ="item.value" name="ans" #ans="ngModel" required class="value"></td>                        
+                        <td><button (click)="deleteRow(i)" class="row">Delete</button></td>
+                       
+                        <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
+                    </tr>
+                  </table>
+            </div>
+            <button [disabled]="ques.invalid" (click)="onSubmit()" class="row">Save</button>
+    </div>
+    <div [hidden]="!submitted" cdkDropList (cdkDropListDropped)="drop($event)">
+        <h4 class="center-align">{{model.ques}}</h4>
+        <div class="dynamic">
+            <table>
+                <tr class="data" style="font-weight: 500; font-size: 14px;">
+                    <th></th>
+                    <th>Strongly agree</th>
+                    <th>Agree</th>
+                    <th>Somewhat agree</th>
+                    <th>Neither agree nor disagree</th>
+                    <th>Somewhat disagree</th>
+                    <th>Disagree</th>
+                    <th>Strongly disagree</th>                  
+                </tr>            
+                <tr *ngFor="let mul of model.muls" cdkDrag>
+                    <th class="btn-tab">{{mul.value}}</th>  
+                    <th *ngFor="let state of status">
+                        <input type="radio" id="opt1+{{mul.id}}" [(ngModel)]="mul.status" 
+                        value="{{state}}" name="option+{{mul.id}}">
+                    </th>              
+                </tr>
+            </table>
+        </div>
+        <button (click)="submitted=false" class="row">Edit</button>
+    </div>
+</div>
