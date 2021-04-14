@@ -1,4 +1,6 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
   selector: 'app-rating-scale',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingScaleComponent implements OnInit {
 
-  constructor() { }
+  constructor(public config:ConfigService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  thumbLabel = false;
+  value = 0;
+  submitted = false;
+ 
+  model = {
+    comp:'rating',
+    ques:''
   }
-
+  
+  onSubmit() {
+    this.config.ratingValues=[];
+    console.log("value");
+    this.submitted =true;
+    console.log(this.model);
+    this.config.ratingValues=this.model;
+    console.log(this.config.ratingValues);
+    if(Object.keys(this.config.ratingValues).length>0)
+    {
+      this.config.allValues.push(this.config.ratingValues);
+    }
+  }
 }
+

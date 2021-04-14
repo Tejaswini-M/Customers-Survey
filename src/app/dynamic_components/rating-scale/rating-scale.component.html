@@ -1,2 +1,25 @@
-<p>rating-scale works!</p>
-
+<div class ="container">
+  <div *ngIf="!submitted">
+    <h3 class="center-align">Rating-Scale Question</h3>
+          <div class= "mul-ques" >
+              <label>Enter your question  : </label>
+              <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.ques" name="ques" #ques="ngModel" required>
+              <div *ngIf="ques.invalid && ques.touched" class="error-message">Please enter question</div>
+          </div>          
+          <button [disabled]="ques.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+  </div>
+  <div *ngIf="submitted">
+      <h3 class="center-align">{{model.ques}}</h3>
+      <mat-card class="center-align" style="box-shadow: none;">
+        <mat-card-content>
+            <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
+          <section class="section">
+            <mat-form-field class="margin" style="width: 83px;">
+              <input matInput type="number" [(ngModel)]="value" class="number">
+            </mat-form-field>
+          </section>
+        </mat-card-content>
+      </mat-card>
+      <button (click)="submitted=false" >Edit</button>
+  </div>
+</div>

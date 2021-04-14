@@ -20,6 +20,16 @@ export class ConfigService {
     // {open:''},
     // {image:''}
   ];
+  mixedValues={}
+  rankingValues={}
+  ratingValues={}
+  matrixValues={}
+  // allValues : any[] = [
+  //   // {mixedtype:''},
+  //   // {ranking:''},
+  //   // {rating:''},
+  //   // {matrix:''}
+  // ];
   
   survey={
     id:1,

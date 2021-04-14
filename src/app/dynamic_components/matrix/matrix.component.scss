@@ -1,54 +1,43 @@
-.container {
-    width: 950px;
-}
-
 .input{
     width: 700px;
     margin: 20px;
     padding: 5px 10px;
   }
 
-  .row{
-    margin: 13px;
-    padding: 5px 25px;
-    font-size: 13px;
-    border-radius: 3px;
-  }
-
-  .value{
-    width: 300px;
-    padding: 3px;
-  }
-
-  table, th, td {
-    border-collapse: collapse;
-    padding: 5px;   
-    text-align: center;
-  }
-
-  th{
-    font-weight: 450; 
-    font-size: 12px; 
-   }
-
-.btn-tab {
+ .btn-tab {
   padding: 5px 10px;
   border: solid 5px white;
-  color: #000000;
-  flex-direction: row; 
-  align-items: center; 
-  justify-content: space-between; 
-  box-sizing: border-box; 
+  text-align: center;
   cursor: pointer;
   font-size: 15px;
-  background-color: #00a3ad; 
+  background-color: #FDCC08;
   width: 25%;
   min-height: 60px;
-  overflow: hidden;
-  font-weight: 400;
+  font-weight: 450;
+  border-radius: 15px;
+  font-family: markPro-Bold;
 }
 .dynamic {
   flex-wrap: wrap;
   max-width: 100%;
   margin:0 auto;
+  padding: 4px;
+}
+
+.delete-tab {
+  margin-top:-20px;
+  margin-left: 10px;
+}
+table {
+  width:100%;
+}
+th {
+  text-align: center;
+}
+
+table .error-message {
+  float:right;
+}
+.add-tab {
+   float:right;
 }
