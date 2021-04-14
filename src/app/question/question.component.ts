@@ -8,6 +8,7 @@ import { OpenEndedComponent } from '../dynamic_components/open-ended/open-ended.
 import { RankingComponent } from '../dynamic_components/ranking/ranking.component';
 import { RatingScaleComponent } from '../dynamic_components/rating-scale/rating-scale.component';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ConfigService } from '../services/config.service';
 
 @Component({
   selector: 'app-question',
@@ -16,20 +17,23 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class QuestionComponent implements OnInit{
   
-
-  comp: any;
-  questionType = dynamicComponents;
+  cmpRef: any;
+  comps: any;
+  qnsType = dynamicComponents;
   components: any[] = [];
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
-  constructor(private compFactoryResolver: ComponentFactoryResolver) { }
+  @ViewChild('appDynamic', { static: true, read: ViewContainerRef })
+  viewContainerRef:any;
+  constructor(private compFactoryResolver: ComponentFactoryResolver,public config:ConfigService) { }
 
   loadComponent(name:any) {
-    this.comp = name;
+    this.comps = name.name;
+    console.log(this.comps);
     const compFactory = this.compFactoryResolver.resolveComponentFactory(name);
     this.components.push(compFactory);
+    console.log(this.components);
   }
 
   drop(event: CdkDragDrop<any[]>){
@@ -41,5 +45,14 @@ export class QuestionComponent implements OnInit{
   }
 
 }
-export const dynamicComponents = [MultiSelectComponent, YesNoComponent, MatrixComponent,
-RatingScaleComponent, RankingComponent, OpenEndedComponent, MixedTypeComponent, ImageChoiceComponent];
+
+export const dynamicComponents = [
+  {name:MultiSelectComponent,isDisable:false,comp:'Multi Select Component'}, 
+  {name:YesNoComponent,isDisable:false,comp:'YesNo Component'}, 
+  {name:MatrixComponent,isDisable:false,comp:'Matrix Component'},
+  {name:RatingScaleComponent,isDisable:false,comp:'Rating Scale Component'},
+  {name:RankingComponent,isDisable:false,comp:'Ranking Component'}, 
+  {name:OpenEndedComponent,isDisable:false,comp:'Open Ended Component'}, 
+  {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type Component'},
+  {name:ImageChoiceComponent,isDisable:false,comp:'Image Choice Component'}
+];

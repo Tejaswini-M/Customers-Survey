@@ -2,16 +2,16 @@
 <div class="content">
     <h1 class="center-align">Create Survey</h1>
     <div class="dynamic flex-display">
-        <div *ngFor="let ques of questionType" class="btns">
-            <button (click)="loadComponent(ques)">{{ques.name}}</button>
+        <div *ngFor="let ques of qnsType" class="btns">
+            <button (click)="loadComponent(ques.name)">{{ques.comp}}</button>
         </div>
     </div>
-    <div cdkDropList class="group" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
-        <div *ngFor="let comp of components; let d=index" cdkDrag class="bundle">
+    <div cdkDropList class="list bg-white" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
+        <div *ngFor="let comp of components; let d=index"  class="box" cdkDrag>
             
             <div *ngIf="comp.componentType.name=='MultiSelectComponent'">
                 <app-multi-select></app-multi-select>                
-                <button (click)="delete(d)" class="delete" >Delete</button>
+                <button (click)="delete(d)" class="delete">Delete</button>
             </div>
             <div *ngIf="comp.componentType.name=='YesNoComponent'">
                 <app-yes-no></app-yes-no>                

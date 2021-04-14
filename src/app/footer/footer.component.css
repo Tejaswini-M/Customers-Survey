@@ -32,7 +32,7 @@ h2{
      display:flex;
      margin-left:150px;
      margin-right:150px;
-     font-family: Arial, Helvetica, sans-serif;
+     font-family: MarkPro;
      box-sizing: border-box;
  }
  .row2
@@ -98,3 +98,6 @@ h2{
     font-size: 14px;
 }
  
+ul{
+    list-style-type: none;
+}

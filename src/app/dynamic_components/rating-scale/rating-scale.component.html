@@ -1,26 +1,25 @@
 <div class ="container">
-    <div [hidden]="submitted">
-            <div class= "mul-ques" >
-                <label style="font-weight: 500;font-size: 14px;">Enter your question  : </label>
-                <input type="text"  [(ngModel)] ="model.ques" name="ques" #ques="ngModel" required class="input">
-                <div *ngIf="ques.invalid && ques.touched" class="error-message">Please enter question</div>
-            </div>
-            
-            <button [disabled]="ques.invalid" (click)="onSubmit()" class="save">Save</button>
-    </div>
-    <div [hidden]="!submitted" cdkDropList (cdkDropListDropped)="drop($event)">
-        <h4 class="center-align">{{model.ques}}</h4>
-        <mat-card class="center-align" style="box-shadow: none;">
-          <mat-card-content>
-              <mat-slider thumbLabe [(ngModel)]="value"></mat-slider>
-            <section class="section">
-              <mat-form-field class="margin"  style="
-              width: 83px;" >
-                <input matInput type="number" [(ngModel)]="value" class="number">
-              </mat-form-field>
-            </section>
-          </mat-card-content>
+  <div *ngIf="!submitted">
+    <h3 class="center-align">Rating-Scale Question</h3>
+          <div class= "mul-ques" >
+              <label>Enter your question  : </label>
+              <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.ques" name="ques" #ques="ngModel" required>
+              <div *ngIf="ques.invalid && ques.touched" class="error-message">Please enter question</div>
+          </div>          
+          <button [disabled]="ques.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+  </div>
+  <div *ngIf="submitted">
+      <h3 class="center-align">{{model.ques}}</h3>
+      <mat-card class="center-align" style="box-shadow: none;">
+        <mat-card-content>
+            <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
+          <section class="section">
+            <mat-form-field class="margin" style="width: 83px;">
+              <input matInput type="number" [(ngModel)]="value" class="number">
+            </mat-form-field>
+          </section>
+        </mat-card-content>
       </mat-card>
-        <button (click)="submitted=false" class="edit">Edit</button>
-    </div>
+      <button (click)="submitted=false" >Edit</button>
+  </div>
 </div>

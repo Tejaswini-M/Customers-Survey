@@ -67,20 +67,30 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+    height:38px;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: markPro-Bold;
 }
 .flex-display {
     display:flex;
     flex-direction: row;
 }
-select,input[type="text"], input[type="phone"], input[type="password"], input[type="date"], 
-input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"],
- input[type="email"], input[type="number"], input[type="search"], input[type="tel"], 
- input[type="time"], input[type="url"] {
+.dynamic {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+label {
+    margin-top: 24px !important;
+    margin-right:10px;
+    font-family: markPro-Light;
+}
+select,input[type="text"], input[type="phone"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
     color: #acafb2;
-    margin-bottom: 0 !important;
+    margin-bottom: 10px !important;
     height: 38px;
     box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-    font-size: 15px !important;
+    font-size: 14px !important;
     color: black;
     border-style: solid;
     border-width: 1px;
@@ -90,6 +100,23 @@ input[type="datetime"], input[type="datetime-local"], input[type="month"], input
     line-height: normal;
     padding: .5rem;
     border-radius: 0;
+    width:100%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.active {
+    background-color:#00a3ad;
+    cursor: pointer;
+}
+.input-field {
+    padding: 10px;
+    outline: none;
+}  
+.input-field:focus {
+    border: 1px solid rgb(105, 103, 103);
+}
+.input-field.ng-invalid.ng-touched {
+    border: 1px solid red
+}
+.error-message {
+    margin-top: 8px;
+    color: red;
+}
