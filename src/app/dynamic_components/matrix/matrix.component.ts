@@ -62,5 +62,5 @@ export class MatrixComponent implements OnInit {
     //console.log(event.container.data);
   }
 
-  status = ['Strongly agree', 'agree', 'Somewhat agree', 'Neither agree nor disagree', 'Somewhat disagree', 'Disagree', 'Strongly disagree'];
+  status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];
 }

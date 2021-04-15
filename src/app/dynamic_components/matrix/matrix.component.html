@@ -27,19 +27,19 @@
             <table>
                 <tr class="data">
                     <th></th>
-                    <th>Strongly agree</th>
-                    <th>Agree</th>
-                    <th>Somewhat agree</th>
-                    <th>Neither agree nor disagree</th>
-                    <th>Somewhat disagree</th>
-                    <th>Disagree</th>
-                    <th>Strongly disagree</th>                  
+                    <th>Very Good</th>
+                    <th>Good</th>
+                    <!-- <th>Somewhat agree</th> -->
+                    <th>Fair</th>
+                    <!-- <th>Somewhat disagree</th> -->
+                    <th>Poor</th>
+                    <th>Very Poor</th>                  
                 </tr>            
                 <tr *ngFor="let tab of model.tabs" cdkDrag>
                     <th class="btn-tab">{{tab.value}}</th>  
                     <th *ngFor="let state of status">
-                        <input type="radio" id="opt1+{{tab.id}}" [(ngModel)]="tab.status" 
-                        value="{{state}}" name="option+{{tab.id}}">
+                        <input type="radio" id="{{tab.id}}" [(ngModel)]="tab.status" 
+                        value="{{state}}" name="{{tab.id}}">
                     </th>              
                 </tr>
             </table>

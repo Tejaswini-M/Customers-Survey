@@ -39,6 +39,7 @@ table .error-message {
     padding: 8px;    
 }
   .example-box {
+    width: 300px;
     border: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
@@ -46,5 +47,4 @@ table .error-message {
     background: white;
     font-size: 14px;
     margin: 10px;
-    width: 40%;    
   }
