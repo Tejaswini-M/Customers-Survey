@@ -10,6 +10,8 @@ export class ConfigService {
     comp:'yesorno',
     qns:''
   }
+  userResponse: boolean = false;
+  adminResponse: boolean = false;
   qnValues={}
   openValues={}
   yesValues={}

@@ -15,6 +15,7 @@ import { RankingComponent } from './dynamic_components/ranking/ranking.component
 import { OpenEndedComponent } from './dynamic_components/open-ended/open-ended.component';
 import { MixedTypeComponent } from './dynamic_components/mixed-type/mixed-type.component';
 import { ImageChoiceComponent } from './dynamic_components/image-choice/image-choice.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ImageChoiceComponent } from './dynamic_components/image-choice/image-ch
     RankingComponent,
     OpenEndedComponent,
     MixedTypeComponent,
-    ImageChoiceComponent
+    ImageChoiceComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,
