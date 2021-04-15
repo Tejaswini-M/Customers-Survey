@@ -27,8 +27,8 @@
         <h3 class="center-align">{{model.qns}}</h3>
         <div class="flex-display dynamic">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
-                <input type="radio" class="btn-tab"id="{{tab.id}}" [(ngModel)]="tab.selected" 
-                value="{{tab}}" name="{{tab.id}}" >{{tab.value}}
+                <input type="radio" class="btn-tab" id="{{tab.selected}}" [(ngModel)]="tab.selected" 
+                value="{{tab.value}}" name="selected" >{{tab.value}}
             </div>
         </div>
         <div class="comment">Any Comments ? 
