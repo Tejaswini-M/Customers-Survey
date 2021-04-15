@@ -16,8 +16,8 @@ export class MatrixComponent implements OnInit {
   ];
   
   model = {
-    comp:'matrix',
-    ques:'',
+    comp:'MatrixComponent',
+    qns:'',
     ans:'',
     tabs:[
       { id:1, value:'',status:null},
@@ -26,6 +26,8 @@ export class MatrixComponent implements OnInit {
     ]
   }
   submitted = false;
+  tabsLength: any;
+
   constructor(public config:ConfigService) { }
 
   ngOnInit(): void {}
@@ -40,9 +42,13 @@ export class MatrixComponent implements OnInit {
     }
  
     onSubmit() {
+      this.tabsLength = this.model.tabs.length;
+      console.log(this.tabsLength);
       console.log("value");
+
       this.submitted =true;
       console.log(this.model);
+      
       this.config.matrixValues=this.model;
       console.log(this.config.matrixValues);
       if(Object.keys(this.config.matrixValues).length>0){

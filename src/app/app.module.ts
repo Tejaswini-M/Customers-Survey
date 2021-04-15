@@ -24,6 +24,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatRadioModule} from '@angular/material/radio';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MatRadioModule} from '@angular/material/radio';
     RankingComponent,
     OpenEndedComponent,
     MixedTypeComponent,
-    ImageChoiceComponent
+    ImageChoiceComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

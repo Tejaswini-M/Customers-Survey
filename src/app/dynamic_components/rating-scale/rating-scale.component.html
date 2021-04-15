@@ -1,15 +1,15 @@
 <div class ="container">
   <div *ngIf="!submitted">
     <h3 class="center-align">Rating-Scale Question</h3>
-          <div class= "mul-ques" >
+          <div class= "mul-qns" >
               <label>Enter your question  : </label>
-              <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.ques" name="ques" #ques="ngModel" required>
-              <div *ngIf="ques.invalid && ques.touched" class="error-message">Please enter question</div>
+              <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+              <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
           </div>          
-          <button [disabled]="ques.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+          <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true" class="save-tab">Save</button>
   </div>
   <div *ngIf="submitted">
-      <h3 class="center-align">{{model.ques}}</h3>
+      <h3 class="center-align">{{model.qns}}</h3>
       <mat-card class="center-align" style="box-shadow: none;">
         <mat-card-content>
             <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
@@ -20,6 +20,6 @@
           </section>
         </mat-card-content>
       </mat-card>
-      <button (click)="submitted=false" >Edit</button>
+      <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse" >Edit</button>
   </div>
 </div>

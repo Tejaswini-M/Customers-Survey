@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 
 export class ConfigService{
 
+    userResponse: boolean = false;
+    adminResponse: boolean = false;
     mixedValues={}
     rankingValues={}
     ratingValues={}

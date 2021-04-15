@@ -16,15 +16,17 @@ export class RatingScaleComponent implements OnInit {
   thumbLabel = false;
   value = 0;
   submitted = false;
+  type="";
  
   model = {
-    comp:'rating',
-    ques:''
+    comp:'RatingComponent',
+    qns:''
   }
   
   onSubmit() {
     this.config.ratingValues=[];
     console.log("value");
+    console.log(this.type);
     this.submitted =true;
     console.log(this.model);
     this.config.ratingValues=this.model;
