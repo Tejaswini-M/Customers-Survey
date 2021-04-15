@@ -86,7 +86,7 @@ button {
 label {
     margin-top: 24px !important;
     margin-right:10px;
-    font-family: markPro-Light;
+    font-family: markPro-Bold;
 }
 select,input[type="text"], input[type="phone"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
     color: #acafb2;
@@ -123,11 +123,10 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     margin-top: 8px;
     color: red;
 }
-<<<<<<< HEAD
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
 .disabled {
     opacity: 0.5;
+    //pointer-events: none;
 }
->>>>>>> 7b9ad74 (user page modification)
+.container{
+    width:100%;
+}
