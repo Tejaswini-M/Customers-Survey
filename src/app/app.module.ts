@@ -16,6 +16,7 @@ import { RankingComponent } from './dynamic_components/ranking/ranking.component
 import { OpenEndedComponent } from './dynamic_components/open-ended/open-ended.component';
 import { MixedTypeComponent } from './dynamic_components/mixed-type/mixed-type.component';
 import { ImageChoiceComponent } from './dynamic_components/image-choice/image-choice.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,7 +40,8 @@ import {MatRadioModule} from '@angular/material/radio';
     RankingComponent,
     OpenEndedComponent,
     MixedTypeComponent,
-    ImageChoiceComponent
+    ImageChoiceComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

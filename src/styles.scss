@@ -44,6 +44,9 @@ body {
     box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
     border-bottom: 1px solid #ddd;
 }
+.bg-grey {
+    background-color: #D1D7DA !important;
+}
 .dflt-padding {
     padding: 3%;
 }
@@ -103,7 +106,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     width:100%;
 }
 .active {
-    background-color:#00a3ad;
+    background-color:#00a3ad !important;
     cursor: pointer;
 }
 .input-field {
@@ -120,5 +123,11 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     margin-top: 8px;
     color: red;
 }
+<<<<<<< HEAD
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+.disabled {
+    opacity: 0.5;
+}
+>>>>>>> 7b9ad74 (user page modification)

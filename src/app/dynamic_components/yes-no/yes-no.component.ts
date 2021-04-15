@@ -12,7 +12,7 @@ export class YesNoComponent implements OnInit {
 
   submitted = false;
   model={
-    comp:'yesorno',
+    comp:'YesNoComponent',
     qns:''
   }
   tab:any;

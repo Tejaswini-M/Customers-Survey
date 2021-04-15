@@ -11,7 +11,7 @@ export class OpenEndedComponent implements OnInit {
   submitted = false;
   //model:any;
   model = {
-    comp:'openended',
+    comp:'OpenEndedComponent',
     qns:'',
     ans:''
   }

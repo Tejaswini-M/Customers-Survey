@@ -23,14 +23,14 @@
                     </table>
                 </div>
             </div>
-            <button [disabled]="qns.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true" class="save-tab">Save</button>
         <!-- </form> -->
     </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)">
         <h3 class="center-align">{{model.qns}}</h3>
         <div class="flex-display dynamic">
             <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
-                <img *ngIf="url.value"  (click)="url.selected =!url.selected;selectOption()"
+                <img *ngIf="url.value" (click)="url.selected =!url.selected;selectOption()"
                 [src]="url.value" [class.active]="url.selected">
             </div>
             <!-- <div *ngFor="let url of urls; let i=index;" cdkDrag>
@@ -38,6 +38,6 @@
             </div> -->
         </div>
         
-        <button (click)="submitted=false">Edit</button>
+        <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>

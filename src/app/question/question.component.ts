@@ -10,6 +10,7 @@ import { RatingScaleComponent } from '../dynamic_components/rating-scale/rating-
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../services/config.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-question',
@@ -23,7 +24,9 @@ export class QuestionComponent implements OnInit{
   qnsType = dynamicComponents;
   components: any[] = [];
   masterForm!: FormGroup;
+  viewOption:any;
   ngOnInit(): void {
+    this.viewOption=this.route.snapshot.data.viewOption;
     // this.masterForm = this.fb.group({
     //   // formTitle: new FormControl(''),
 
@@ -35,38 +38,23 @@ export class QuestionComponent implements OnInit{
   }
   onSave() {
     //console.log(this.masterForm.value);
-    //config.allValues.push("id:56");
     console.log(this.components.length);
     //this.config.survey.list=[];
     // console.log(Object.values(this.config.qnValues)[0]);
     // if(Object.values(this.config.qnValues)[0]==this.comps){
     //   this.config.allValues.push(this.config.qnValues);
     // }
-    if(Object.keys(this.config.qnValues).length>0){
-      this.config.allValues.push(this.config.qnValues);
-    }
-    // if(Object.keys(this.config.openValues).length>0){
-    //   this.config.allValues.push(this.config.openValues);
-    // }
-    // if(Object.keys(this.config.yesValues).length>0){
-    //   this.config.allValues.push(this.config.yesValues);
-    // }
-    if(Object.keys(this.config.imageValues).length>0){
-      this.config.allValues.push(this.config.imageValues);
-    }
-    // this.config.allValues.push(this.config.yesValues);
-    // this.config.allValues.push(this.config.openValues);
-    // this.config.allValues.push(this.config.imageValues);
     this.config.allValues = [...new Set(this.config.allValues)];
     console.log(this.config.allValues);
     console.log(JSON.stringify(this.config.allValues));
     this.config.survey.list=this.config.allValues;
     console.log(this.config.survey);
+    this.config.userResponse=true;
   }
   @ViewChild('appDynamic', { static: true, read: ViewContainerRef })
   viewContainerRef:any;
   //component: ComponentRef<any>[]=[];
-  constructor(public fb: FormBuilder,public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver) { }
+  constructor(public fb: FormBuilder,private route: ActivatedRoute,public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver) { }
   
   loadComponent(name:any) {
     // const viewContainerRef = this.entryContainer.viewContainerRef;
@@ -102,11 +90,12 @@ export class QuestionComponent implements OnInit{
 
   drop(event: CdkDragDrop<any[]>){
     //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
-    moveItemInArray(this.components, event.previousIndex, event.currentIndex);
+      moveItemInArray(this.components, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
   }
   deleteComponent(i:any) {
     this.components.splice(i,1);
+    this.config.allValues.splice(i,1);
   }
 
 }

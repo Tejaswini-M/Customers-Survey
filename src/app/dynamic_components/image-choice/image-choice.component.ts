@@ -10,7 +10,7 @@ import { ConfigService } from 'src/app/services/config.service';
 export class ImageChoiceComponent implements OnInit {
 
   model = {
-    comp:'image',
+    comp:'ImageChoiceComponent',
     qns:'',
     tabs:[
       { id:'', value:'',selected:false},

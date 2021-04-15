@@ -15,7 +15,7 @@ export class MultiSelectComponent implements OnInit {
     { id:'', value:''},
     { id:'', value:''}
   ];
-  
+  tabsLength: any;
   model = {
     comp:'MultiSelectComponent',
     qns:'',
@@ -79,6 +79,8 @@ export class MultiSelectComponent implements OnInit {
   // }
  
   onSubmit() {
+    this.tabsLength=this.model.tabs.length;
+    console.log(this.tabsLength);
     //this.config.qnValues={};
     console.log("value");
     this.submitted =true;
@@ -97,7 +99,7 @@ export class MultiSelectComponent implements OnInit {
     //console.log(event.container.data);
   }
 
-  selectOption(value:any,i:number){
+  selectOption(){
     this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
     console.log(this.selectedTab);
   }

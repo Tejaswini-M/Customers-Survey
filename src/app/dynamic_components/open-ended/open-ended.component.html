@@ -6,22 +6,23 @@
                 <div class="text-btns">
                     <button (click)="model.ans='long'"  [ngClass]="{'active':model.ans==='long'}">Long Text</button>
                     <button (click)="model.ans='short'" [ngClass]="{'active':model.ans==='short'}">Short Text</button>
+                    <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
                 </div>
                 
                 <div>
                     <label>Enter your question</label>
                     <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
-                    <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
+                    <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
                 </div>
             </div>
-            <button  (click)="onSubmit()">Save</button>
+            <button [class.disabled]="qns.invalid || model.ans=='' " (click)="onSubmit();config.adminResponse=true">Save</button>
         <!-- </form> -->
     </div>
     <div *ngIf="submitted">
         <h3>{{model.qns}}</h3>
         <input type="text" placeholder="please type here..." *ngIf="model.ans=='short'">
         <textarea rows="5" placeholder="please type here..." *ngIf="model.ans=='long'"></textarea>
-        <button (click)="submitted=false">Edit</button>
+        <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>
 
