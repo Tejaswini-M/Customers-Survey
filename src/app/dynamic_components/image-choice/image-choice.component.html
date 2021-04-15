@@ -27,7 +27,7 @@
         <!-- </form> -->
     </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)">
-        <h3 class="center-align">{{model.qns}}</h3>
+        <h3>{{model.qns}}</h3>
         <div class="flex-display dynamic">
             <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
                 <img *ngIf="url.value" (click)="url.selected =!url.selected;selectOption()"

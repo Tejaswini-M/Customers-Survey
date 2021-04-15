@@ -9,7 +9,7 @@
           <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true" class="save-tab">Save</button>
   </div>
   <div *ngIf="submitted">
-      <h3 class="center-align">{{model.qns}}</h3>
+      <h3>{{model.qns}}</h3>
       <mat-card class="center-align" style="box-shadow: none;">
         <mat-card-content>
             <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>

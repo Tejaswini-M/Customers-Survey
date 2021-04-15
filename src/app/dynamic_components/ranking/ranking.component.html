@@ -22,7 +22,7 @@
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true" class="save-tab">Save</button>
     </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)">
-        <h3 class="center-align">{{model.qns}}</h3>
+        <h3>{{model.qns}}</h3>
         <div class="example-box"  *ngFor="let mul of model.tabs; let i=index" cdkDrag>
             <div class="drag-index">
                 <select (change)="onChange($event)" >

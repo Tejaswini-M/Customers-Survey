@@ -2,7 +2,7 @@
 <h1 class="center-align" *ngIf="!config.userResponse">Survey Home</h1>
 <h1 class="center-align" *ngIf="config.userResponse">Customer Feedback</h1>
 <div class="content">
-    <div class="comps" *ngIf="!config.userResponse">
+    <div class="comps flex-display dynamic" *ngIf="!config.userResponse">
         <div *ngFor="let qns of qnsType" class="btns">
             <button (click)="loadComponent(qns.name)">{{qns.comp}}</button>
         </div>

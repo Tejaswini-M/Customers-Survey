@@ -24,7 +24,7 @@
         <!-- </form> -->
         </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)">
-        <h3 class="center-align">{{model.qns}}</h3>
+        <h3>{{model.qns}}</h3>
         <div class="flex-display dynamic">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
                 <input type="radio" class="btn-tab" id="{{tab.selected}}" [(ngModel)]="tab.selected" 
