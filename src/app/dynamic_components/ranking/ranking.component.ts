@@ -25,8 +25,8 @@ export class RankingComponent implements OnInit {
   ];
   
   model = {
-    comp:'ranking',
-    ques:'',
+    comp:'RankingComponent',
+    qns:'',
     tabs:[
       { id:'', value:''},
       { id:'', value:''},
@@ -34,6 +34,7 @@ export class RankingComponent implements OnInit {
     ]
   }
   submitted = false; 
+  type="";
 
   addTable() {
     const obj =  { id:'', value:''};
@@ -45,7 +46,9 @@ export class RankingComponent implements OnInit {
   }
   
   onSubmit() {
+    this.config.rankingValues=[];
     console.log("value");
+    console.log(this.type);
     this.submitted =true;
     console.log(this.model);
     this.config.rankingValues=this.model;

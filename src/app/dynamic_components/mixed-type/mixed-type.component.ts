@@ -13,9 +13,15 @@ export class MixedTypeComponent implements OnInit {
 
   ngOnInit( ) { }
   
+  tabs=[
+    { id:'', value:''},
+    { id:'', value:''},
+    { id:'', value:''}
+  ];
+
   model = {
-    comp:'mixedtype',
-    ques:'',
+    comp:'MixedTypeComponent',
+    qns:'',
     ans:'',
     tabs:[
       { id:1, value:'',selected:false},
@@ -24,6 +30,7 @@ export class MixedTypeComponent implements OnInit {
     ]
   }
   submitted = false; 
+  tabsLength: any;
   selectedTab:any=[];
 
   addTable() {
@@ -35,6 +42,8 @@ export class MixedTypeComponent implements OnInit {
   }
  
   onSubmit() {
+    this.tabsLength=this.model.tabs.length;
+    console.log(this.tabsLength);
     console.log("value");
     this.submitted =true;
     console.log(this.model);
@@ -48,9 +57,9 @@ export class MixedTypeComponent implements OnInit {
   drop(event: CdkDragDrop<any[]>){
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
   }
-  selectOption(value:any,i:number){
-    this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
-    console.log(this.selectedTab);
-  }
+  // selectOption(){
+  //   this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
+  //   console.log(this.selectedTab);
+  // }
 
 }
