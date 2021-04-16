@@ -1,0 +1,51 @@
+// .container {
+//   width: 125%;
+//   align-items: center;
+// }
+.input{
+    width: 700px;
+    margin: 20px;
+    padding: 5px 10px;
+  }
+
+ .btn-tab {
+  padding: 5px 10px;
+  border: solid 5px white;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: #FDCC08;
+  width: 25%;
+  min-height: 60px;
+  font-weight: 450;
+  border-radius: 15px;
+  font-family: markPro-Bold;
+}
+.dynamic {
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin:0 auto;
+  padding: 4px;
+}
+
+.delete-tab {
+  margin-top:-20px;
+  margin-left: 10px;
+}
+table {
+  width:100%;
+}
+th {
+  text-align: center;
+  padding: 10px;
+}
+
+table .error-message {
+  float:right;
+}
+.add-tab {
+   float:right;
+}
+.center-align{
+  text-align: left;
+}

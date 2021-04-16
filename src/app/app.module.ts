@@ -2,10 +2,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { QuestionComponent } from './question/question.component';
 import { MultiSelectComponent } from './dynamic_components/multi-select/multi-select.component';
 import { YesNoComponent } from './dynamic_components/yes-no/yes-no.component';
@@ -17,10 +18,20 @@ import { MixedTypeComponent } from './dynamic_components/mixed-type/mixed-type.c
 import { ImageChoiceComponent } from './dynamic_components/image-choice/image-choice.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatRadioModule} from '@angular/material/radio';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
+    HeaderComponent,
+    FooterComponent,
     QuestionComponent,
     MultiSelectComponent,
     YesNoComponent,
@@ -38,10 +49,16 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     ReactiveFormsModule,
     HttpClientModule,
     DragDropModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSliderModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [MultiSelectComponent, YesNoComponent, MatrixComponent]
 })
 export class AppModule { }

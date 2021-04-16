@@ -11,7 +11,7 @@
         <!-- </form> -->
     </div>
     <div *ngIf="submitted">
-        <h3 class="center-align">{{model.qns}}</h3>
+        <h3>{{model.qns}}</h3>
         <div class="thumb flex-display dynamic">
             <div (click)="captureSentiment('like')" [ngClass]="{'active':tab==='like'}" class="bg-grey">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
@@ -22,6 +22,7 @@
                 <span class="naming">No</span>
             </div>
         </div>
+        <br>
         <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>

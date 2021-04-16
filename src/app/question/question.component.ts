@@ -38,7 +38,7 @@ export class QuestionComponent implements OnInit{
   }
   onSave() {
     //console.log(this.masterForm.value);
-    console.log(this.components.length);
+    console.log(this.components.length,this.config.allValues.length);
     //this.config.survey.list=[];
     // console.log(Object.values(this.config.qnValues)[0]);
     // if(Object.values(this.config.qnValues)[0]==this.comps){
