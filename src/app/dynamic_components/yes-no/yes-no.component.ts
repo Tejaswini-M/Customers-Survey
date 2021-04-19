@@ -13,7 +13,8 @@ export class YesNoComponent implements OnInit {
   submitted = false;
   model={
     comp:'YesNoComponent',
-    qns:''
+    qns:'',
+    tab:'',
   }
   tab:any;
 
@@ -26,14 +27,14 @@ export class YesNoComponent implements OnInit {
     console.log(this.model);
     this.config.yesValues=this.model;
     console.log(this.config.yesValues);
-    if(Object.keys(this.config.yesValues).length>0){
+    //if(Object.keys(this.config.yesValues).length>0){
       this.config.allValues.push(this.config.yesValues);
-    }
+    //}
     //console.log(this.config.allValues);
-    
+    this.config.allValues = [...new Set(this.config.allValues)];
   }
   captureSentiment(sentiment:any) {
     console.log(sentiment);
-    return sentiment=='like' ? this.tab=sentiment :  this.tab=sentiment;
+    return sentiment=='like' ? this.model.tab=sentiment :  this.model.tab=sentiment;
   }
 }

@@ -7,23 +7,23 @@
                 <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                 <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit()">Save</button>
         <!-- </form> -->
     </div>
-    <div *ngIf="submitted">
+    <div *ngIf="submitted" (click)="submitted=false">
         <h3>{{model.qns}}</h3>
         <div class="thumb flex-display dynamic">
-            <div (click)="captureSentiment('like')" [ngClass]="{'active':tab==='like'}" class="bg-grey">
+            <div class="bg-grey">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
                 <span class="naming">Yes</span>
             </div>
-            <div (click)="captureSentiment('dislike')" [ngClass]="{'active':tab==='dislike'}" class="bg-grey">
+            <div class="bg-grey">
                 <span class="glyphicon glyphicon-thumbs-down"></span>
                 <span class="naming">No</span>
             </div>
         </div>
         <br>
-        <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse">Edit</button>
+        <button (click)="submitted=false">Edit</button>
     </div>
 </div>
 

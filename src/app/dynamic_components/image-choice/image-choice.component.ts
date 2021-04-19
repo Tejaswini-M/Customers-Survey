@@ -38,12 +38,13 @@ export class ImageChoiceComponent implements OnInit {
     //this.config.imageValues=[];
     console.log("value");
     this.submitted =true;
-    // console.log(this.model);
-    // this.config.imageValues=this.model;
-    // console.log(this.config.imageValues);
-    // if(Object.keys(this.config.imageValues).length>0){
-    //   this.config.allValues.push(this.config.imageValues);
-    // }
+    console.log(this.model);
+    this.config.imageValues=this.model;
+    console.log(this.config.imageValues);
+    //if(Object.keys(this.config.imageValues).length>0){
+      this.config.allValues.push(this.config.imageValues);
+    //}
+    this.config.allValues = [...new Set(this.config.allValues)];
   }
 
   drop(event: CdkDragDrop<any[]>){

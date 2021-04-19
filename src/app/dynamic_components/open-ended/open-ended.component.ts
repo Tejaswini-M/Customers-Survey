@@ -13,7 +13,8 @@ export class OpenEndedComponent implements OnInit {
   model = {
     comp:'OpenEndedComponent',
     qns:'',
-    ans:''
+    ans:'',
+    ansType:''
   }
   type="";
   tab:any;
@@ -31,16 +32,17 @@ export class OpenEndedComponent implements OnInit {
   }
 
   onSubmit() {
-    this.config.openValues=[];
+    //this.config.openValues=[];
     console.log("value");
     console.log(this.type);
     this.submitted =true;
     console.log(this.model);
     this.config.openValues=this.model;
     console.log(this.config.openValues);
-    if(Object.keys(this.config.openValues).length>0){
+    //if(Object.keys(this.config.openValues).length>0){
       this.config.allValues.push(this.config.openValues);
-    }
+    //}
+    this.config.allValues = [...new Set(this.config.allValues)];
     //console.log(this.parent.value)
   }
 

@@ -6,38 +6,28 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ConfigService {
-  model={
-    comp:'yesorno',
-    qns:''
-  }
+ 
   userResponse: boolean = false;
   adminResponse: boolean = false;
   qnValues={}
   openValues={}
   yesValues={}
   imageValues={}
-  allValues : any[] = [
-    // {multi:''},
-    // {yes:''},
-    // {open:''},
-    // {image:''}
-  ];
   mixedValues={}
   rankingValues={}
   ratingValues={}
   matrixValues={}
-  // allValues : any[] = [
-  //   // {mixedtype:''},
-  //   // {ranking:''},
-  //   // {rating:''},
-  //   // {matrix:''}
-  // ];
-  
+  allValues : any[] = [];
   survey={
     id:1,
-    list:this.allValues,
-  };
-  allComps:any[]=[];
+    list:this.allValues
+  }
+  //survey:any[]=[];
+  allComps:any[]=[
+    
+  ];
+  paramID:any;
+  userValues=this.survey.list;
   constructor(public http:HttpClient) { }
 
   userUrl = "/assets/data/user.json";

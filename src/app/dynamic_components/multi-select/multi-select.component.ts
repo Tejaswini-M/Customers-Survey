@@ -88,9 +88,10 @@ export class MultiSelectComponent implements OnInit {
     console.log(this.model);
     this.config.qnValues=this.model;
     console.log(this.config.qnValues);
-    if(Object.keys(this.config.qnValues).length>0){
+    //if(Object.keys(this.config.qnValues).length>0){
       this.config.allValues.push(this.config.qnValues);
-    }
+    //}
+    this.config.allValues = [...new Set(this.config.allValues)];
   }
 
   drop(event: CdkDragDrop<any[]>){

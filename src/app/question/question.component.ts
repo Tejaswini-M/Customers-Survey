@@ -10,7 +10,7 @@ import { RatingScaleComponent } from '../dynamic_components/rating-scale/rating-
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../services/config.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-question',
@@ -36,25 +36,36 @@ export class QuestionComponent implements OnInit{
     //   // specialInfo: new FormControl('')
     // });
   }
+  
   onSave() {
+    console.log(this.config.allComps)
+    //this.count++;
     //console.log(this.masterForm.value);
     console.log(this.components.length,this.config.allValues.length);
-    //this.config.survey.list=[];
+    //this.config.allValues=[];
     // console.log(Object.values(this.config.qnValues)[0]);
     // if(Object.values(this.config.qnValues)[0]==this.comps){
     //   this.config.allValues.push(this.config.qnValues);
     // }
+    // const obj =  { id:this.count, list:this.config.allValues};
+    // this.config.survey.push(obj);
     this.config.allValues = [...new Set(this.config.allValues)];
     console.log(this.config.allValues);
     console.log(JSON.stringify(this.config.allValues));
+    //this.config.survey.id=this.count;
     this.config.survey.list=this.config.allValues;
     console.log(this.config.survey);
-    this.config.userResponse=true;
+    // this.config.allComps.push(this.config.allValues);
+    // console.log("all", this.config.allComps);
+    // console.log(JSON.stringify(this.config.allComps));
+    // this.config.allValues=[];
+    // this.config.userValues=this.config.survey.list;
+  
   }
   @ViewChild('appDynamic', { static: true, read: ViewContainerRef })
   viewContainerRef:any;
   //component: ComponentRef<any>[]=[];
-  constructor(public fb: FormBuilder,private route: ActivatedRoute,public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver) { }
+  constructor(public fb: FormBuilder,private rout: Router, private route: ActivatedRoute,public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver) { }
   
   loadComponent(name:any) {
     // const viewContainerRef = this.entryContainer.viewContainerRef;

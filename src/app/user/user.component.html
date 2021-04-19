@@ -1,0 +1,70 @@
+<app-header></app-header>
+<h1 class="center-align">Customer Feedback</h1>
+<div class="content bg-white">
+
+    <div *ngFor="let cmp of config.survey.list; let i=index" class="box">
+        <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="thumb flex-display dynamic">
+                    <div (click)="cmp.tab='like'" [ngClass]="{'active':cmp.tab==='like'}" class="bg-grey">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                        <span class="naming">Yes</span>
+                    </div>
+                    <div (click)="cmp.tab='dislike'" [ngClass]="{'active':cmp.tab==='dislike'}" class="bg-grey">
+                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                        <span class="naming">No</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='RankingComponent'">
+            <app-ranking></app-ranking>
+        </div>
+        <div *ngIf="cmp.comp=='RatingScaleComponent'">
+            <app-rating-scale></app-rating-scale>
+    
+         </div>
+        <div *ngIf="cmp.comp=='MultiSelectComponent'" class="each">
+            <!-- <app-multi-select></app-multi-select> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display dynamic">
+                    <div *ngFor="let tab of cmp.tabs; let i=index;">
+                        <button  *ngIf="tab.value" class="btn-tab bg-grey" (click)="tab.selected =!tab.selected" 
+                        [class.active]="tab.selected">{{tab.value}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='MatrixComponent'">
+            <app-matrix></app-matrix>
+        </div>
+        <div *ngIf="cmp.comp=='MixedTypeComponent'">
+            <app-mixed-type></app-mixed-type>
+            
+        </div>
+        <div *ngIf="cmp.comp=='ImageChoiceComponent'" class="each">          
+            <!-- <app-image-choice></app-image-choice> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display dynamic">
+                    <div *ngFor="let url of cmp.tabs; let i=index;">
+                        <img *ngIf="url.value" (click)="url.selected =!url.selected"
+                        [src]="url.value" [class.active]="url.selected">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='OpenEndedComponent'" class="each">
+            <!-- <app-open-ended></app-open-ended> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='short'">
+                <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='long'"></textarea>
+            </div>
+        </div>
+    </div>
+    <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button>
+</div>
+<app-footer></app-footer>

@@ -1,8 +1,7 @@
 <app-header></app-header>
-<h1 class="center-align" *ngIf="!config.userResponse">Survey Home</h1>
-<h1 class="center-align" *ngIf="config.userResponse">Customer Feedback</h1>
+<h1 class="center-align">Survey Home</h1>
 <div class="content">
-    <div class="comps flex-display dynamic" *ngIf="!config.userResponse">
+    <div class="comps">
         <div *ngFor="let qns of qnsType" class="btns">
             <button (click)="loadComponent(qns.name)">{{qns.comp}}</button>
         </div>
@@ -10,56 +9,56 @@
     <div class="comps2" *ngIf="components.length>0">
         <div cdkDropList class="list bg-white" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
             <!-- <ng-container #appDynamic></ng-container> -->
-            <div *ngFor="let cmp of components; let i=index" class="box" cdkDrag [cdkDragDisabled]="config.userResponse">
-                <div *ngIf="cmp.componentType.name=='YesNoComponent'">
+            <div *ngFor="let cmp of components; let i=index" class="box" cdkDrag>
+                <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
-                    <app-yes-no></app-yes-no>
+                    <app-yes-no class="eac"></app-yes-no>
     
                     <!-- <div><i *ngIf="!cmp.isDisable" class="disable">reorder</i>
                          <i  cdkDragHandle class="">reorder</i>
                     </div>
                     <input type="checkbox" (change)="cmp.isDisable=!cmp.isDisable"> -->
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='RankingComponent'">
+                <div *ngIf="cmp.componentType.name=='RankingComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-ranking></app-ranking>
                 
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='RatingScaleComponent'">
+                <div *ngIf="cmp.componentType.name=='RatingScaleComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-rating-scale></app-rating-scale>
             
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='MultiSelectComponent'">
+                <div *ngIf="cmp.componentType.name=='MultiSelectComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-multi-select></app-multi-select>
             
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='MatrixComponent'">
+                <div *ngIf="cmp.componentType.name=='MatrixComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-matrix></app-matrix>
                     
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='MixedTypeComponent'">
+                <div *ngIf="cmp.componentType.name=='MixedTypeComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-mixed-type></app-mixed-type>
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'">
+                <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-image-choice></app-image-choice>
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
-                <div *ngIf="cmp.componentType.name=='OpenEndedComponent'">
+                <div *ngIf="cmp.componentType.name=='OpenEndedComponent'" class="each"> 
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-open-ended></app-open-ended>
                     
-                    <button (click)="deleteComponent(i)" *ngIf="!config.userResponse">Delete Component</button>
+                    <button (click)="deleteComponent(i)">Delete Component</button>
                 </div>
             </div>
         </div>
@@ -68,10 +67,11 @@
     
     <!-- </form> -->
     <!-- masterForm = {{ masterForm.value | json }} -->
+    <!-- [class.disabled]="config.allValues.length!=components.length || config.adminResponse==false"  -->
 </div>
-<div class=" flex-display dynamic">
-    <button (click)="onSave()" [class.disabled]="config.allValues.length!=components.length || config.adminResponse==false" 
-    *ngIf="components.length>0 && !config.userResponse">Submit</button>
-    <button routerLink="/thank" *ngIf="components.length>0 && config.userResponse">Done</button>
+<div class="send">
+    <div *ngIf="config.allValues.length!=components.length && components.length>0" class="error-message">Please fill all selected questionarie!!!</div>
+    <button (click)="onSave()" routerLink="/user" 
+    *ngIf="components.length>0">Submit</button>
 </div>
 <app-footer></app-footer>

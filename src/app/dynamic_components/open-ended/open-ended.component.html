@@ -4,8 +4,8 @@
         <!-- <form #mulForm="ngForm"> -->
             <div class= "mul-qns">
                 <div class="text-btns">
-                    <button (click)="model.ans='long'"  [ngClass]="{'active':model.ans==='long'}">Long Text</button>
-                    <button (click)="model.ans='short'" [ngClass]="{'active':model.ans==='short'}">Short Text</button>
+                    <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}">Long Text</button>
+                    <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}">Short Text</button>
                     <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
                 </div>
                 
@@ -15,14 +15,14 @@
                     <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
                 </div>
             </div>
-            <button [class.disabled]="qns.invalid || model.ans=='' " (click)="onSubmit();config.adminResponse=true">Save</button>
+            <button [class.disabled]="qns.invalid || model.ansType=='' " (click)="onSubmit()">Save</button>
         <!-- </form> -->
     </div>
-    <div *ngIf="submitted">
+    <div *ngIf="submitted" (click)="submitted=false">
         <h3>{{model.qns}}</h3>
-        <input type="text" placeholder="please type here..." *ngIf="model.ans=='short'">
-        <textarea rows="5" placeholder="please type here..." *ngIf="model.ans=='long'"></textarea>
-        <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse">Edit</button>
+        <input type="text" placeholder="please type here..." *ngIf="model.ansType=='short'">
+        <textarea rows="5" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea>
+        <button (click)="submitted=false">Edit</button>
     </div>
 </div>
 
