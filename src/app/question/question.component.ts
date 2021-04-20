@@ -41,7 +41,7 @@ export class QuestionComponent implements OnInit{
   viewDetail(index : any){
     this.rout.navigate(['/user', index]);
     this.config.paramID=index;
-    this.config.userValues=this.config.allComps[index];
+    this.config.userValues=this.config.allComps[index].list;
   }
   count=0;
   onSave() {
@@ -60,7 +60,7 @@ export class QuestionComponent implements OnInit{
     console.log(JSON.stringify(this.config.allValues));
     this.config.survey.id=this.config.survey.id+1;
     this.config.survey.list=this.config.allValues;
-
+    this.config.userValues=this.config.survey.list
     console.log(this.config.survey);
     this.config.allComps.push(JSON.parse(JSON.stringify(this.config.survey)));
     
@@ -68,7 +68,7 @@ export class QuestionComponent implements OnInit{
     this.config.paramID=this.config.allComps.length-1;
     // console.log(JSON.stringify(this.config.allComps));
     this.config.allValues=[];
-    // this.config.userValues=this.config.survey.list;
+    ;
   
   }
   @ViewChild('appDynamic', { static: true, read: ViewContainerRef })

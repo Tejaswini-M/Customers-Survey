@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="content bg-white">
     <h1 class="center-align">{{config.allComps[config.paramID].title}}</h1>
-    <div *ngFor="let cmp of config.allComps[config.paramID].list; let i=index" class="box">
+    <div *ngFor="let cmp of config.userValues; let i=index" class="box">
         <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
             <div>
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
