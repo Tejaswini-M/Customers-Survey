@@ -18,12 +18,13 @@ export class RatingScaleComponent implements OnInit {
   disabled = true;
   submitted = false;
   type="";
+  ans=0;
  
   model = {
     comp:'RatingScaleComponent',
     qns:'',
     ans:''
-  }
+    }
   
   onSubmit() {
     this.config.ratingValues=[];

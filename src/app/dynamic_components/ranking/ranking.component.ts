@@ -65,9 +65,9 @@ export class RankingComponent implements OnInit {
   //   this.model = event.target.value;
   // }
 
-  drop(event: CdkDragDrop<any[]>){
-    //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
-    moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
-    //console.log(event.container.data);
-  }
+  // drop(event: CdkDragDrop<any[]>){
+  //   //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
+  //   moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
+  //   //console.log(event.container.data);
+  // }
 }

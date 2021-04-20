@@ -38,8 +38,8 @@
                 <tr *ngFor="let tab of model.tabs" cdkDrag>
                     <th class="btn-tab">{{tab.value}}</th>  
                     <th *ngFor="let state of status">
-                        <input type="radio" id="{{tab.id}}" [(ngModel)]="tab.status" 
-                        value="{{state}}" name="{{tab.id}}">
+                        <input type="radio" id="opt1+{{tab.id}}" [(ngModel)]="tab.status" 
+                        value="{{state}}" name="option+{{tab.id}}">
                     </th>              
                 </tr>
             </table>

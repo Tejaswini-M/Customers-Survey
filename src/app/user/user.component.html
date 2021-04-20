@@ -42,10 +42,10 @@
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
                 <mat-card class="center-align" style="box-shadow: none;" *ngIf="cmp.comp" >
                     <mat-card-content>
-                        <mat-slider thumbLabel [(ngModel)]="value" name="ans" #ans="ngModel"></mat-slider>
+                        <mat-slider thumbLabel [(ngModel)]="cmp.ans" ></mat-slider>
                       <section class="section">
                         <mat-form-field class="margin" style="width: 83px;">
-                          <input matInput type="number" [(ngModel)]="value" class="number" name="ans" #ans="ngModel">
+                          <input matInput type="number" [(ngModel)]="cmp.ans" class="number">
                         </mat-form-field>
                       </section>
                     </mat-card-content>
@@ -68,9 +68,9 @@
             <!-- <app-matrix></app-matrix> -->
             <div>
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
-                <div class="dynamic">
+                <div class="flex-display dynamic">
                     <table>
-                        <tr class="data">
+                        <tr>
                             <th></th>
                             <th>Very Good</th>
                             <th>Good</th>
@@ -78,11 +78,11 @@
                             <th>Poor</th>
                             <th>Very Poor</th>                  
                         </tr>            
-                        <tr *ngFor="let tab of cmp.tabs" cdkDrag>
+                        <tr *ngFor="let tab of cmp.tabs" >
                             <th class="btn-tab1">{{tab.value}}</th>  
                             <th *ngFor="let state of status">
-                                <input type="radio" id="{{tab.id}}" [(ngModel)]="tab.status" 
-                                value="{{state}}" name="{{tab.id}}">
+                                <input type="radio" id="opt1+{{tab.id}}" [(ngModel)]="tab.status" 
+                                value="{{state}}" name="option+{{tab.id}}">
                             </th>              
                         </tr>
                     </table>
@@ -93,9 +93,10 @@
             <!-- <app-mixed-type></app-mixed-type> -->
             <div>
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
-                <div class="flex-display ">
-                    <div *ngFor="let tab of cmp.tabs; let i=index;" cdkDrag>
-                        <input type="radio" class="btn-tab" id="{{tab.selected}}" (click)="tab.selected =!tab.selected" 
+                <div class="flex-display dynamic ">
+                    <div *ngFor="let tab of cmp.tabs; let i=index;">
+                        <input type="radio" class="btn-tab" id="{{tab.selected}}" 
+                        (click)="tab.selected =!tab.selected" 
                         [class.active]="tab.selected" >{{tab.value}}
                     </div>
                 </div>

@@ -12,19 +12,25 @@ export class UserComponent implements OnInit {
 
   constructor(public config:ConfigService) { }
   selectedTab: any=[];
+  selected: any=[];
   ngOnInit(): void { }
 
-  cmp = {
-    ans:'',
-    qns:'',
-    tab:[
-      { id:'', value:''},
-      { id:'', value:''},
-      { id:'', value:''}
-    ]
-  }
+  // cmp = {
+  //   ans:'',
+  //   qns:'',
+  //   tab:[
+  //     { id:'', value:''},
+  //     { id:'', value:''},
+  //     { id:'', value:''}
+  //   ]
+  // }
+  // rank=[
+  //   { id:'', value:''},
+  //   { id:'', value:''},
+  //   { id:'', value:''}
+  // ];
   thumbLabel = false;
-  value = 0;
+  ans = 0;
 
   onSubmit(){
     console.log(this.config.userValues);
