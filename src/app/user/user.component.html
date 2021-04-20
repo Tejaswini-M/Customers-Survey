@@ -20,18 +20,20 @@
         <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event,i)">
             <div>
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
-                <div class="flex-display dynamic" id="example-box" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag>
-                    <div class="drag-index">
-                        <select>
-                            <option *ngFor="let tab of cmp.tabs" [value]="tab.id">{{i+1}}</option>
-                        </select>
-                    </div>
-                    <div class="w-20 drag-icon">
-                        <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->
-                        <i  class="material-icons" cdkDragHandle>reorder</i>
-                      </div>
-                      <div class="w-100 drag-content">
-                        <span *ngIf="tab.value">{{tab.value}}</span>
+                <div class="center-align">
+                    <div class="example-box" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag>
+                        <div class="drag-index">
+                            <select>
+                                <option *ngFor="let tab of cmp.tabs" [value]="tab.id">{{i+1}}</option>
+                            </select>
+                        </div>
+                        <div class="w-20 drag-icon">
+                            <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->
+                            <i  class="material-icons" cdkDragHandle>reorder</i>
+                        </div>
+                        <div class="w-100 drag-content">
+                            <span *ngIf="tab.value">{{tab.value}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
