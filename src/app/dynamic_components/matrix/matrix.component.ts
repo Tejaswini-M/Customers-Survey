@@ -51,9 +51,11 @@ export class MatrixComponent implements OnInit {
       
       this.config.matrixValues=this.model;
       console.log(this.config.matrixValues);
-      if(Object.keys(this.config.matrixValues).length>0){
+      //if(Object.keys(this.config.matrixValues).length>0){
         this.config.allValues.push(this.config.matrixValues);
-      }
+  // }
+  this.config.allValues = [...new Set(this.config.allValues)];
+
     }
 
   drop(event: CdkDragDrop<any[]>){

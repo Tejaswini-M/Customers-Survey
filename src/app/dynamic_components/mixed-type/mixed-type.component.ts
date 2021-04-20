@@ -49,9 +49,11 @@ export class MixedTypeComponent implements OnInit {
     console.log(this.model);
     this.config.mixedValues=this.model;
     console.log(this.config.mixedValues);
-    if(Object.keys(this.config.mixedValues).length>0){
+    // if(Object.keys(this.config.mixedValues).length>0){
       this.config.allValues.push(this.config.mixedValues);
-    }
+    // }
+    this.config.allValues = [...new Set(this.config.allValues)];
+
   }
 
   drop(event: CdkDragDrop<any[]>){

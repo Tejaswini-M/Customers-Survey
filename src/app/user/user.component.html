@@ -18,12 +18,40 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="cmp.comp=='RankingComponent'">
-            <app-ranking></app-ranking>
+        <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event)">
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="example-box"  *ngFor="let tab of cmp.tabs; let i=index" cdkDrag>
+                    <div class="drag-index">
+                        <select>
+                            <option *ngFor="let tab of cmp.tabs" [value]="tab.id">{{i+1}}</option>
+                        </select>
+                    </div>
+                    <div class="w-20 drag-icon">
+                        <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->
+                        <i  class="material-icons" cdkDragHandle>reorder</i>
+                      </div>
+                      <div class="w-100 drag-content">
+                        <span *ngIf="tab.value">{{tab.value}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div *ngIf="cmp.comp=='RatingScaleComponent'">
-            <app-rating-scale></app-rating-scale>
-    
+        <div *ngIf="cmp.comp=='RatingScaleComponent'" class="each">
+            <!-- <app-rating-scale></app-rating-scale>     -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <mat-card class="center-align" style="box-shadow: none;" *ngIf="cmp.comp" >
+                    <mat-card-content>
+                        <mat-slider thumbLabel [(ngModel)]="value" name="ans" #ans="ngModel"></mat-slider>
+                      <section class="section">
+                        <mat-form-field class="margin" style="width: 83px;">
+                          <input matInput type="number" [(ngModel)]="value" class="number" name="ans" #ans="ngModel">
+                        </mat-form-field>
+                      </section>
+                    </mat-card-content>
+                </mat-card>
+            </div>
          </div>
         <div *ngIf="cmp.comp=='MultiSelectComponent'" class="each">
             <!-- <app-multi-select></app-multi-select> -->
@@ -37,12 +65,45 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="cmp.comp=='MatrixComponent'">
-            <app-matrix></app-matrix>
+        <div *ngIf="cmp.comp=='MatrixComponent'" class="each">
+            <!-- <app-matrix></app-matrix> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="dynamic">
+                    <table>
+                        <tr class="data">
+                            <th></th>
+                            <th>Very Good</th>
+                            <th>Good</th>
+                            <th>Fair</th>
+                            <th>Poor</th>
+                            <th>Very Poor</th>                  
+                        </tr>            
+                        <tr *ngFor="let tab of cmp.tabs" cdkDrag>
+                            <th class="btn-tab1">{{tab.value}}</th>  
+                            <th *ngFor="let state of status">
+                                <input type="radio" id="{{tab.id}}" [(ngModel)]="tab.status" 
+                                value="{{state}}" name="{{tab.id}}">
+                            </th>              
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div *ngIf="cmp.comp=='MixedTypeComponent'">
-            <app-mixed-type></app-mixed-type>
-            
+        <div *ngIf="cmp.comp=='MixedTypeComponent'" class="each">
+            <!-- <app-mixed-type></app-mixed-type> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display ">
+                    <div *ngFor="let tab of cmp.tabs; let i=index;" cdkDrag>
+                        <input type="radio" class="btn-tab" id="{{tab.selected}}" (click)="tab.selected =!tab.selected" 
+                        [class.active]="tab.selected" >{{tab.value}}
+                    </div>
+                </div>
+                <div class="comment">Any Comments ? 
+                    <input class="input1" type="text" [(ngModel)] ="cmp.ans" #ans="ngModel" placeholder="please type here...">
+                </div>
+            </div>
         </div>
         <div *ngIf="cmp.comp=='ImageChoiceComponent'" class="each">          
             <!-- <app-image-choice></app-image-choice> -->

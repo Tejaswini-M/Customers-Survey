@@ -15,12 +15,14 @@ export class RatingScaleComponent implements OnInit {
 
   thumbLabel = false;
   value = 0;
+  
   submitted = false;
   type="";
  
   model = {
-    comp:'RatingComponent',
-    qns:''
+    comp:'RatingScaleComponent',
+    qns:'',
+    ans:''
   }
   
   onSubmit() {
@@ -31,10 +33,10 @@ export class RatingScaleComponent implements OnInit {
     console.log(this.model);
     this.config.ratingValues=this.model;
     console.log(this.config.ratingValues);
-    if(Object.keys(this.config.ratingValues).length>0)
-    {
+    //if(Object.keys(this.config.ratingValues).length>0){
       this.config.allValues.push(this.config.ratingValues);
-    }
+    //}
+    this.config.allValues = [...new Set(this.config.allValues)];
   }
 }
 

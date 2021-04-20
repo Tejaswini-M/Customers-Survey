@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConfigService } from '../services/config.service';
@@ -11,11 +12,28 @@ export class UserComponent implements OnInit {
 
   constructor(public config:ConfigService) { }
   selectedTab: any=[];
-  ngOnInit(): void {
-    
+  ngOnInit(): void { }
+
+  cmp = {
+    ans:'',
+    qns:'',
+    tab:[
+      { id:'', value:''},
+      { id:'', value:''},
+      { id:'', value:''}
+    ]
   }
+  thumbLabel = false;
+  value = 0;
+
   onSubmit(){
     console.log(this.config.survey);
   }
+
+  drop(event: CdkDragDrop<any[]>){
+    moveItemInArray(this.cmp.tab, event.previousIndex, event.currentIndex);
+  }
+
+  status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];
 
 }

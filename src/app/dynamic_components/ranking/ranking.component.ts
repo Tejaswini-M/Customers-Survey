@@ -53,9 +53,11 @@ export class RankingComponent implements OnInit {
     console.log(this.model);
     this.config.rankingValues=this.model;
     console.log(this.config.rankingValues);
-    if(Object.keys(this.config.rankingValues).length>0){
+    //if(Object.keys(this.config.rankingValues).length>0){
       this.config.allValues.push(this.config.rankingValues);
-    }
+    //}
+    this.config.allValues = [...new Set(this.config.allValues)];
+
   }
 
   // changeOptions(event: any) {

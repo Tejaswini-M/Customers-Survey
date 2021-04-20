@@ -59,3 +59,133 @@ img {
     width:100px;
     padding:10px;
 }
+//Ranking
+.drag-icon {
+    position: relative;
+    background-color: #00a3ad;
+    color: #fff;
+    text-align: center;
+    padding: 8px 15px;
+    margin: 0px 20px;
+  }
+  .drag-icon i {
+    cursor: move;
+  }
+  i.disable{
+    position: absolute;
+    cursor: not-allowed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: transparent;
+  }
+
+  .drag-index {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;    
+}
+  .example-box {
+    width: 300px;
+    border: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    align-items: center;
+    background: white;
+    font-size: 14px;
+    margin: 10px;
+  }
+  
+  //Mixsed-Type
+  .input1{
+    width: 400px;
+    margin: 10px;
+    padding: 5px 5px;
+  }
+  
+  .comment{
+    min-width: fit-content; 
+    font-weight: 500;
+    height: 50px;
+    font-size: 14px;
+    // margin: 25px;
+    padding: 10px;
+  }
+  .btn-tab{
+    width: 50px;
+    margin: 5px;
+    padding: 5px;
+    color: #000000;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+    overflow: hidden;
+    float: left;
+  }
+
+  //Matrix
+  .btn-tab1 {
+    padding: 5px 10px;
+    border: solid 5px white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #FDCC08;
+    width: 25%;
+    min-height: 60px;
+    font-weight: 450;
+    border-radius: 15px;
+    font-family: markPro-Bold;
+  }
+  .dynamic {
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin:0 auto;
+    padding: 4px;
+  }
+  table {
+    width:100%;
+  }
+  th {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  table .error-message {
+    float:right;
+  }
+// rating-scale
+  .section {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .margin {
+    margin: 4px;
+    width: 70px;
+  }
+  
+  .mat-slider-horizontal {
+    width: 400px;
+  }
+  
+  .mat-slider-vertical {
+    height: 300px;
+  }
+  
+  .mat-card + .mat-card {
+    margin-top: 8px;
+  }
+
+  .number{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+  }
+
+  .mat-form-field{
+    width: auto;
+  }
