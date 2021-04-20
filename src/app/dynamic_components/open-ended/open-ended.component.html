@@ -8,7 +8,7 @@
                     <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}">Short Text</button>
                     <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
                 </div>
-                
+                <br>
                 <div>
                     <label>Enter your question</label>
                     <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
@@ -20,7 +20,7 @@
     </div>
     <div *ngIf="submitted" (click)="submitted=false">
         <h3>{{model.qns}}</h3>
-        <div class="flex-display dynamic open">
+        <div class="flex-display dynamic ">
             <input type="text" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='short'">
             <textarea rows="5" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea>
         </div>
