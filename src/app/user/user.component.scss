@@ -86,22 +86,28 @@ img {
     font-weight: 500;
     padding: 8px;    
 }
-  .example-box {
+  #example-box {
+    display: flex;
     width: 300px;
     border: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    display: flex;
     align-items: center;
     background: white;
     font-size: 14px;
-    margin: 10px;
+    /* margin: 0px 10px; */
+    min-width: 150px;
+    margin-bottom: 10px;
   }
   
-  //Mixsed-Type
+  //Mixed-Type
   .input1{
     width: 400px;
-    margin: 10px;
+    margin: 5px;
     padding: 5px 5px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .comment{
@@ -111,6 +117,10 @@ img {
     font-size: 14px;
     // margin: 25px;
     padding: 10px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .btn-tab{
     width: 50px;

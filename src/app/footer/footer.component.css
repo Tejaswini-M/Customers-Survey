@@ -30,7 +30,7 @@ h2{
  .row
  {
      display:flex;
-     margin-left:150px;
+     margin-left: 40px;
      margin-right:150px;
      font-family: MarkPro;
      box-sizing: border-box;
@@ -42,22 +42,23 @@ h2{
  .inline-list
  {
     display:flex;
-    margin-left:100px;
-    margin-top:-20px;  
+    /* margin-left:100px;
+    margin-top:-20px;   */
  }
  h4{
      color:rgb(175, 165, 165);
-     margin-left:320px;
+     margin-left: 180px;
      margin-top:-20px;
  }
  .footer1
  {
-     margin-right:200px;
+    margin-right: 25px;
+    margin-left: 25px;
      list-style-type: none;
  }
  .footer2
  {
-     margin-left:100px;
+     margin-left:150px;
      list-style-type: none;
  }
  .footer1 li,

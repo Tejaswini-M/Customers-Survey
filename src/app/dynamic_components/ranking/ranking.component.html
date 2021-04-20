@@ -23,7 +23,7 @@
     </div>
     <div *ngIf="submitted" (click)="submitted=false">
         <h3>{{model.qns}}</h3>
-        <div class="example-box"  *ngFor="let mul of model.tabs; let i=index" >
+        <div class="flex-display dynamic" id="example-box"  *ngFor="let mul of model.tabs; let i=index" >
             <div class="drag-index">
                 <select>
                     <option *ngFor="let mul of model.tabs" [value]="mul.id">{{i+1}}</option>
