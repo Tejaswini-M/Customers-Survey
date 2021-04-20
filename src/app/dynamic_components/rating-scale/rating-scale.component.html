@@ -12,11 +12,7 @@
           <h3>{{model.qns}}</h3>
           <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp">
             <mat-card-content>
-<<<<<<< HEAD
-                <mat-slider  [(ngModel)]="value" name="ans" #ans="ngModel"></mat-slider>
-=======
-                <mat-slider [(ngModel)]="ans" [disabled]="disabled" name="ans"></mat-slider>
->>>>>>> e44096196549f0a17d32d461a4cd9b7d0cfa02d5
+                <mat-slider  [(ngModel)]="ans" name="ans"></mat-slider>
               <section class="section">
                 <mat-form-field class="margin" style="width: 83px;">
                   <input matInput type="number" [(ngModel)]="ans" class="number" name="ans">
