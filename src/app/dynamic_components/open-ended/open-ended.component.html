@@ -20,8 +20,11 @@
     </div>
     <div *ngIf="submitted" (click)="submitted=false">
         <h3>{{model.qns}}</h3>
-        <input type="text" placeholder="please type here..." *ngIf="model.ansType=='short'">
-        <textarea rows="5" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea>
+        <div class="flex-display dynamic open">
+            <input type="text" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='short'">
+            <textarea rows="5" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea>
+        </div>
+        <br>
         <button (click)="submitted=false">Edit</button>
     </div>
 </div>

@@ -20,6 +20,7 @@ export class ConfigService {
   allValues : any[] = [];
   survey={
     id:1,
+    title:'',
     list:this.allValues
   }
   //survey:any[]=[];
