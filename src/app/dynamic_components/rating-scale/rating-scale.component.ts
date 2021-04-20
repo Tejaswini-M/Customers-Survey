@@ -13,9 +13,9 @@ export class RatingScaleComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  thumbLabel = false;
-  value = 0;
-  
+  // thumbLabel = false;
+  // value = 0;
+  disabled = true;
   submitted = false;
   type="";
  
