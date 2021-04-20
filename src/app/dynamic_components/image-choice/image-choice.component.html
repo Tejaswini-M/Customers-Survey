@@ -30,7 +30,7 @@
         <h3>{{model.qns}}</h3>
         <div class="flex-display dynamic">
             <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
-                <img *ngIf="url.value" [src]="url.value">
+                <img *ngIf="url.value" class="btn-tab bg-grey"[src]="url.value">
             </div>
             <!-- <div *ngFor="let url of urls; let i=index;" cdkDrag>
                 <img [src]="url" height="50px" width="50px">

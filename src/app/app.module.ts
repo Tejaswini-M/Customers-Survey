@@ -61,6 +61,6 @@ import { UserComponent } from './user/user.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MultiSelectComponent, YesNoComponent, MatrixComponent]
+  entryComponents: [],
 })
 export class AppModule { }
