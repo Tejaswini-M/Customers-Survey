@@ -12,17 +12,10 @@ export class UserComponent implements OnInit {
 
   constructor(public config:ConfigService) { }
   selectedTab: any=[];
-  ngOnInit(): void { }
-
-  cmp = {
-    ans:'',
-    qns:'',
-    tab:[
-      { id:'', value:''},
-      { id:'', value:''},
-      { id:'', value:''}
-    ]
+  ngOnInit(): void { 
   }
+
+ 
   thumbLabel = false;
   value = 0;
 
@@ -30,8 +23,8 @@ export class UserComponent implements OnInit {
     console.log(this.config.userValues);
   }
 
-  drop(event: CdkDragDrop<any[]>){
-    moveItemInArray(this.cmp.tab, event.previousIndex, event.currentIndex);
+  drop(event: CdkDragDrop<any[]>,i:any){
+    moveItemInArray(this.config.userValues[i].tabs, event.previousIndex, event.currentIndex);
   }
 
   status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];

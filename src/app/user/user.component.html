@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event)">
+        <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event,i)">
             <div>
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
                 <div class="example-box"  *ngFor="let tab of cmp.tabs; let i=index" cdkDrag>

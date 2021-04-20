@@ -27,7 +27,7 @@ export class ConfigService {
   allComps:any[]=[
     
   ];
-  paramID:any;
+  paramID=0;
   userValues=this.survey.list;
   constructor(public http:HttpClient) { }
 
