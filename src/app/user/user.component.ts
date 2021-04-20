@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
   value = 0;
 
   onSubmit(){
-    console.log(this.config.survey);
+    console.log(this.config.userValues);
   }
 
   drop(event: CdkDragDrop<any[]>){
