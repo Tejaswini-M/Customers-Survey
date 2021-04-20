@@ -7,7 +7,7 @@ import { MixedTypeComponent } from '../dynamic_components/mixed-type/mixed-type.
 import { OpenEndedComponent } from '../dynamic_components/open-ended/open-ended.component';
 import { RankingComponent } from '../dynamic_components/ranking/ranking.component';
 import { RatingScaleComponent } from '../dynamic_components/rating-scale/rating-scale.component';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../services/config.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,6 +25,8 @@ export class QuestionComponent implements OnInit{
   components: any[] = [];
   masterForm!: FormGroup;
   viewOption:any;
+  title:any;
+  createResponse=false;
   ngOnInit(): void {
     this.viewOption=this.route.snapshot.data.viewOption;
     // this.masterForm = this.fb.group({
@@ -36,10 +38,14 @@ export class QuestionComponent implements OnInit{
     //   // specialInfo: new FormControl('')
     // });
   }
-  
+  viewDetail(index : any){
+    this.rout.navigate(['/user', index]);
+    this.config.paramID=index;
+    this.config.userValues=this.config.allComps[index];
+  }
+  count=0;
   onSave() {
     console.log(this.config.allComps)
-    //this.count++;
     //console.log(this.masterForm.value);
     console.log(this.components.length,this.config.allValues.length);
     //this.config.allValues=[];
@@ -52,13 +58,16 @@ export class QuestionComponent implements OnInit{
     this.config.allValues = [...new Set(this.config.allValues)];
     console.log(this.config.allValues);
     console.log(JSON.stringify(this.config.allValues));
-    //this.config.survey.id=this.count;
+    this.config.survey.id=this.config.survey.id+1;
     this.config.survey.list=this.config.allValues;
+
     console.log(this.config.survey);
-    // this.config.allComps.push(this.config.allValues);
-    // console.log("all", this.config.allComps);
+    this.config.allComps.push(JSON.parse(JSON.stringify(this.config.survey)));
+    
+    console.log("all", this.config.allComps);
+    this.config.paramID=this.config.allComps.length-1;
     // console.log(JSON.stringify(this.config.allComps));
-    // this.config.allValues=[];
+    this.config.allValues=[];
     // this.config.userValues=this.config.survey.list;
   
   }
@@ -98,7 +107,9 @@ export class QuestionComponent implements OnInit{
     // console.log(this.config.allComps);
     
   }
-
+  onDrop(event: any, idx: any){
+    
+  }
   drop(event: CdkDragDrop<any[]>){
     //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
       moveItemInArray(this.components, event.previousIndex, event.currentIndex);

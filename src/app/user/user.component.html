@@ -1,8 +1,7 @@
 <app-header></app-header>
-<h1 class="center-align">Customer Feedback</h1>
 <div class="content bg-white">
-
-    <div *ngFor="let cmp of config.survey.list; let i=index" class="box">
+    <h1 class="center-align">{{config.allComps[config.paramID].title}}</h1>
+    <div *ngFor="let cmp of config.allComps[config.paramID].list; let i=index" class="box">
         <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
             <div>
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
@@ -127,5 +126,6 @@
         </div>
     </div>
     <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button>
+    <br>
 </div>
 <app-footer></app-footer>
