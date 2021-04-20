@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
 
  
   thumbLabel = false;
-  value = 0;
+  ans = 0;
 
   onSubmit(){
     console.log(this.config.userValues);

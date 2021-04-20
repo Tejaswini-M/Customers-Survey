@@ -13,17 +13,18 @@ export class RatingScaleComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  thumbLabel = false;
-  value = 0;
-  
+  // thumbLabel = false;
+  // value = 0;
+  disabled = true;
   submitted = false;
   type="";
+  ans=0;
  
   model = {
     comp:'RatingScaleComponent',
     qns:'',
     ans:''
-  }
+    }
   
   onSubmit() {
     this.config.ratingValues=[];
