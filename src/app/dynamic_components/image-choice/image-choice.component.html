@@ -16,9 +16,10 @@
                     <table>
                         <tr *ngFor="let item of model.tabs; let i=index">
                             <td><input type="file" (change)="onFileChanged($event,i)" 
-                                class="input-field" [(ngModel)] ="item.value" name="ans" #ans="ngModel" required></td>
+                                class="input-field" required></td>
+                                <!-- [(ngModel)] ="item.value" name="ans" #ans="ngModel"  -->
                             <td><button (click)="deleteRow(i)" class="delete-tab">delete</button></td>
-                            <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td>
+                            <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
                         </tr>
                     </table>
                 </div>
