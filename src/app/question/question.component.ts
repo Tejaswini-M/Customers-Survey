@@ -56,10 +56,21 @@ export class QuestionComponent implements OnInit{
     // const obj =  { id:this.count, list:this.config.allValues};
     // this.config.survey.push(obj);
     this.config.allValues = [...new Set(this.config.allValues)];
-    console.log(this.config.allValues);
-    console.log(JSON.stringify(this.config.allValues));
+    var sortedArray = [];
+    for(var i=0; i < this.components.length; i++) {
+    var found = false;
+      for(var j=0; j < this.config.allValues.length && !found; j++) {
+        if(this.config.allValues[j].comp == this.components[i].componentType.name) {
+            sortedArray.push(this.config.allValues[j]);
+            this.config.allValues.splice(j,1);
+            found = true;
+        }
+      }
+    }
+    console.log("sort",sortedArray)
+    console.log(JSON.stringify(sortedArray));
     this.config.survey.id=this.config.survey.id+1;
-    this.config.survey.list=this.config.allValues;
+    this.config.survey.list=sortedArray;
     this.config.userValues=this.config.survey.list
     console.log(this.config.survey);
     this.config.allComps.push(JSON.parse(JSON.stringify(this.config.survey)));
@@ -113,6 +124,7 @@ export class QuestionComponent implements OnInit{
   drop(event: CdkDragDrop<any[]>){
     //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
       moveItemInArray(this.components, event.previousIndex, event.currentIndex);
+      moveItemInArray(this.config.userValues, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
   }
   deleteComponent(i:any) {
