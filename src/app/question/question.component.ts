@@ -118,13 +118,10 @@ export class QuestionComponent implements OnInit{
     // console.log(this.config.allComps);
     
   }
-  onDrop(event: any, idx: any){
-    
-  }
+  
   drop(event: CdkDragDrop<any[]>){
     //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
       moveItemInArray(this.components, event.previousIndex, event.currentIndex);
-      moveItemInArray(this.config.userValues, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
   }
   deleteComponent(i:any) {
