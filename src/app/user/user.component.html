@@ -60,7 +60,7 @@
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
                 <div class="flex-display dynamic">
                     <div *ngFor="let tab of cmp.tabs; let i=index;">
-                        <button  *ngIf="tab.value" class="btn-tab bg-grey" (click)="tab.selected =!tab.selected" 
+                        <button  *ngIf="tab.value" class="btn-tab-mul bg-grey" (click)="tab.selected =!tab.selected" 
                         [class.active]="tab.selected">{{tab.value}}</button>
                     </div>
                 </div>
