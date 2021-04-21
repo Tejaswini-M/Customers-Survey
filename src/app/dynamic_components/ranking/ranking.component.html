@@ -26,9 +26,10 @@
         <div class="center-align">
             <div class="example-box" *ngFor="let mul of model.tabs; let i=index" >
                 <div class="drag-index">
-                    <select>
+                    <!-- <select>
                         <option *ngFor="let mul of model.tabs" [value]="mul.id">{{i+1}}</option>
-                    </select>
+                    </select> -->
+                    <div class="sort">{{i+1}}</div>
                 </div>
                 <div class="w-20 drag-icon">
                     <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->

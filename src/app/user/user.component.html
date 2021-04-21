@@ -23,9 +23,10 @@
                 <div class="center-align">
                     <div class="example-box" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag>
                         <div class="drag-index">
-                            <select>
+                            <!-- <select>
                                 <option *ngFor="let tab of cmp.tabs" [value]="tab.id">{{i+1}}</option>
-                            </select>
+                            </select> -->
+                            <div class="sort">{{i+1}}</div>
                         </div>
                         <div class="w-20 drag-icon">
                             <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->
@@ -93,16 +94,17 @@
         </div>
         <div *ngIf="cmp.comp=='MixedTypeComponent'" class="each">
             <!-- <app-mixed-type></app-mixed-type> -->
-            <div>
+            <div class="mixed">
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
                 <div class="flex-display dynamic ">
                     <div *ngFor="let tab of cmp.tabs; let i=index;">
                         <input type="radio" class="btn-tab" id="{{tab.selected}}" 
-                        (click)="tab.selected =!tab.selected" 
-                        [class.active]="tab.selected" >{{tab.value}}
+                        [(ngModel)]="tab.selected" [class.active]="tab.selected" 
+                        value="{{tab.value}}" name="selected" >{{tab.value}}
                     </div>
                 </div>
-                <div class="comment">Any Comments ? 
+                <div class="comment">
+                    <label class="comment1">Any Comments ? </label> 
                     <input class="input1" type="text" [(ngModel)] ="cmp.ans" #ans="ngModel" placeholder="please type here...">
                 </div>
             </div>

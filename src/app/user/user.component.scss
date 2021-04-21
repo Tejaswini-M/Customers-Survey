@@ -97,9 +97,21 @@ img {
   margin-left: 150px;
   margin-bottom: 15px; 
 }
-
-select{
-  margin-top: 10px;
+.sort{
+  color: #acafb2;
+  height: 30px;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+  font-size: 15px !important;
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  font-family: 'MarkPro';
+  font-size: 10px;
+  line-height: normal;
+  padding: 0.5rem;
+  border-radius: 0;
+  width: 40px;
 }
   
   //Mixed-Type
@@ -112,7 +124,11 @@ select{
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+  .comment1{  
+    margin-top: 15px !important;
+    margin-right: 10px;
+    font-family: markPro-Bold;
+}
   .comment{
     min-width: fit-content; 
     font-weight: 500;

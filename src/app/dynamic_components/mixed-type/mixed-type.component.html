@@ -25,14 +25,17 @@
         </div>
         <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="submitted=false">
             <h3>{{model.qns}}</h3>
-        <div class="flex-display dynamic ">
-            <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
-                <input type="radio" class="btn-tab" >{{tab.value}}
+            <div class="mixed">
+                <div class="flex-display dynamic ">
+                    <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
+                        <input type="radio" class="btn-tab" >{{tab.value}}
+                    </div>
+                </div>
+                <div class="comment">
+                    <label class="comment1">Any Comments ? </label> 
+                    <input class="input1" type="text" placeholder="please type here...">
+                </div>
             </div>
-        </div>
-        <div class="comment">Any Comments ? 
-            <input class="input1" type="text" placeholder="please type here...">
-        </div>
         <button (click)="submitted=false">Edit</button>
     </div>
 </div>
