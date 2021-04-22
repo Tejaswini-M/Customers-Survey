@@ -1,5 +1,5 @@
 <app-header></app-header>
-<h1 class="center-align">Survey Home</h1>
+<!-- <h1 class="center-align">Survey Home</h1> -->
 <div class="users">
     <div class="flex-display title">
         <input type="text" placeholder="Enter title of the survey..." class="input-field" [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
@@ -23,9 +23,9 @@
         </div>
     </div>
     <div class="comps2" *ngIf="components.length>0">
-        <div cdkDropList class="list bg-white" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
+        <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
             <!-- <ng-container #appDynamic></ng-container> -->
-            <div *ngFor="let cmp of components; let i=index" class="box" cdkDrag>
+            <div *ngFor="let cmp of components; let i=index" class="box bg-white" cdkDrag>
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-yes-no></app-yes-no>

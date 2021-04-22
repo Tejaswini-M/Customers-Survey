@@ -76,6 +76,7 @@
 .box {
     width:100%;
     padding: 20px 10px;
+    margin-bottom: 10px;
     border-bottom: solid 1px #E3E9EC;
     flex-wrap: wrap;
     justify-content: center;
@@ -111,4 +112,23 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen  and (max-width:767px){
+    .content {
+        flex-direction: column;
+    }
+    .comps, .comps2 {
+        width:100%;
+    }
+    .comps2 {
+        margin-left:0;
+    }
+    .btns button {
+        height:100%;
+        width:100%;
+        margin:10px 0;
+        flex-direction: row;
+        background-color:#00a3ad;
+    }
 }

@@ -22,7 +22,7 @@ h2{
  footer{
      margin-top:70px;
      background-color: black;
-     height:350px;
+     /* height:350px; */
      display: inline-block;
      margin-bottom:0;
      width:100%;
@@ -52,13 +52,13 @@ h2{
  }
  .footer1
  {
-    margin-right: 25px;
-    margin-left: 25px;
+    margin-right: 100px;
+    margin-left: 100px;
      list-style-type: none;
  }
  .footer2
  {
-     margin-left:150px;
+     margin-left:300px;
      list-style-type: none;
  }
  .footer1 li,
@@ -97,8 +97,14 @@ h2{
  }
 .size{
     font-size: 14px;
+    margin-left:500px
 }
  
 ul{
     list-style-type: none;
+}
+@media screen  and (max-width:767px){
+    .row,.row2{
+        flex-direction: column;
+    }
 }
