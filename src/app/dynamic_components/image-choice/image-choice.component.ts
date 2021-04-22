@@ -48,9 +48,7 @@ export class ImageChoiceComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<any[]>){
-    //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
-    //console.log(event.container.data);
   }
 
   selectOption(){
