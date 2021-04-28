@@ -30,6 +30,6 @@
               </section>
             </mat-card-content>
         </mat-card>
-      <button (click)="edit();config.adminResponse=true">Edit</button>
+      <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>
