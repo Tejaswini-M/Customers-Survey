@@ -1,3 +1,8 @@
+.content{
+    display: flex;
+    margin: 15px 10%;
+    flex-direction: column;
+}
 .top-content {
     background-image: url("../../assets/images/bg-welcome.jpg");
     background-size: cover;
