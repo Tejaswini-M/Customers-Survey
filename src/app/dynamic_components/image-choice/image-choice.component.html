@@ -10,9 +10,7 @@
                 </div>
                 
                 <div>
-                    <label>Enter your answer</label>
-                    <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
-                    
+                    <label>Enter your answer</label>                    
                     <table>
                         <tr *ngFor="let item of model.tabs; let i=index">
                             <td><input type="file" (change)="onFileChanged($event,i)" 
@@ -22,6 +20,7 @@
                             <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
                         </tr>
                     </table>
+                    <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
                 </div>
             </div>
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
