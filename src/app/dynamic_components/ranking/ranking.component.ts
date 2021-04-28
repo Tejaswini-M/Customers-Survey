@@ -44,7 +44,9 @@ export class RankingComponent implements OnInit {
   deleteRow(i:any) {
     this.model.tabs.splice(i,1);
   }
-  
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
   onSubmit() {
     this.config.rankingValues=[];
     console.log("value");
@@ -65,9 +67,9 @@ export class RankingComponent implements OnInit {
   //   this.model = event.target.value;
   // }
 
-  // drop(event: CdkDragDrop<any[]>){
-  //   //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
-  //   moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
-  //   //console.log(event.container.data);
-  // }
+  drop(event: CdkDragDrop<any[]>){
+    //this.viewContainerRef.move(this.components[event.previousIndex].hostView, event.currentIndex);
+    moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
+    //console.log(event.container.data);
+  }
 }

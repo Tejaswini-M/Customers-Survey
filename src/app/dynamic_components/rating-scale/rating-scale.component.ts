@@ -25,7 +25,9 @@ export class RatingScaleComponent implements OnInit {
     qns:'',
     ans:''
     }
-  
+    edit() {
+      this.config.userResponse ? this.submitted=true : this.submitted=false;
+    }
   onSubmit() {
     this.config.ratingValues=[];
     console.log("value");

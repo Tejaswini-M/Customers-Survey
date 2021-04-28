@@ -33,8 +33,14 @@ export class YesNoComponent implements OnInit {
     //console.log(this.config.allValues);
     this.config.allValues = [...new Set(this.config.allValues)];
   }
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
   captureSentiment(sentiment:any) {
-    console.log(sentiment);
-    return sentiment=='like' ? this.model.tab=sentiment :  this.model.tab=sentiment;
+    if(this.config.userResponse){
+      console.log(sentiment);
+      this.model.tab=sentiment;
+      //return sentiment=='like' ? this.model.tab=sentiment :  this.model.tab=sentiment;
+    }
   }
 }

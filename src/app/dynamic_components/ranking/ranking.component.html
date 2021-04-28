@@ -19,12 +19,12 @@
                       </table>
                 </div>                
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
     </div>
-    <div *ngIf="submitted" (click)="submitted=false">
+    <div *ngIf="submitted" (click)="edit();config.adminResponse=true" cdkDropList (cdkDropListDropped)="drop($event)">
         <h3>{{model.qns}}</h3>
         <div class="center-align">
-            <div class="example-box" *ngFor="let mul of model.tabs; let i=index" >
+            <div class="example-box" *ngFor="let mul of model.tabs; let i=index" cdkDrag>
                 <div class="drag-index">
                     <!-- <select>
                         <option *ngFor="let mul of model.tabs" [value]="mul.id">{{i+1}}</option>
@@ -40,6 +40,6 @@
                 </div>
             </div>
         </div>
-        <button (click)="submitted=false">Edit</button>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>

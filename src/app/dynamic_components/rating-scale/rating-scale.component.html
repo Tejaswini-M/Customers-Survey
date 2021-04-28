@@ -6,11 +6,11 @@
               <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
               <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
           </div>          
-          <button [class.disabled]="qns.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+          <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         </div>
-    <div *ngIf="submitted" (click)="submitted=false">
+    <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
           <h3>{{model.qns}}</h3>
-          <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp">
+          <!-- <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp">
             <mat-card-content>
                 <mat-slider  [(ngModel)]="ans" name="ans"></mat-slider>
               <section class="section">
@@ -19,7 +19,17 @@
                 </mat-form-field>
               </section>
             </mat-card-content>
-          </mat-card>
-      <button (click)="submitted=false">Edit</button>
+          </mat-card> -->
+          <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp" >
+            <mat-card-content>
+                <mat-slider thumbLabel [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" ></mat-slider>
+              <section class="section">
+                <mat-form-field class="margin" style="width: 83px;">
+                  <input matInput type="number" [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" class="number">
+                </mat-form-field>
+              </section>
+            </mat-card-content>
+        </mat-card>
+      <button (click)="edit();config.adminResponse=true">Edit</button>
     </div>
 </div>

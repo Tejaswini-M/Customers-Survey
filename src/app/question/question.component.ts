@@ -55,6 +55,7 @@ export class QuestionComponent implements OnInit{
     // }
     // const obj =  { id:this.count, list:this.config.allValues};
     // this.config.survey.push(obj);
+    this.config.userResponse=true;
     this.config.allValues = [...new Set(this.config.allValues)];
     var sortedArray = [];
     for(var i=0; i < this.components.length; i++) {
@@ -79,8 +80,9 @@ export class QuestionComponent implements OnInit{
     this.config.paramID=this.config.allComps.length-1;
     // console.log(JSON.stringify(this.config.allComps));
     this.config.allValues=[];
-    this.config.components=this.components;
-    console.log(this.components);
+  }
+  onSubmit(){
+    console.log(this.config.userValues);
   }
   @ViewChild('appDynamic', { static: true, read: ViewContainerRef })
   viewContainerRef:any;

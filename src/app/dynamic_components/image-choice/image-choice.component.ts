@@ -51,11 +51,16 @@ export class ImageChoiceComponent implements OnInit {
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
   }
 
-  selectOption(){
-    this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
-    console.log(this.selectedTab);
+  selectOption(url:any){
+    if(this.config.userResponse){
+      url.selected =!url.selected
+      // this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
+      // console.log(this.selectedTab);
+    }
   }
-  
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
   urls: any[] = [];
   onFileChanged(event:any,index:number) {
     if(event.target.files && event.target.files[0]){

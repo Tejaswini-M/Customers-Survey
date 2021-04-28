@@ -40,7 +40,9 @@ export class MatrixComponent implements OnInit {
     deleteRow(i:any) {
       this.model.tabs.splice(i,1);
     }
- 
+    edit() {
+      this.config.userResponse ? this.submitted=true : this.submitted=false;
+    }
     onSubmit() {
       this.tabsLength = this.model.tabs.length;
       console.log(this.tabsLength);

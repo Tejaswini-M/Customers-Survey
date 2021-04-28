@@ -99,10 +99,15 @@ export class MultiSelectComponent implements OnInit {
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
   }
-
-  selectOption(){
-    this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
-    console.log(this.selectedTab);
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
+  selectOption(tab:any){
+    if(this.config.userResponse){
+      tab.selected =!tab.selected;
+    }
+    //this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
+    //console.log(this.selectedTab);
   }
 
 }

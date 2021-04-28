@@ -30,7 +30,9 @@ export class OpenEndedComponent implements OnInit {
   //    ans: new FormControl("",[Validators.required]),
   //  }));
   }
-
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
   onSubmit() {
     //this.config.openValues=[];
     console.log("value");

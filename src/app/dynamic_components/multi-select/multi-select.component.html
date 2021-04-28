@@ -22,17 +22,21 @@
                     </table>
                 </div>
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         <!-- </form> -->
     </div>
-    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="submitted=false">
+    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
         <h3>{{model.qns}}</h3>
         <div class="flex-display dynamic">
-            <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
+            <!-- <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
                 <button  *ngIf="tab.value" class="btn-tab bg-grey">{{tab.value}}</button>
+            </div> -->
+            <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
+                <button  *ngIf="tab.value" class="btn-tab bg-grey" (click)="selectOption(tab)" 
+                [class.active]="tab.selected">{{tab.value}}</button>
             </div>
         </div>
         
-        <button (click)="submitted=false">Edit</button>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>

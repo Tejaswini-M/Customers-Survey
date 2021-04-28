@@ -55,7 +55,9 @@ export class MixedTypeComponent implements OnInit {
     this.config.allValues = [...new Set(this.config.allValues)];
 
   }
-
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
   drop(event: CdkDragDrop<any[]>){
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
   }

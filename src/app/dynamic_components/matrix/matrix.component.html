@@ -19,9 +19,9 @@
                     </table>
                 </div>
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
     </div>
-    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="submitted=false">
+    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
         <h3>{{model.qns}}</h3>
         <div class="dynamic">
             <table>
@@ -44,6 +44,6 @@
                 </tr>
             </table>
         </div>
-        <button (click)="submitted=false">Edit</button>
+        <button (click)="edit();;config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>

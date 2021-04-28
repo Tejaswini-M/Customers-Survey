@@ -24,20 +24,21 @@
                     </table>
                 </div>
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit()" class="save-tab">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         <!-- </form> -->
     </div>
-    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="submitted=false">
+    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
         <h3>{{model.qns}}</h3>
         <div class="flex-display dynamic">
-            <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
+            <!-- <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
                 <img *ngIf="url.value" class="btn-tab bg-grey"[src]="url.value">
-            </div>
-            <!-- <div *ngFor="let url of urls; let i=index;" cdkDrag>
-                <img [src]="url" height="50px" width="50px">
             </div> -->
+            <div *ngFor="let url of model.tabs; let i=index;" cdkDrag>
+                <img *ngIf="url.value" (click)="selectOption(url)"
+                [src]="url.value" [class.active]="url.selected">
+            </div>
         </div>
         
-        <button (click)="submitted=false">Edit</button>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
     </div>
 </div>
