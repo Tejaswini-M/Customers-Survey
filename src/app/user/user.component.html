@@ -7,12 +7,12 @@
                 <h3>{{i+1}}.{{cmp.qns}}</h3>
                 <div class="thumb flex-display dynamic">
                     <div (click)="cmp.tab='like'" [ngClass]="{'active':cmp.tab==='like'}" class="bg-grey">
-                        <span class="glyphicon glyphicon-thumbs-up"></span>
-                        <span class="naming">Yes</span>
+                        <p class="glyphicon glyphicon-thumbs-up"></p>
+                        <p class="naming">Yes</p>
                     </div>
                     <div (click)="cmp.tab='dislike'" [ngClass]="{'active':cmp.tab==='dislike'}" class="bg-grey">
-                        <span class="glyphicon glyphicon-thumbs-down"></span>
-                        <span class="naming">No</span>
+                        <p class="glyphicon glyphicon-thumbs-down"></p>
+                        <p class="naming">No</p>
                     </div>
                 </div>
             </div>

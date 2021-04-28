@@ -86,6 +86,9 @@ button {
     border-radius: 4px;
     font-family: markPro-Bold;
 }
+button:hover {
+    box-shadow: yellow;
+}
 .flex-display {
     display:flex;
     flex-direction: row;
@@ -146,7 +149,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     width:100%;
     padding: 20px 10px;
     margin-bottom: 10px;
-    //border-bottom: solid 1px #E3E9EC;
+    border-bottom: solid 1px #E3E9EC;
     flex-wrap: wrap;
     justify-content: center;
     color: #000000;

@@ -46,7 +46,10 @@
     height:100%;
     width:100%;
     margin:5px 0;
-    background-color:#00a3ad;
+    background-color:#D1D7DA;
+}
+.btns button:hover {
+    background-color:#ACAFB2;
 }
 .comps2 {
     width:75%;
@@ -72,7 +75,8 @@
     //align-items: center;
 }
 .del-cmp {
-    width:150px;
+    //width:150px;
+    float:right;
 }
 // .box {
 //     width:100%;

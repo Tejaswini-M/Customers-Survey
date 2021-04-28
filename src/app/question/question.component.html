@@ -27,6 +27,7 @@
             <!-- <ng-container #appDynamic></ng-container> -->
             <div *ngFor="let cmp of components; let i=index" class="box bg-white" cdkDrag>
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-yes-no></app-yes-no>
     
@@ -34,47 +35,52 @@
                          <i  cdkDragHandle class="">reorder</i>
                     </div>
                     <input type="checkbox" (change)="cmp.isDisable=!cmp.isDisable"> -->
-                    <button (click)="deleteComponent(i)" class="del-cmp">Delete Component</button>
                 </div>
                 <div *ngIf="cmp.componentType.name=='RankingComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-ranking></app-ranking>
-                
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+            
                 </div>
                 <div *ngIf="cmp.componentType.name=='RatingScaleComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-rating-scale></app-rating-scale>
             
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+                   
                 </div>
                 <div *ngIf="cmp.componentType.name=='MultiSelectComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-multi-select></app-multi-select>
             
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+                    
                 </div>
                 <div *ngIf="cmp.componentType.name=='MatrixComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-matrix></app-matrix>
                     
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+                    
                 </div>
                 <div *ngIf="cmp.componentType.name=='MixedTypeComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-mixed-type></app-mixed-type>
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+                    
                 </div>
                 <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-image-choice></app-image-choice>
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+                   
                 </div>
-                <div *ngIf="cmp.componentType.name=='OpenEndedComponent'" class="each"> 
+                <div *ngIf="cmp.componentType.name=='OpenEndedComponent'" class="each">
+                    <button (click)="deleteComponent(i)" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button> 
                     <p style="margin-bottom:-20px;">{{i+1}}</p>
                     <app-open-ended></app-open-ended>
                     
-                    <button (click)="deleteComponent(i)"  class="del-cmp">Delete Component</button>
+                   
                 </div>
             </div>
         </div>

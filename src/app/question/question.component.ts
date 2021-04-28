@@ -79,8 +79,8 @@ export class QuestionComponent implements OnInit{
     this.config.paramID=this.config.allComps.length-1;
     // console.log(JSON.stringify(this.config.allComps));
     this.config.allValues=[];
-
-  
+    this.config.components=this.components;
+    console.log(this.components);
   }
   @ViewChild('appDynamic', { static: true, read: ViewContainerRef })
   viewContainerRef:any;

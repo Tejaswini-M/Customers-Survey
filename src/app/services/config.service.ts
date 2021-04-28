@@ -9,6 +9,7 @@ export class ConfigService {
  
   userResponse: boolean = false;
   adminResponse: boolean = false;
+  components:any=[];
   qnValues={}
   openValues={}
   yesValues={}
@@ -29,6 +30,7 @@ export class ConfigService {
   ];
   paramID=0;
   userValues=this.survey.list;
+  isDisable=false;
   constructor(public http:HttpClient) { }
 
   userUrl = "/assets/data/user.json";

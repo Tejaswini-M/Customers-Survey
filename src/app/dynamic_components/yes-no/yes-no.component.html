@@ -13,13 +13,13 @@
     <div *ngIf="submitted" (click)="submitted=false">
         <h3>{{model.qns}}</h3>
         <div class="thumb flex-display dynamic">
-            <div (click)="captureSentiment('like')" [ngClass]="{'active':tab==='like'}" class="bg-grey">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
-                <span class="naming">Yes</span>
+            <div class="bg-grey">
+                <p class="glyphicon glyphicon-thumbs-up"></p>
+                <p class="naming">Yes</p>
             </div>
-            <div (click)="captureSentiment('dislike')" [ngClass]="{'active':tab==='dislike'}" class="bg-grey">
-                <span class="glyphicon glyphicon-thumbs-down"></span>
-                <span class="naming">No</span>
+            <div class="bg-grey">
+                <p class="glyphicon glyphicon-thumbs-down"></p>
+                <p class="naming">No</p>
             </div>
         </div>
         <br>
