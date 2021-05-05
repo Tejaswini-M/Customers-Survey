@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
   constructor(public config:ConfigService) { }
   selectedTab: any=[];
   ngOnInit(): void { 
+  
   }
 
  

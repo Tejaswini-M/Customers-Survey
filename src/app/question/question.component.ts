@@ -11,6 +11,7 @@ import { CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../services/config.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CompType } from '../comp-type';
 
 @Component({
   selector: 'app-question',
@@ -23,11 +24,13 @@ export class QuestionComponent implements OnInit{
   comps: any;
   qnsType = dynamicComponents;
   components: any[] = [];
+  //components: CompType[] = [];
   masterForm!: FormGroup;
   viewOption:any;
   title:any;
   createResponse=false;
   ngOnInit(): void {
+    this.config.userResponse=false;
     this.viewOption=this.route.snapshot.data.viewOption;
     // this.masterForm = this.fb.group({
     //   // formTitle: new FormControl(''),
@@ -78,9 +81,26 @@ export class QuestionComponent implements OnInit{
     
     console.log("all", this.config.allComps);
     this.config.paramID=this.config.allComps.length-1;
-    // console.log(JSON.stringify(this.config.allComps));
+    console.log(JSON.stringify(this.config.allComps));
     this.config.allValues=[];
+    this.config.components.push(this.components);
+    console.log( this.config.components);
+  //   this.components.forEach(component => {
+  //     // how to access the data from each component??
+  //     console.log(component.data);
+  // });
   }
+  // data =  {
+  //   comp:'YesNoComponent',
+  //   qns:'aks',
+  //   tab:'',
+  // }
+  // onCompDataChanged(item: any,i:any) {
+  //   console.log('item:', item);
+  //   const field = this.components.filter(a => a.data.comp === item.comp);
+  //   field[i].data = item;
+  //   //this.data=item;
+  // }
   onSubmit(){
     console.log(this.config.userValues);
   }
@@ -110,6 +130,11 @@ export class QuestionComponent implements OnInit{
     // }
     const cmpFactory= this.compFactoryResolver.resolveComponentFactory(name);
     //const cmpRef= this.viewContainerRef.createComponent(cmpFactory);
+    // let compAndData = new CompType();
+    //     compAndData.component = cmpFactory;
+    //     compAndData.data = this.data;
+    //     this.components.push(compAndData);
+    // this.config.compns=this.components;
     this.components.push(cmpFactory);
     //this.components.push( this.viewContainerRef.createComponent(cmpFactory));
     
@@ -117,8 +142,8 @@ export class QuestionComponent implements OnInit{
     //this.components.push(componentRef);
     console.log(this.components);
     // this.config.allComps.push(this.comps);
-    // console.log(this.config.allComps);
-    
+    // console.log(this.config.allComps)
+    // cmpFactory.instance.variableName = 'abc';
   }
   
   drop(event: CdkDragDrop<any[]>){

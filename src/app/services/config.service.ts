@@ -9,6 +9,7 @@ export class ConfigService {
  
   userResponse: boolean = false;
   adminResponse: boolean = false;
+  createResponse=false;
   components:any=[];
   qnValues={}
   openValues={}
@@ -31,11 +32,17 @@ export class ConfigService {
   paramID=0;
   userValues=this.survey.list;
   isDisable=false;
+  compns:any=[];
   constructor(public http:HttpClient) { }
 
   userUrl = "/assets/data/user.json";
+  templateUrl = "/assets/data/template.json";
 
   getUserData():Observable<any> {
     return this.http.get<any[]>(this.userUrl);
+  }
+
+  getTemplateData():Observable<any> {
+    return this.http.get<any[]>(this.templateUrl);
   }
 }

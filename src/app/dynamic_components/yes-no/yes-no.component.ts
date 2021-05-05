@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
@@ -16,6 +16,8 @@ export class YesNoComponent implements OnInit {
     qns:'',
     tab:'',
   }
+  @Input() data: any;
+  @Output() changedData = new EventEmitter<any>();
   tab:any;
 
   ngOnInit(): void {
@@ -32,6 +34,9 @@ export class YesNoComponent implements OnInit {
     //}
     //console.log(this.config.allValues);
     this.config.allValues = [...new Set(this.config.allValues)];
+    this.data = this.model;
+    this.changedData.emit(this.data);
+    console.log(this.data)
   }
   edit() {
     this.config.userResponse ? this.submitted=true : this.submitted=false;
