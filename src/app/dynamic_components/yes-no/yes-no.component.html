@@ -1,13 +1,13 @@
 <div class ="container">
     <div *ngIf="!submitted">
-        <h3 class="center-align">Yes/No Question</h3>
+        <h3 class="center-align">Yes or No Question</h3>
         <!-- <form #mulForm="ngForm"> -->
             <div class= "mul-qns">
                 <label>Enter your question</label>
                 <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                 <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         <!-- </form> -->
     </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
@@ -34,7 +34,7 @@
             </div>
         </div>       
         <br>
-        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>
 

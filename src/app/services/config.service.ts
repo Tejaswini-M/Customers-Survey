@@ -25,9 +25,7 @@ export class ConfigService {
     list:this.allValues
   }
   //survey:any[]=[];
-  allComps:any[]=[
-    
-  ];
+  allComps:any[]=[];
   paramID=0;
   userValues=this.survey.list;
   isDisable=false;

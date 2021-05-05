@@ -163,3 +163,17 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 .each {
     width:100%;
 }
+
+.save-tab{
+    margin-top: 5%;
+    background-color: #D1D7DA;
+}
+.edit-tab{
+    background-color: #D1D7DA;
+}
+.delete-tab {
+    margin-left: -20px;
+    background-color: #D1D7DA;
+    height: 0px;
+    padding: 0px;
+  }

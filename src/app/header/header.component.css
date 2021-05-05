@@ -9,13 +9,11 @@
 }
 
 .optus{
-    margin-top:10px;
-    color:rgb(240, 178, 8);
-    font-weight: 900;
-    font-size:20px;
+    color:#FDCC08;
+    font-size:1rem;
     margin-top:5px;
     text-decoration: none;   
-    font-family: MarkPro;
+    font-family: markPro-Bold;
 }
 
 img{

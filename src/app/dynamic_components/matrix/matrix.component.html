@@ -13,7 +13,7 @@
                         <tr *ngFor="let item of model.tabs; let i=index">
                             <td><input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="item.value" name="value" #ans="ngModel" required></td>                        
                             <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
-                            <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td>
+                            <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
                         </tr>
                     </table>
                     <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
@@ -22,7 +22,7 @@
             </div>
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
     </div>
-    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
+    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true" required>
         <h3>{{model.qns}}</h3>
         <div class="dynamic">
             <table>
@@ -45,6 +45,6 @@
                 </tr>
             </table>
         </div>
-        <button (click)="edit();;config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
+        <button (click)="edit();;config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>
