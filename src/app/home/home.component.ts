@@ -11,12 +11,15 @@ export class HomeComponent implements OnInit {
 
   template:any=[];
   default:boolean=false
-
+  duplicateIndex:any;
+  dupTitle:any;
+  copySurvey:boolean=false;
+  closedSurvey:boolean=false;
   constructor(public config:ConfigService,private rout: Router) { }
   title:any;
   ngOnInit(): void {
     this.config.getTemplateData().subscribe(data => {
-      console.log("template",data);
+      //console.log("template",data);
       this.template=data;
       this.config.allComps[0]=data;
     })
@@ -49,10 +52,6 @@ export class HomeComponent implements OnInit {
     this.config.compns=this.config.components[index-1];
     console.log(this.config.compns)
   }
-  duplicateIndex:any;
-  dupTitle:any;
-  copySurvey:boolean=false;
-  closedSurvey:boolean=false;
   duplicateSurvey(i:any) {
     //this.rout.navigate(['/qns', ]);
     this.config.survey.title=this.config.allComps[i].title + ' - clone';

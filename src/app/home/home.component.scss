@@ -59,6 +59,9 @@
     margin-left:20px;
     //padding:0 10px;
 }
+.view1:hover {
+    text-decoration: underline;
+}
 .view2 {
     width:10%;
     display: flex;
@@ -75,6 +78,16 @@
 .view4 {
     display: flex;
     justify-content: center;
-    width:30%;
+    margin-left:20px;
+    width:40%;
 
+}
+@media screen  and (max-width:767px) {
+    .views {
+        flex-direction: column;
+    }
+    .view1, .view2, .view3, .view4 {
+        width:auto;
+        margin:0;
+    }
 }
