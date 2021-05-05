@@ -26,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatRadioModule} from '@angular/material/radio';
 import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { UserComponent } from './user/user.component';
     MixedTypeComponent,
     ImageChoiceComponent,
     ThankyouComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

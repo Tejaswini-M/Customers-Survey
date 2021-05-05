@@ -73,7 +73,10 @@ body {
     //width:100%;
 }
 .flex-col {
+    display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 button {
@@ -163,6 +166,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 .each {
     width:100%;
 }
+<<<<<<< HEAD
 
 .save-tab{
     margin-top: 5%;
@@ -177,3 +181,16 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     height: 0px;
     padding: 0px;
   }
+=======
+.mod-head {
+    justify-content: left !important;
+    h4 {
+        width:100%;
+    }
+    .close {
+        margin-left:200px !important;
+        width:20px ;
+    }
+
+}
+>>>>>>> Akshatha/Survey

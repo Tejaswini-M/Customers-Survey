@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class RatingScaleComponent implements OnInit {
   submitted = false;
   type="";
   ans=0;
- 
+  @Input() data: any;
+  @Output() changedData = new EventEmitter<any>();
   model = {
     comp:'RatingScaleComponent',
     qns:'',
@@ -40,6 +41,9 @@ export class RatingScaleComponent implements OnInit {
       this.config.allValues.push(this.config.ratingValues);
     //}
     this.config.allValues = [...new Set(this.config.allValues)];
+    this.data = this.model;
+    this.changedData.emit(this.data);
+    console.log(this.data)
   }
 }
 

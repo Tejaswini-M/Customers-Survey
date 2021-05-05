@@ -1,0 +1,93 @@
+.title button {
+    width:fit-content !important;
+}
+.modal-body {
+    label {
+        margin-top:0 !important;
+    }
+}
+.usersList {
+    //margin:10px;
+    //display: flex !important;
+    width: 100%;
+}
+.qns-num {
+    width:400px;
+    height:100px;
+    //padding:38px 0;
+    //border:1px solid #E3E9EC;
+    text-align:center;
+}
+.action {
+    width:100px;
+    height:100px;
+    padding:30px 0;
+    //border:1px solid #E3E9EC;
+    text-align:center;
+}
+.users{
+    //width:100%;
+    display: flex;
+    margin: 15px 10%;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    //width:100%;
+    button {
+        width:200px;
+        border-radius:0;
+        background-color: none;
+    }
+}
+.lists {
+    width:100%;
+    //margin-left:5%;
+}
+.datas {
+    margin-bottom :10px;
+    justify-content: center;
+    width:auto;
+    // width: 1800px !important;
+}
+.card-border:hover {
+    border: 1px solid grey;
+    cursor: pointer;
+}
+.view1 {
+    width:40%;
+    margin-left:20px;
+    //padding:0 10px;
+}
+.view1:hover {
+    text-decoration: underline;
+}
+.view2 {
+    width:10%;
+    display: flex;
+    justify-content: center;
+    //padding:0 10px;
+    .font-large-2 {
+        font-size:30px;
+    }
+}
+.view3 {
+    width:20%;
+    //padding:0 10px;
+}
+.view4 {
+    display: flex;
+    justify-content: center;
+    margin-left:20px;
+    width:40%;
+
+}
+@media screen  and (max-width:767px) {
+    .views {
+        flex-direction: column;
+    }
+    .view1, .view2, .view3, .view4 {
+        width:auto;
+        margin:0;
+    }
+}
