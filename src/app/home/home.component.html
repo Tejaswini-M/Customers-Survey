@@ -4,7 +4,9 @@
         <!-- <input type="text" placeholder="Enter title of the survey..." class="input-field" [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required> -->
         <!-- <div *ngIf="title.invalid && title.touched" class="error-message">Please enter title of the survey.</div> -->
         <!-- <button [class.disabled]="title.invalid" (click)="createResponse=true;">Create survey</button> -->
-        <button type="button"  class="font-bold" data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;copySurvey=false;config.survey.title=''"><span class="glyphicon glyphicon-plus"></span> New Survey</button>
+        
+        <button type="button"  class="font-bold" data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;copySurvey=false;config.survey.title=''">
+          <span class="glyphicon glyphicon-plus"></span> New Survey</button>
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
@@ -27,11 +29,12 @@
               </div>
             </div>
             <div class="modal-content" *ngIf="closedSurvey">
-              <div style="background-color:#7EC848; height:20px"></div>
-              <div class="modal-body">
+              <div style="background-color:#c3c4c2;">
+                <button type="button" class="close" data-dismiss="modal" style="margin-right: 10px;">&times;</button>
+              </div>
+              <div class="modal-body">                
                 <label>Deleted</label>
-                <p>Survey is deleted successfully!</p>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <p>Survey is deleted successfully!</p>                
               </div>
             </div>
           </div>
