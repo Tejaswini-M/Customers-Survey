@@ -30,7 +30,7 @@
     display: flex;
     margin: 15px 10%;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 .title {
     //width:100%;
@@ -46,8 +46,8 @@
 }
 .datas {
     margin-bottom :10px;
-    justify-content: center;
-    width:auto;
+   // justify-content: center;
+    width:100%;
     // width: 1800px !important;
 }
 .card-border:hover {
@@ -90,4 +90,20 @@
         width:auto;
         margin:0;
     }
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+ 
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }

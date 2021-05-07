@@ -88,6 +88,9 @@ export class HomeComponent implements OnInit {
     // },3000);
     
   }
+  onSearch() {
+    
+  }
 
 
 }
