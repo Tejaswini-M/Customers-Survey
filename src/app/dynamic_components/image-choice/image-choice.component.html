@@ -1,1 +1,43 @@
-<p>image-choice works!</p>
+<div class ="container">
+    <div *ngIf="!submitted">
+        <h3 class="center-align">Image Choice Questions</h3>
+        <!-- <form #mulForm="ngForm"> -->
+            <div class= "mul-qns">
+                <div>
+                    <label>Enter your question</label>
+                    <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                    <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
+                </div>
+                
+                <div>
+                    <label>Enter your answer</label>                    
+                    <table>
+                        <tr *ngFor="let item of model.tabs; let i=index">
+                            <td><input type="file" (change)="onFileChanged($event,i)" 
+                                class="input-field" required></td>
+                                <!-- [(ngModel)] ="item.value" name="ans" #ans="ngModel"  -->
+                            <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
+                            <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
+                        </tr>
+                    </table>
+                    <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
+                </div>
+            </div>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
+        <!-- </form> -->
+    </div>
+    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
+        <h3>{{model.qns}}</h3>
+        <div class="flex-display dynamic">
+            <!-- <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
+                <img *ngIf="url.value" class="btn-tab bg-grey"[src]="url.value">
+            </div> -->
+            <div *ngFor="let url of model.tabs; let i=index;" cdkDrag>
+                <img *ngIf="url.value" (click)="selectOption(url)"
+                [src]="url.value" [class.active]="url.selected">
+            </div>
+        </div>
+        
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
+    </div>
+</div>

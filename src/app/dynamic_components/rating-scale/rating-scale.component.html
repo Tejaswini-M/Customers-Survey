@@ -6,20 +6,30 @@
               <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
               <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
           </div>          
-          <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true" class="save-tab">Save</button>
-  </div>
-  <div *ngIf="submitted">
-      <h3 class="center-align">{{model.qns}}</h3>
-      <mat-card class="center-align" style="box-shadow: none;">
-        <mat-card-content>
-            <mat-slider thumbLabel [(ngModel)]="value"></mat-slider>
-          <section class="section">
-            <mat-form-field class="margin" style="width: 83px;">
-              <input matInput type="number" [(ngModel)]="value" class="number">
-            </mat-form-field>
-          </section>
-        </mat-card-content>
-      </mat-card>
-      <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse" >Edit</button>
-  </div>
+          <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
+        </div>
+    <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
+          <h3>{{model.qns}}</h3>
+          <!-- <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp">
+            <mat-card-content>
+                <mat-slider disable [(ngModel)]="ans" name="ans"></mat-slider>
+              <section class="section">
+                <mat-form-field class="margin" style="width: 83px;">
+                  <input matInput type="number" [(ngModel)]="ans" class="number" name="ans">
+                </mat-form-field>
+              </section>
+            </mat-card-content>
+          </mat-card> -->
+          <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp" >
+            <mat-card-content>
+                <mat-slider thumbLabel [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" ></mat-slider>
+              <section class="section">
+                <mat-form-field class="margin" style="width: 83px;">
+                  <input matInput type="number" [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" class="number">
+                </mat-form-field>
+              </section>
+            </mat-card-content>
+        </mat-card>
+      <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
+    </div>
 </div>

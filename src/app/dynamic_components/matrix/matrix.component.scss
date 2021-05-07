@@ -1,3 +1,7 @@
+// .container {
+//   width: 125%;
+//   align-items: center;
+// }
 .input{
     width: 700px;
     margin: 20px;
@@ -10,7 +14,7 @@
   text-align: center;
   cursor: pointer;
   font-size: 15px;
-  background-color: #FDCC08;
+  background-color: #acafb2;
   width: 25%;
   min-height: 60px;
   font-weight: 450;
@@ -24,15 +28,18 @@
   padding: 4px;
 }
 
-.delete-tab {
-  margin-top:-20px;
-  margin-left: 10px;
-}
+// .delete-tab {
+//   margin-left: -20px;
+//   background-color: #D1D7DA;
+//   height: 0px;
+//   padding: 0px;
+// }
 table {
   width:100%;
 }
 th {
   text-align: center;
+  padding: 10px;
 }
 
 table .error-message {
@@ -40,4 +47,5 @@ table .error-message {
 }
 .add-tab {
    float:right;
+   background-color: #D1D7DA;
 }

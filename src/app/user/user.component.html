@@ -1,0 +1,156 @@
+<app-header></app-header>
+<div class="content flex-col bg-white">
+    <div *ngFor="let cmp of config.userValues; let i=index" class="box">
+        <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="thumb flex-display dynamic">
+                    <div (click)="cmp.tab='like'" [ngClass]="{'active':cmp.tab==='like'}" class="bg-grey">
+                        <p class="glyphicon glyphicon-thumbs-up"></p>
+                        <p class="naming">Yes</p>
+                    </div>
+                    <div (click)="cmp.tab='dislike'" [ngClass]="{'active':cmp.tab==='dislike'}" class="bg-grey">
+                        <p class="glyphicon glyphicon-thumbs-down"></p>
+                        <p class="naming">No</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event,i)">
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="center-align">
+                    <div class="example-box" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag>
+                        <div class="drag-index">
+                            <!-- <select>
+                                <option *ngFor="let tab of cmp.tabs" [value]="tab.id">{{i+1}}</option>
+                            </select> -->
+                            <div class="sort">{{i+1}}</div>
+                        </div>
+                        <div class="w-20 drag-icon">
+                            <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->
+                            <i  class="material-icons" cdkDragHandle>reorder</i>
+                        </div>
+                        <div class="w-100 drag-content">
+                            <span *ngIf="tab.value">{{tab.value}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='RatingScaleComponent'" class="each">
+            <!-- <app-rating-scale></app-rating-scale>     -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <mat-card class="center-align" style="box-shadow: none;" *ngIf="cmp.comp" >
+                    <mat-card-content>
+                        <mat-slider thumbLabel [(ngModel)]="cmp.ans" ></mat-slider>
+                      <section class="section">
+                        <mat-form-field class="margin" style="width: 83px;">
+                          <input matInput type="number" [(ngModel)]="cmp.ans" class="number">
+                        </mat-form-field>
+                      </section>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+         </div>
+        <div *ngIf="cmp.comp=='MultiSelectComponent'" class="each">
+            <!-- <app-multi-select></app-multi-select> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display dynamic">
+                    <div *ngFor="let tab of cmp.tabs; let i=index;">
+                        <button  *ngIf="tab.value" class="btn-tab-mul bg-grey" (click)="tab.selected =!tab.selected" 
+                        [class.active]="tab.selected">{{tab.value}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='MatrixComponent'" class="each">
+            <!-- <app-matrix></app-matrix> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display dynamic">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Very Good</th>
+                            <th>Good</th>
+                            <th>Fair</th>
+                            <th>Poor</th>
+                            <th>Very Poor</th>                  
+                        </tr>            
+                        <tr *ngFor="let tab of cmp.tabs" >
+                            <th class="btn-tab1">{{tab.value}}</th>  
+                            <th *ngFor="let state of status">
+                                <input type="radio" id="opt1+{{tab.id}}" [(ngModel)]="tab.status" 
+                                value="{{state}}" name="option+{{tab.id}}">
+                            </th>              
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='MixedTypeComponent'" class="each">
+            <!-- <app-mixed-type></app-mixed-type> -->
+            <div class="mixed">
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display dynamic ">
+                    <div *ngFor="let tab of cmp.tabs; let i=index;">
+                        <input type="radio" class="btn-tab" id="{{tab.selected}}" 
+                        [(ngModel)]="tab.selected" [class.active]="tab.selected" 
+                        value="{{tab.value}}" name="selected" >{{tab.value}}
+                    </div>
+                </div>
+                <div class="comment">
+                    <label class="comment1">Any Comments ? </label> 
+                    <input class="input1" type="text" [(ngModel)] ="cmp.ans" #ans="ngModel" placeholder="please type here...">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='ImageChoiceComponent'" class="each">          
+            <!-- <app-image-choice></app-image-choice> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <div class="flex-display dynamic">
+                    <div *ngFor="let url of cmp.tabs; let i=index;">
+                        <img *ngIf="url.value" (click)="url.selected =!url.selected"
+                        [src]="url.value" [class.active]="url.selected">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="cmp.comp=='OpenEndedComponent'" class="each">
+            <!-- <app-open-ended></app-open-ended> -->
+            <div>
+                <h3>{{i+1}}.{{cmp.qns}}</h3>
+                <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='short'">
+                <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='long'"></textarea>
+            </div>
+        </div>
+    </div>
+    <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button>
+    <br>
+</div>
+<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">hi
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">how
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">bye
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+<app-footer></app-footer>

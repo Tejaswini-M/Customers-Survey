@@ -9,31 +9,32 @@
                 </div>
                 <div>
                     <label>Enter your answer</label>
-                    <button (click)="addTable()" class="add-tab">Add</button>
                     <table>                  
                         <tr *ngFor="let item of model.tabs; let i=index">
                             <td><input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="item.value" name="value" #ans="ngModel" required></td>                        
-                            <td><button (click)="deleteRow(i)" class="delete-tab">Delete</button></td>                           
-                            <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td>
+                            <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
+                            <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
                         </tr>
                     </table>
+                    <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
+
                 </div>
             </div>
-            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=true" class="save-tab">Save</button>
+            <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
     </div>
-    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)">
-        <h3 class="center-align">{{model.qns}}</h3>
+    <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true" required>
+        <h3>{{model.qns}}</h3>
         <div class="dynamic">
             <table>
                 <tr class="data">
                     <th></th>
-                    <th>Strongly agree</th>
-                    <th>Agree</th>
-                    <th>Somewhat agree</th>
-                    <th>Neither agree nor disagree</th>
-                    <th>Somewhat disagree</th>
-                    <th>Disagree</th>
-                    <th>Strongly disagree</th>                  
+                    <th>Very Good</th>
+                    <th>Good</th>
+                    <!-- <th>Somewhat agree</th> -->
+                    <th>Fair</th>
+                    <!-- <th>Somewhat disagree</th> -->
+                    <th>Poor</th>
+                    <th>Very Poor</th>                  
                 </tr>            
                 <tr *ngFor="let tab of model.tabs" cdkDrag>
                     <th class="btn-tab">{{tab.value}}</th>  
@@ -44,6 +45,6 @@
                 </tr>
             </table>
         </div>
-        <button (click)="submitted=false;config.adminResponse=false" *ngIf="!config.userResponse">Edit</button>
+        <button (click)="edit();;config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>

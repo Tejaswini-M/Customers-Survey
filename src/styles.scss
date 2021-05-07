@@ -33,41 +33,6 @@ $Customers-Survey-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($Customers-Survey-theme);
 
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$Customers-Survey-primary: mat-palette($mat-indigo);
-$Customers-Survey-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$Customers-Survey-warn: mat-palette($mat-red);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$Customers-Survey-theme: mat-light-theme((
-  color: (
-    primary: $Customers-Survey-primary,
-    accent: $Customers-Survey-accent,
-    warn: $Customers-Survey-warn,
-  )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($Customers-Survey-theme);
-
 /* You can add global styles to this file, and also import other style files */
 body {
     background-color: #f1f4f6 !important;
@@ -78,6 +43,9 @@ body {
     background-color: white !important;
     box-shadow: 0 0 2rem 0 rgba(53,64,82,.1);
     border-bottom: 1px solid #ddd;
+}
+.bg-grey {
+    background-color: #D1D7DA !important;
 }
 .dflt-padding {
     padding: 3%;
@@ -97,6 +65,20 @@ body {
 .center-align {
     text-align: center;
 }
+.content {
+    display: flex;
+    margin: 15px 10%;
+    flex-direction: row;
+    //align-items: center;
+    //width:100%;
+}
+.flex-col {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 button {
     background-color: #FDCC08;
     border: none;
@@ -106,6 +88,9 @@ button {
     padding: 10px;
     border-radius: 4px;
     font-family: markPro-Bold;
+}
+button:hover {
+    box-shadow: yellow;
 }
 .flex-display {
     display:flex;
@@ -118,7 +103,7 @@ button {
 label {
     margin-top: 24px !important;
     margin-right:10px;
-    font-family: markPro-Light;
+    font-family: markPro-Bold;
 }
 select,input[type="text"], input[type="phone"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
     color: #acafb2;
@@ -138,7 +123,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     width:100%;
 }
 .active {
-    background-color:#00a3ad;
+    background-color:#00a3ad !important;
     cursor: pointer;
 }
 .input-field {
@@ -155,5 +140,60 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     margin-top: 8px;
     color: red;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.container{
+    width:100%;
+    align-items: center;
+}
+.box {
+    width:100%;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #E3E9EC;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #000000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.each {
+    width:100%;
+}
+
+.save-tab{
+    margin-top: 5%;
+    background-color: #D1D7DA;
+}
+.save-tab:hover{
+    background-color:#ACAFB2;
+}
+.edit-tab{
+    background-color: #D1D7DA;
+}
+.edit-tab:hover{
+    background-color:#ACAFB2;
+}
+.delete-tab {
+    margin-left: -20px;
+    background-color: #D1D7DA;
+    height: 0px;
+    padding: 0px;
+  }
+.mod-head {
+    justify-content: left !important;
+    h4 {
+        width:100%;
+    }
+    .close {
+        margin-left:200px !important;
+        width:20px ;
+    }
+
+}

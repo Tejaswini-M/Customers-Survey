@@ -1,0 +1,29 @@
+.thumb {
+    text-align: center;
+}
+.thumb div {
+    font-size: 30px;
+    color:black;
+    background-color: white;
+    height:50px;
+    width:300px;
+    margin:10px;
+    padding: 3px;
+    cursor: pointer;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+.thumb div.active{
+    background-color:#00a3ad;
+    cursor: pointer; 
+}
+.glyphicon {
+    margin-top:5px;
+}
+.naming {
+    margin-left:20px;
+    padding:12px;
+    font-size:14px;
+    font-weight:bold;
+}

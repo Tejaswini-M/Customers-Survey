@@ -16,6 +16,7 @@ import { RankingComponent } from './dynamic_components/ranking/ranking.component
 import { OpenEndedComponent } from './dynamic_components/open-ended/open-ended.component';
 import { MixedTypeComponent } from './dynamic_components/mixed-type/mixed-type.component';
 import { ImageChoiceComponent } from './dynamic_components/image-choice/image-choice.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatRadioModule} from '@angular/material/radio';
-import { ThankyouComponent } from './thankyou/thankyou.component';
+import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     OpenEndedComponent,
     MixedTypeComponent,
     ImageChoiceComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,6 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [MultiSelectComponent, YesNoComponent, MatrixComponent]
+  entryComponents: [],
 })
 export class AppModule { }

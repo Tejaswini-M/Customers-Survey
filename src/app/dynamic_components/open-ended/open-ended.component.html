@@ -1,1 +1,35 @@
-<p>open-ended works!</p>
+<div class ="container">
+    <div *ngIf="!submitted">
+        <h3 class="center-align">Open Ended Question</h3>
+        <!-- <form #mulForm="ngForm"> -->
+            <div class= "mul-qns">
+                <div class="text-btns">
+                    <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit-tab">Long Text</button>
+                    <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit-tab">Short Text</button>
+                    <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
+                </div>
+                <br>
+                <div>
+                    <label>Enter your question</label>
+                    <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                    <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
+                </div>
+            </div>
+            <button [class.disabled]="qns.invalid || model.ansType=='' " (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
+        <!-- </form> -->
+    </div>
+    <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
+        <h3>{{model.qns}}</h3>
+        <div class="flex-display dynamic ">
+            <!-- <input type="text" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='short'">
+            <textarea rows="5" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea> -->
+            <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="model.ansType=='short'">
+            <textarea rows="5" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea>
+        </div>
+               
+        <br>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
+    </div>
+</div>
+
+

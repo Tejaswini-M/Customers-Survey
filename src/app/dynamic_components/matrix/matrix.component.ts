@@ -40,7 +40,9 @@ export class MatrixComponent implements OnInit {
     deleteRow(i:any) {
       this.model.tabs.splice(i,1);
     }
- 
+    edit() {
+      this.config.userResponse ? this.submitted=true : this.submitted=false;
+    }
     onSubmit() {
       this.tabsLength = this.model.tabs.length;
       console.log(this.tabsLength);
@@ -51,9 +53,11 @@ export class MatrixComponent implements OnInit {
       
       this.config.matrixValues=this.model;
       console.log(this.config.matrixValues);
-      if(Object.keys(this.config.matrixValues).length>0){
+      //if(Object.keys(this.config.matrixValues).length>0){
         this.config.allValues.push(this.config.matrixValues);
-      }
+  // }
+  this.config.allValues = [...new Set(this.config.allValues)];
+
     }
 
   drop(event: CdkDragDrop<any[]>){
@@ -62,5 +66,5 @@ export class MatrixComponent implements OnInit {
     //console.log(event.container.data);
   }
 
-  status = ['Strongly agree', 'agree', 'Somewhat agree', 'Neither agree nor disagree', 'Somewhat disagree', 'Disagree', 'Strongly disagree'];
+  status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];
 }

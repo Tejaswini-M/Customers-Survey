@@ -1,32 +1,47 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
+export class ConfigService {
+ 
+  userResponse: boolean = false;
+  adminResponse: boolean = false;
+  createResponse=false;
+  components:any=[];
+  qnValues={}
+  openValues={}
+  yesValues={}
+  imageValues={}
+  mixedValues={}
+  rankingValues={}
+  ratingValues={}
+  matrixValues={}
+  allValues : any[] = [];
+  survey={
+    id:1,
+    title:'',
+    description:'',
+    list:this.allValues
+  }
+  //survey:any[]=[];
+  allComps:any[]=[];
+  paramID=0;
+  userValues=this.survey.list;
+  isDisable=false;
+  compns:any=[];
+  constructor(public http:HttpClient) { }
 
-export class ConfigService{
+  userUrl = "/assets/data/user.json";
+  templateUrl = "/assets/data/template.json";
 
-    userResponse: boolean = false;
-    adminResponse: boolean = false;
-    mixedValues={}
-    rankingValues={}
-    ratingValues={}
-    matrixValues={}
-    allValues : any[] = [
-      // {mixedtype:''},
-      // {ranking:''},
-      // {rating:''},
-      // {matrix:''}
-    ];
+  getUserData():Observable<any> {
+    return this.http.get<any[]>(this.userUrl);
+  }
 
-    survey={
-        id:1,
-        list:this.allValues,
-    };
-
-    allComps:any[]=[];
-
-    constructor(public http:HttpClient){ }
-    
+  getTemplateData():Observable<any> {
+    return this.http.get<any[]>(this.templateUrl);
+  }
 }

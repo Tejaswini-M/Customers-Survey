@@ -1,0 +1,24 @@
+
+    {
+    "id":1,
+    "title":"Example survey",
+    "description":"Demo survey , you can refer this survey",
+    "list":[
+        {
+            "comp":"YesNoComponent",
+            "qns":"Do you like this chocolate ?",
+            "tab":""
+        },
+        {
+            "comp":"RatingScaleComponent",
+            "qns":"How satisfied with Dairy milk chocolate ?",
+            "ans":""
+        },
+        {
+            "comp":"OpenEndedComponent",
+            "qns":"Desscribe about your favorite chocolate.",
+            "ans":"",
+            "ansType":"short"
+        }
+    ]
+    }

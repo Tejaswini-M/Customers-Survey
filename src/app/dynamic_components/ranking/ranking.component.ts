@@ -44,7 +44,9 @@ export class RankingComponent implements OnInit {
   deleteRow(i:any) {
     this.model.tabs.splice(i,1);
   }
-  
+  edit() {
+    this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
   onSubmit() {
     this.config.rankingValues=[];
     console.log("value");
@@ -53,9 +55,11 @@ export class RankingComponent implements OnInit {
     console.log(this.model);
     this.config.rankingValues=this.model;
     console.log(this.config.rankingValues);
-    if(Object.keys(this.config.rankingValues).length>0){
+    //if(Object.keys(this.config.rankingValues).length>0){
       this.config.allValues.push(this.config.rankingValues);
-    }
+    //}
+    this.config.allValues = [...new Set(this.config.allValues)];
+
   }
 
   // changeOptions(event: any) {
