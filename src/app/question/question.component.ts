@@ -28,7 +28,9 @@ export class QuestionComponent implements OnInit{
   masterForm!: FormGroup;
   viewOption:any;
   title:any;
+  description:any;
   createResponse=false;
+  deleteIndex:any;
   ngOnInit(): void {
     this.config.userResponse=false;
     this.viewOption=this.route.snapshot.data.viewOption;
@@ -158,12 +160,12 @@ export class QuestionComponent implements OnInit{
 
 }
 export const dynamicComponents = [
-  {name:MultiSelectComponent,isDisable:false,comp:'Multi Select'}, 
-  {name:YesNoComponent,isDisable:false,comp:'Yes or No'}, 
-  {name:MatrixComponent,isDisable:false,comp:'Matrix'},
-  {name:RatingScaleComponent,isDisable:false,comp:'Rating Scale'},
-  {name:RankingComponent,isDisable:false,comp:'Ranking'}, 
-  {name:OpenEndedComponent,isDisable:false,comp:'Open Ended'}, 
-  {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type'},
-  {name:ImageChoiceComponent,isDisable:false,comp:'Image Choice'}
+  {name:MultiSelectComponent,isDisable:false,comp:'Multi Select',icon:'glyphicon glyphicon-list'}, 
+  {name:YesNoComponent,isDisable:false,comp:'Yes or No',icon:'glyphicon glyphicon-thumbs-up'}, 
+  {name:MatrixComponent,isDisable:false,comp:'Matrix',icon:'glyphicon glyphicon-th'},
+  {name:RatingScaleComponent,isDisable:false,comp:'Rating Scale',icon:'glyphicon glyphicon-star'},
+  {name:RankingComponent,isDisable:false,comp:'Ranking',icon:'glyphicon glyphicon-stats'}, 
+  {name:OpenEndedComponent,isDisable:false,comp:'Open Ended',icon:'glyphicon glyphicon-pencil'}, 
+  {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type',icon:'glyphicon glyphicon-tasks'},
+  {name:ImageChoiceComponent,isDisable:false,comp:'Image Choice',icon:'glyphicon glyphicon-picture'}
 ];
