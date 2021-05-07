@@ -4,8 +4,8 @@
         <!-- <form #mulForm="ngForm"> -->
             <div class= "mul-qns">
                 <div class="text-btns">
-                    <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}">Long Text</button>
-                    <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}">Short Text</button>
+                    <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit-tab">Long Text</button>
+                    <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit-tab">Short Text</button>
                     <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
                 </div>
                 <br>
@@ -15,7 +15,7 @@
                     <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
                 </div>
             </div>
-            <button [class.disabled]="qns.invalid || model.ansType=='' " (click)="onSubmit();config.adminResponse=false">Save</button>
+            <button [class.disabled]="qns.invalid || model.ansType=='' " (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         <!-- </form> -->
     </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
@@ -28,7 +28,7 @@
         </div>
                
         <br>
-        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>
 

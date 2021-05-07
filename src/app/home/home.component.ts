@@ -55,6 +55,7 @@ export class HomeComponent implements OnInit {
   duplicateSurvey(i:any) {
     //this.rout.navigate(['/qns', ]);
     this.config.survey.title=this.config.allComps[i].title + ' - clone';
+    //this.config.survey.description=this.config.allComps[i].description;
     //this.config.allComps[this.config.allComps.length].title= this.config.allComps[i].title;
     console.log(this.config.survey.title);
     // this.config.allComps[this.config.allComps.length-1].title= this.config.survey.title;
@@ -62,15 +63,10 @@ export class HomeComponent implements OnInit {
     this.copySurvey=true;
   }
   updateTitle() {
-    //if(this.duplicateIndex!=""){
-      // this.config.allComps.push(this.config.allComps[this.dupTitle]);
-      // console.log(this.config.survey.title,this.config.allComps.length,this.dupTitle,this.duplicateIndex)
-      // this.config.allComps[this.config.allComps.length-1].title= this.config.survey.title;
-      // console.log(this.config.allComps[this.config.allComps.length-1].title)
-      // this.config.allComps[this.dupTitle].title= this.duplicateIndex;
       let duplicate ={
         id:this.config.allComps.length,
         title:this.config.survey.title,
+        description:this.config.allComps[this.dupTitle].description,
         list:this.config.allComps[this.dupTitle].list
       }
       this.config.allComps.push(duplicate);
@@ -81,13 +77,13 @@ export class HomeComponent implements OnInit {
   closeSurvey(i:any) {
     this.closedSurvey=true;
     this.config.allComps.splice(i,1);
-    
-
-    // setTimeout(()=>{
-    //   this.closedSurvey=false;
-    // },3000);
-    
   }
-
+  reset() {
+    this.closedSurvey=false;
+    this.copySurvey=false;
+    this.config.survey.title='';
+    this.config.survey.description='';
+    this.config.allValues=[];
+  }
 
 }

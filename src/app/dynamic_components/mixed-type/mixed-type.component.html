@@ -13,8 +13,8 @@
                     <table>
                         <tr *ngFor="let item of model.tabs; let i=index">
                             <td><input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="item.value" name="value" #ans="ngModel" required></td>                           
-                            <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td>
                             <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
+                            <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
                         </tr>
                     </table>
                     <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
@@ -40,6 +40,6 @@
                     <input class="input1" type="text" [(ngModel)] ="model.ans" #ans="ngModel" placeholder="please type here...">
                 </div>
             </div>
-        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse">Edit</button>
+        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>

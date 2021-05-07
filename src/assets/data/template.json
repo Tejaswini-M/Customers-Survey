@@ -2,6 +2,7 @@
     {
     "id":1,
     "title":"Example survey",
+    "description":"Demo survey , you can refer this survey",
     "list":[
         {
             "comp":"YesNoComponent",
