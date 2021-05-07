@@ -1,6 +1,5 @@
 <app-header></app-header>
 <div class="content flex-col bg-white">
-    <h1 class="center-align"*ngIf="config.allComps.length>0">{{config.allComps[config.paramID].title}}</h1>
     <div *ngFor="let cmp of config.userValues; let i=index" class="box">
         <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
             <div>

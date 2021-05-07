@@ -30,7 +30,6 @@ export class QuestionComponent implements OnInit{
   title:any;
   createResponse=false;
   ngOnInit(): void {
-
     this.config.userResponse=false;
     this.viewOption=this.route.snapshot.data.viewOption;
     // this.masterForm = this.fb.group({

@@ -1,6 +1,5 @@
 <app-header></app-header>
-
-<!-- <h1 class="center-align">Survey Home</h1> -->
+<!-- <h1 class="center-align">Survey Home</h1> -->  
 <div class="flex-display container" *ngIf="!config.userResponse">
     <h3 class="glyphicon glyphicon-home" routerLink="/"></h3>
     <input placeholder="Enter Survey Name" class="survey-title" value={{config.survey.title}}
@@ -106,36 +105,13 @@
             <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button>
             <!-- <button routerLink="/thank" [class.disabled]="(config.allValues.length!=config.survey.list.length && config.survey.list.length>0) || config.userResponse" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button> -->
         </div>
-        <div class="send" *ngIf="components.length>=2">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-        </div>
     </div>
-
     <!-- <form [formGroup]="masterForm" (ngSubmit)="onSave()"> -->
     
     <!-- </form> -->
     <!-- masterForm = {{ masterForm.value | json }} -->
     <!-- [class.disabled]="config.allValues.length!=components.length || config.adminResponse==false"  -->
 </div>
-
 <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button> -->
 
 <!-- Modal -->
