@@ -85,10 +85,6 @@ export class HomeComponent implements OnInit {
     this.config.survey.description='';
     this.config.allValues=[];
   }
-  onSearch() {
-    var searchSurvey = this.config.allComps;
-   
-
-  }
+  
 
 }
