@@ -1,24 +1,24 @@
 #site-footer {
 	background:#000;
-    padding:40px 10px;
+    padding:15px 0px;
     font-family: markPro-Bold;
 	font-size: 15px;
 	box-sizing: border-box;
 }
-.container{
+/* .container{
     padding: 0px;
-}
+} */
 .row{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
+    /* margin-left: -15px; */
 }
 .row1{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
+    /* margin-left: -15px; */
     margin-top: 20px;
 }
 .support{
@@ -53,28 +53,31 @@ a:hover, a:active {
     display: flex;
     text-align: left;
     flex-flow: row wrap;
-    margin: 0px;
-    padding: 0px;
+    margin-left: -10px;
 }
 .foot{
     padding: 5px;
-    margin-right: 21px;
+    margin-right: 5px;
 }
 
 @media only screen and (max-width: 768px){
     .row {
-        min-width: 125%;
-        flex-direction: column;
-    }
-    .support1{
-        flex-direction: column;
+        /* min-width: 165%; */
+        margin-left: 0px;
+        /* flex-direction: column; */
     }
     .icon{
         margin: 0px;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         text-align: left;
+        width: 40%  ;
+        /* margin-left: -10px; */
     }
     .row1{
-        flex-direction: column;
+        margin-left: 10px;
+        /* flex-direction: column; */
+    }
+    ul{
+        width: 42%;
     }
 }

@@ -1,14 +1,14 @@
 <app-header></app-header>
-<!-- <h1 class="center-align">Survey Home</h1> -->
+<!-- <h1 class="center-align">Survey Home</h1> -->  
 <div class="flex-display container" *ngIf="!config.userResponse">
     <h3 class="glyphicon glyphicon-home" routerLink="/"></h3>
     <div class="survey-name">
-        <input placeholder="Enter Survey Name" class="survey-title font-bold" value={{config.survey.title}}
+        <input type="text" placeholder="Enter Survey Name" class="survey-title font-bold" value={{config.survey.title}}
         [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
         <div *ngIf="title.invalid && title.touched" class="error-message">Please enter survey title.</div>
     </div>
     <div class="survey-desc">
-        <input placeholder="Enter Survey Descrption" class="survey-descrption font-bold" value={{config.survey.description}}
+        <input  type="text" placeholder="Enter Survey Descrption" class="survey-descrption font-bold" value={{config.survey.description}}
         [(ngModel)] ="config.survey.description" name="description" #description="ngModel" required>
         <div *ngIf="description.invalid && description.touched" class="error-message">Please enter survey description.</div>
     </div>
@@ -127,4 +127,4 @@
 <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button> -->
 
 <!-- Modal -->
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>
