@@ -68,9 +68,9 @@
                   <div class="card-content">
                     <div class="card-body">
                       <div class="media d-flex views">
-                        <div class="view1" (click)="viewDetail(i);">
-                          <div  class="align-self-center view-title font-bold">{{user.title}}</div>
-                          <div  class="align-self-center ">{{user.description}}</div>
+                        <div class="view1">
+                          <div (click)="viewDetail(i);" class="align-self-center view-title font-bold">{{user.title}}</div>
+                            <div contenteditable='true' class="align-self-center ">{{user.description}}</div>   
                         </div>
                       
                         <!-- <div class="align-self-center view2">

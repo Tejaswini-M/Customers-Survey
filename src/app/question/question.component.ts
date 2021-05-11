@@ -56,6 +56,8 @@ export class QuestionComponent implements OnInit{
     this.config.userValues=this.config.allComps[index].list;
   }
   count=0;
+
+ 
   onSave() {
     console.log(this.config.allComps)
     //console.log(this.masterForm.value);
@@ -95,7 +97,7 @@ export class QuestionComponent implements OnInit{
     this.config.components.push(this.components);
     console.log( this.config.components);
     this.data = new Array<any>()
-    this.data = this.config.allComps;
+    this.data = this.config.components;
     console.log("data at pagination:", this.data);
 
   //   this.components.forEach(component => {
