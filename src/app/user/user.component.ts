@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<any[]>,i:any){
-    moveItemInArray(this.config.userValues[i].tabs, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.config.userValues.list[i].tabs, event.previousIndex, event.currentIndex);
   }
 
   status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];
