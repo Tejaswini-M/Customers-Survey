@@ -31,7 +31,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { FilterPipe } from './filter.pipe';
 import { NgxStarRatingModule } from 'ngx-star-rating';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -67,7 +67,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     MatSliderModule,
     MatRadioModule,
     Ng2SearchPipeModule,
-    NgxStarRatingModule
+    NgxStarRatingModule,
+    NgxPaginationModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
