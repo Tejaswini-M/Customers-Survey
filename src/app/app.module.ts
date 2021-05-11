@@ -30,6 +30,7 @@ import { HomeComponent } from './home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { FilterPipe } from './filter.pipe';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 
 
@@ -65,7 +66,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatInputModule,
     MatSliderModule,
     MatRadioModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxStarRatingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

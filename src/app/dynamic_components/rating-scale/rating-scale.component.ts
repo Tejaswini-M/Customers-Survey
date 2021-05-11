@@ -9,10 +9,13 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class RatingScaleComponent implements OnInit {
 
-  constructor(public config:ConfigService) { }
+  constructor(public config:ConfigService) { 
+    this.rating = 0;
+  }
 
   ngOnInit(): void {}
 
+  rating: number;
   // thumbLabel = false;
   // value = 0;
   disabled = true;
