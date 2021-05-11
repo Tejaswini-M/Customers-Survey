@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   copySurvey:boolean=false;
   closedSurvey:boolean=false;
   constructor(public config:ConfigService,private rout: Router) { }
-  title:any;
+  //title:any;
+  searchText:any;
   ngOnInit(): void {
     this.config.getTemplateData().subscribe(data => {
       //console.log("template",data);
@@ -55,6 +56,7 @@ export class HomeComponent implements OnInit {
   duplicateSurvey(i:any) {
     //this.rout.navigate(['/qns', ]);
     this.config.survey.title=this.config.allComps[i].title + ' - clone';
+    this.config.survey.description=this.config.allComps[i].description;
     //this.config.survey.description=this.config.allComps[i].description;
     //this.config.allComps[this.config.allComps.length].title= this.config.allComps[i].title;
     console.log(this.config.survey.title);
@@ -66,7 +68,7 @@ export class HomeComponent implements OnInit {
       let duplicate ={
         id:this.config.allComps.length,
         title:this.config.survey.title,
-        description:this.config.allComps[this.dupTitle].description,
+        description:this.config.survey.description,
         list:this.config.allComps[this.dupTitle].list
       }
       this.config.allComps.push(duplicate);
@@ -85,5 +87,6 @@ export class HomeComponent implements OnInit {
     this.config.survey.description='';
     this.config.allValues=[];
   }
+  
 
 }

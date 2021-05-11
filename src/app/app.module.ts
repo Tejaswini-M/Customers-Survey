@@ -27,6 +27,10 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatRadioModule} from '@angular/material/radio';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// import { FilterPipe } from './filter.pipe';
+
 
 
 @NgModule({
@@ -45,7 +49,8 @@ import { HomeComponent } from './home/home.component';
     ImageChoiceComponent,
     ThankyouComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    // FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -59,8 +64,10 @@ import { HomeComponent } from './home/home.component';
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
-    MatRadioModule
+    MatRadioModule,
+    Ng2SearchPipeModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [],

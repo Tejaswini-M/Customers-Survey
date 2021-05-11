@@ -154,4 +154,11 @@ input:-webkit-autofill:focus {
             margin:0;
         }
     }
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        .survey-name, .survey-desc {
+            margin-bottom:10px;
+        }
+    }
 }

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 .title button {
     width:fit-content !important;
+=======
+.new-survey {
+    padding: 15px 15px 15px 0;
+>>>>>>> Project/Survey-tool
 }
 .modal-body {
     label {
@@ -8,9 +13,23 @@
 }
 .usersList {
     //margin:10px;
+<<<<<<< HEAD
     //display: flex !important;
     width: 100%;
 }
+=======
+    display: flex !important;
+    width: 100%;
+}
+.input-group {
+    display: flex; 
+    flex-wrap: inherit; 
+    width: 100%; 
+    padding-top: 15px; 
+    float: left;
+    //margin-right: 30px;
+}
+>>>>>>> Project/Survey-tool
 .qns-num {
     width:400px;
     height:100px;
@@ -25,21 +44,13 @@
     flex-direction: column;
     align-items:flex-end;
 }
-.title {
-    //width:100%;
-    button {
-        width:200px;
-        border-radius:0;
-        background-color: none;
-    }
-}
 .lists {
     width:100%;
     //margin-left:5%;
 }
 .datas {
     margin-bottom :10px;
-    justify-content: center;
+   // justify-content: center;
     width:auto;
     // width: 1800px !important;
 }
@@ -55,15 +66,19 @@
 .view-title:hover {
     text-decoration: underline;
 }
+.view2 {
+    width:50%;
+    margin-left:20px;
+}
 .view3 {
-    width:30%;
+    width:50%;
     //padding:0 10px;
 }
 .view4 {
     display: flex;
     justify-content: center;
     margin-left:20px;
-    width:20%;
+    width:50%;
 
 }
 .dropdown {
@@ -81,8 +96,19 @@
     .views {
         flex-direction: column;
     }
-    .view1, .view2, .view3, .view4 {
+    .view1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .view2 {
+        justify-content: center;
+    }
+    .view1,.view2 {
         width:auto;
         margin:0;
+    }
+    .new-survey {
+        font-size: xx-small;
     }
 }
