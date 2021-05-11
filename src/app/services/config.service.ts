@@ -29,7 +29,7 @@ export class ConfigService {
   //survey:any[]=[];
   allComps:any[]=[];
   paramID=0;
-  userValues=this.survey.list;
+  userValues=this.survey;
   isDisable=false;
   compns:any=[];
   constructor(public http:HttpClient) { }

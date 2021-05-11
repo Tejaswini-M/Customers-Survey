@@ -76,7 +76,7 @@ export class QuestionComponent implements OnInit{
     console.log(JSON.stringify(sortedArray));
     this.config.survey.id=this.config.survey.id+1;
     this.config.survey.list=sortedArray;
-    this.config.userValues=this.config.survey.list
+    this.config.userValues=this.config.survey
     console.log(this.config.survey);
     this.config.allComps.push(JSON.parse(JSON.stringify(this.config.survey)));
     

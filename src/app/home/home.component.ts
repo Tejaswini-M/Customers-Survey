@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     console.log(this.template)
     this.rout.navigate(['/user', index]);
     this.config.paramID=index;
-    this.config.userValues=this.config.allComps[index].list;
+    this.config.userValues=this.config.allComps[index];
     //this.config.userValues=this.config.allComps[index].list;
     // if(this.default){
     //   this.rout.navigate(['/user']);
