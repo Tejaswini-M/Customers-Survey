@@ -38,14 +38,14 @@
     height:100%;
     width:100%;
     margin:5px 0;
-    background-color:#D1D7DA;
+    background-color:#00a3ad;
     text-align: start;
     span {
         margin: 0 20px;
     }
 }
 .btns button:hover {
-    background-color:#ACAFB2;
+    background-color:#008a92;
 }
 .comps2 {
     width:80%;
@@ -69,7 +69,12 @@
     //display:flex;
     //flex-direction: column;
     //align-items: center;
+    //background-color: #00a3ad;
 }
+/*.each:hover{
+    background-color:#008a92;
+}
+*/
 .del-cmp {
     //width:150px;
     float:right;

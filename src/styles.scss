@@ -86,7 +86,7 @@ button {
     cursor: pointer;
     height:38px;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 5px;
     font-family: markPro-Bold;
 }
 button:hover {
@@ -169,16 +169,16 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 
 .save-tab{
     margin-top: 5%;
-    background-color: #D1D7DA;
+    background-color: #00a3ad;
 }
 .save-tab:hover{
-    background-color:#ACAFB2;
+    background-color:#008a92;
 }
 .edit-tab{
-    background-color: #D1D7DA;
+    background-color: #00a3ad;
 }
 .edit-tab:hover{
-    background-color:#ACAFB2;
+    background-color:#008a92;
 }
 .delete-tab {
     margin-left: -20px;
