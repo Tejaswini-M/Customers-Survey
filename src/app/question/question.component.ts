@@ -11,6 +11,7 @@ import { CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfigService } from '../services/config.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlatformLocation } from '@angular/common';
 
 @Component({
   selector: 'app-question',
@@ -21,15 +22,22 @@ export class QuestionComponent implements OnInit{
 
   cmpRef: any;
   comps: any;
+  totalPages = 10;
   qnsType = dynamicComponents;
   components: any[] = [];
   //components: CompType[] = [];
   masterForm!: FormGroup;
   viewOption:any;
+    collection = { count: 20, data: [] };
+
   // title:any;
   // description:any;
   createResponse=false;
   deleteIndex:any;
+ data:any;
+ totalRecords: any;
+ page: number = 1;
+  
   ngOnInit(): void {
     this.config.userResponse=false;
     this.viewOption=this.route.snapshot.data.viewOption;
@@ -48,6 +56,8 @@ export class QuestionComponent implements OnInit{
     this.config.userValues=this.config.allComps[index].list;
   }
   count=0;
+
+ 
   onSave() {
     console.log(this.config.allComps)
     //console.log(this.masterForm.value);
@@ -86,6 +96,10 @@ export class QuestionComponent implements OnInit{
     this.config.allValues=[];
     this.config.components.push(this.components);
     console.log( this.config.components);
+    this.data = new Array<any>()
+    this.data = this.config.components;
+    console.log("data at pagination:", this.data);
+
   //   this.components.forEach(component => {
   //     // how to access the data from each component??
   //     console.log(component.data);
@@ -109,22 +123,41 @@ export class QuestionComponent implements OnInit{
   viewContainerRef:any;
   //component: ComponentRef<any>[]=[];
   constructor(public fb: FormBuilder,private rout: Router, private route: ActivatedRoute,
-    public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver) {
-     window.location.hash="no-back-button";
-     //window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
-     window.onhashchange=function(){confirm("Changes you made may not be saved.")}
+    public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver, private location: PlatformLocation) {
+    this.location.onPopState(() => {        
+       alert("Changes you made may not be saved.");
+       //window.location.href = window.location.href + '/qns';
+       console.log(window.location.href);
+      
+        //return false;
+    });//window.location.hash="no-back-button";
+    
+  //window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+     //window.onhashchange=function(){confirm("Changes you made may not be saved.")}
   }
   
   @HostListener("window:beforeunload", ["$event"]) unloadHandler(event: Event) {
     let result = confirm("Changes you made may not be saved.");
     if (result) {
+      console.log("Clicked on refresh button");
       //history.back();
     } 
         event.returnValue = false; // stay on same page
   }
+
+  // @HostListener('window:popstate', ['$event'])
+  // onPopState(event: Event) {
+  //   console.log('Back button pressed');
+  //   let result = confirm("Changes you made may not be saved.");
+  //   if (result) {
+  //     //history.back();
+  //   } 
+  //       event.returnValue = false;
+    
+  // }
  
 
-
+  
   loadComponent(name:any) {
     // const viewContainerRef = this.entryContainer.viewContainerRef;
     //const cmpClass = this.qnsType.find(cmp => cmp.name === name);

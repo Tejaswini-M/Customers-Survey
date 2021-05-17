@@ -23,7 +23,7 @@
     </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true" cdkDropList (cdkDropListDropped)="drop($event)">
         <h3>{{model.qns}}</h3>
-        <div class="center-align">
+        <div>
             <div class="example-box bg-grey" *ngFor="let mul of model.tabs; let i=index" cdkDrag cdkDragHandle>
                 <div class="dot">&#xFE19;</div>
                 <div class="dot">&#xFE19;</div>

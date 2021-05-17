@@ -28,7 +28,7 @@
     </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
         <h3>{{model.qns}}</h3>
-        <div class="flex-display dynamic">
+        <div class="flex-display content-left">
             <!-- <div *ngFor="let url of model.tabs; let i=index;" cdkDrag >
                 <img *ngIf="url.value" class="btn-tab bg-grey"[src]="url.value">
             </div> -->

@@ -20,7 +20,7 @@
               </section>
             </mat-card-content>
           </mat-card> -->
-          <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp" >
+          <!-- <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp" >
             <mat-card-content>
                 <mat-slider thumbLabel [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" ></mat-slider>
               <section class="section">
@@ -29,7 +29,14 @@
                 </mat-form-field>
               </section>
             </mat-card-content>
-        </mat-card>
+        </mat-card> -->
+        <div class="cont">
+          <div class="stars">
+            <ngx-star-rating [(ngModel)]="model.ans" [id]="'rating'" 
+            [class.disabled]="!this.config.userResponse"></ngx-star-rating >
+          </div>
+          <!-- <div>Rating: {{ rating3 }}</div> -->
+        </div>
       <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>

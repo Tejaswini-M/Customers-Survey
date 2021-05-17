@@ -86,11 +86,12 @@ button {
     cursor: pointer;
     height:38px;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 5px;
     font-family: markPro-Bold;
+    opacity: 0.9;
 }
 button:hover {
-    box-shadow: yellow;
+    opacity: 1.0;
 }
 .flex-display {
     display:flex;
@@ -99,6 +100,10 @@ button:hover {
 .dynamic {
     flex-wrap: wrap;
     justify-content: center;
+}
+.content-left {
+    flex-wrap: wrap;
+    justify-content: left;
 }
 label {
     margin-top: 24px !important;
@@ -169,16 +174,16 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 
 .save-tab{
     margin-top: 5%;
-    background-color: #D1D7DA;
+    background-color: #00a3ad;
 }
 .save-tab:hover{
-    background-color:#ACAFB2;
+    background-color:#008a92;
 }
 .edit-tab{
-    background-color: #D1D7DA;
+    background-color: #00a3ad;
 }
 .edit-tab:hover{
-    background-color:#ACAFB2;
+    background-color:#008a92;
 }
 .delete-tab {
     margin-left: -20px;
@@ -198,6 +203,9 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 
 }
 @media screen  and (max-width:767px) {
+    body {
+        margin:0 18px;
+    }
     .mod-head {
         .close {
             margin-left: 0 !important;
