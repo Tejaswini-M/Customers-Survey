@@ -53,9 +53,10 @@ button {
     padding: 10px;
     border-radius: 5px;
     font-family: markPro-Bold;
+    opacity: 0.9;
 }
 button:hover {
-    box-shadow: yellow;
+    opacity: 1.0;
 }
 .flex-display {
     display:flex;
@@ -67,6 +68,9 @@ button:hover {
 }
 .line{
     margin-top: 24px;
+.content-left {
+    flex-wrap: wrap;
+    justify-content: left;
 }
 label {
     margin-top: 24px !important;
@@ -185,6 +189,9 @@ div.stars{
     width: auto !important;
 }
 @media screen  and (max-width:767px) {
+    body {
+        margin:0 18px;
+    }
     .mod-head {
         .close {
             margin-left: 0 !important;
@@ -200,4 +207,5 @@ div.stars{
         padding: -5px !important;
         float: none;
     }
+}
 }

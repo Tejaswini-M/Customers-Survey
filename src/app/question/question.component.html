@@ -1,7 +1,6 @@
 <app-header></app-header>
 <!-- <h1 class="center-align">Survey Home</h1> -->  
-<div class="flex-display container" *ngIf="!config.userResponse">
-    <h3 class="glyphicon glyphicon-home" routerLink="/"></h3>
+<div class="flex-display content bg-white" *ngIf="!config.userResponse">
     <div class="survey-name">
         <input type="text" placeholder="Enter Survey Name" class="survey-title font-bold" value={{config.survey.title}}
         [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
@@ -112,7 +111,8 @@
 
         <div class="send" *ngIf="!config.userResponse">
             <div *ngIf="config.allValues.length!=components.length && components.length>0"  class="error-message">Please fill all selected questionarie!!!</div>
-            <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse" id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
+            <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse || config.survey.title=='' || config.survey.description==''" 
+                id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
         </div>
         <div class="send" *ngIf="config.userResponse" >
             <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()" id="listOfRecords">Done</button>

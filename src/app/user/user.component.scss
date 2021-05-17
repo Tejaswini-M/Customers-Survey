@@ -26,13 +26,40 @@ textarea {
 }
 .thumb {
   text-align: center;
+  input[type=radio] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    outline: none;
+    content: none;
+    margin: 2px;
+  }
+  
+  input[type=radio]:before {
+    font-family: "FontAwesome";
+    content: "\f00c";
+    font-size: 20px;
+    color: transparent !important;
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    // border: 2px solid black;
+    margin-right: 5px;
+    border-radius: 50% !important;
+    padding:1px;
+  }
+  
+  input[type=radio]:checked:before {
+    color:#00a3ad !important;
+    // border-radius: 50% !important;
+  }
 }
 .thumb div {
   font-size: 30px;
   color:black;
   background-color: white;
   height:50px;
-  width:300px;
+  width:200px;
   margin:10px;
   padding: 3px;
   cursor: pointer;
@@ -43,16 +70,24 @@ textarea {
 .thumb div.active{
   background-color:#00a3ad;
   cursor: pointer; 
+  // .glyphicon {
+  //   background-color: white;
+  // }
+  .naming {
+    color:white;
+  }
 }
-.glyphicon {
-  margin-top:5px;
-}
+// .glyphicon {
+//   margin:2px;
+//   border-radius:50%;
+//   padding:6px;
+// }
 .naming {
-  margin-left:20px;
+  // margin-left:10px;
   padding:12px;
-  font-size:14px;
-  font-weight:bold;
+  font-size:18px;
 }
+
 .btn-tab-mul {
   width: auto;
   margin: 10px;
@@ -142,25 +177,15 @@ margin-left: 50px;
 }
   
   //Mixed-Type
-  .input1{
-    //width: 400px;
-    margin: 5px;
-    padding: 5px 5px;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
-    min-width: 200px;
-  }
-  .mixed-type{
-    width: auto;
-    justify-content: space-evenly;
-  }
-  .mixed{
-    margin-bottom: 50px;
-    font-size: 16px;
-  }
+  // .input1{
+  //   width: 400px;
+  //   margin: 5px;
+  //   padding: 5px 5px;
+  //   display:flex;
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  //   justify-content: center;
+  // }
   .comment1{  
       margin-top: 15px !important;
       margin-right: 10px;
@@ -168,17 +193,16 @@ margin-left: 50px;
   }
   
   .comment{
-    //min-width: fit-content; 
-      /* font-weight: 500; */
-      height: 40px;
-      font-size: 16px;
-      /* padding: 10px; */
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      //margin: 10px;
-      margin-top: 24px;
+    min-width: fit-content; 
+    font-weight: 500;
+    height: 50px;
+    font-size: 14px;
+    // margin: 25px;
+    // padding: 10px;
+    // display:flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: center;
   }
   
   .btn-tab{
