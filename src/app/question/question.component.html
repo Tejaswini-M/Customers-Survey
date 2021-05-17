@@ -29,7 +29,7 @@
             <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag>
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <button  data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-yes-no></app-yes-no>
     
                     <!-- <div><i *ngIf="!cmp.isDisable" class="disable">reorder</i>
@@ -40,14 +40,14 @@
                 <div *ngIf="cmp.componentType.name=='RankingComponent'" class="each">
 
                     <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-ranking></app-ranking>
             
                 </div>
                 <div *ngIf="cmp.componentType.name=='RatingScaleComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-rating-scale></app-rating-scale>
             
                    
@@ -55,7 +55,7 @@
                 <div *ngIf="cmp.componentType.name=='MultiSelectComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal"  *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                    <app-multi-select></app-multi-select>
             
                     
@@ -63,7 +63,7 @@
                 <div *ngIf="cmp.componentType.name=='MatrixComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal"  *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-matrix></app-matrix>
                     
                     
@@ -71,21 +71,21 @@
                 <div *ngIf="cmp.componentType.name=='MixedTypeComponent'" class="each">
 
                     <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-mixed-type></app-mixed-type>
                     
                 </div>
                 <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'" class="each">
 
                     <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-image-choice></app-image-choice>
                    
                 </div>
                 <div *ngIf="cmp.componentType.name=='OpenEndedComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal"  *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button> 
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-open-ended></app-open-ended>
                     
                    

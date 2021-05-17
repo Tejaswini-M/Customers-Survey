@@ -61,6 +61,7 @@ export class HomeComponent implements OnInit {
     //this.config.survey.description=this.config.allComps[i].description;
     //this.config.allComps[this.config.allComps.length].title= this.config.allComps[i].title;
     console.log(this.config.survey.title);
+    this.rout.navigate(['/qns', i]);
     // this.config.allComps[this.config.allComps.length-1].title= this.config.survey.title;
     this.dupTitle=i;
     this.copySurvey=true;

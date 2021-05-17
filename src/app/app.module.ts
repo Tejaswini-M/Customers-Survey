@@ -20,11 +20,6 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatRadioModule} from '@angular/material/radio';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -61,11 +56,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DragDropModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSliderModule,
-    MatRadioModule,
     Ng2SearchPipeModule,
     NgxStarRatingModule,
     NgxPaginationModule,

@@ -12,7 +12,8 @@
         {
             "comp":"RatingScaleComponent",
             "qns":"How satisfied with Dairy milk chocolate ?",
-            "ans":""
+            "ans":"",
+            "ansType":"star"
         },
         {
             "comp":"OpenEndedComponent",

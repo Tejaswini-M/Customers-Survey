@@ -105,9 +105,17 @@
     .new-survey {
         button {
             font-size: xx-small;
-            padding:0;
+            padding: 5px;
         }
     }
+    .survey-list {
+        flex-direction: column;
+    }
+    .usersList {
+        width:100%;
+    }
+}
+@media screen  and (max-width:1023px)  {
     .survey-list {
         flex-direction: column;
     }
