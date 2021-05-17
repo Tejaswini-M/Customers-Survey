@@ -40,7 +40,7 @@
                     <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
                 </div>
             </div> -->
-            <div class="flex-display dynamic line">
+            <div class="flex-display content-left line">
                 <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
                     <input type="radio" *ngIf="tab.value" class="btn-tab bg-grey" (click)="selectOption(tab)" 
                     [class.active]="tab.selected" value="tab.selected" [checked]="tab.selected">{{tab.value}}

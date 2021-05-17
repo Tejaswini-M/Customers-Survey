@@ -140,7 +140,7 @@
             <!-- <app-open-ended></app-open-ended> -->
             <div>
                 <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
-                <div class="line">                
+                <div class="flex-display content-left line">                
                     <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='short'">
                     <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='long'"></textarea>
                 </div>

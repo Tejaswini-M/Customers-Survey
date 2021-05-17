@@ -22,13 +22,8 @@
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
     </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true" cdkDropList (cdkDropListDropped)="drop($event)">
-<<<<<<< HEAD
         <h3 class="question font-bold">{{model.qns}}</h3>
-        <div class="center-align line">
-=======
-        <h3>{{model.qns}}</h3>
-        <div>
->>>>>>> Akshatha/Survey
+        <div class="line">
             <div class="example-box bg-grey" *ngFor="let mul of model.tabs; let i=index" cdkDrag cdkDragHandle>
                 <div class="dot">&#xFE19;</div>
                 <div class="dot">&#xFE19;</div>
