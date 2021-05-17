@@ -6,10 +6,14 @@
         margin-top:0 !important;
     }
 }
+.survey-list {
+    width:100%;
+    display: flex !important;
+    flex-wrap: wrap;
+}
 .usersList {
     //margin:10px;
-    display: flex !important;
-    width: 100%;
+    width: 50%;
 }
 .input-group {
     display: flex; 
@@ -31,21 +35,22 @@
     display: flex;
     margin: 15px 10%;
     flex-direction: column;
-    align-items:flex-end;
+    // align-items:flex-end;
 }
 .lists {
     width:100%;
     //margin-left:5%;
 }
-.datas {
+.card {
+    min-height: 80px;
     margin-bottom :10px;
-   // justify-content: center;
-    width:auto;
-    // width: 1800px !important;
 }
-.card-border:hover {
+.card:hover {
     border: 1px solid grey;
     cursor: pointer;
+}
+.views {
+    width:100%;
 }
 .view1 {
     width:50%;
@@ -98,6 +103,23 @@
         margin:0;
     }
     .new-survey {
-        font-size: xx-small;
+        button {
+            font-size: xx-small;
+            padding: 5px;
+        }
+    }
+    .survey-list {
+        flex-direction: column;
+    }
+    .usersList {
+        width:100%;
+    }
+}
+@media screen  and (max-width:1023px)  {
+    .survey-list {
+        flex-direction: column;
+    }
+    .usersList {
+        width:100%;
     }
 }

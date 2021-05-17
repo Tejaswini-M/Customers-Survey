@@ -22,8 +22,8 @@
                 <p class="naming">No</p>
             </div>
         </div> -->
-        <h3>{{model.qns}}</h3>
-        <div class="thumb flex-display dynamic">
+        <h3 class="question font-bold">{{model.qns}}</h3>
+        <div class="thumb flex-display dynamic line">
             <div (click)="captureSentiment('like')" [ngClass]="{'active':model.tab==='like'}" class="bg-grey">
                 <p class="glyphicon glyphicon-thumbs-up"></p>
                 <p class="naming">Yes</p>

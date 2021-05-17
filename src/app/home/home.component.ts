@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     console.log(this.template)
     this.rout.navigate(['/user', index]);
     this.config.paramID=index;
-    this.config.userValues=this.config.allComps[index].list;
+    this.config.userValues=this.config.allComps[index];
     //this.config.userValues=this.config.allComps[index].list;
     // if(this.default){
     //   this.rout.navigate(['/user']);
@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
     //this.config.survey.description=this.config.allComps[i].description;
     //this.config.allComps[this.config.allComps.length].title= this.config.allComps[i].title;
     console.log(this.config.survey.title);
+    this.rout.navigate(['/qns', i]);
     // this.config.allComps[this.config.allComps.length-1].title= this.config.survey.title;
     this.dupTitle=i;
     this.copySurvey=true;

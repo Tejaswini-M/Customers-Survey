@@ -14,20 +14,23 @@ export class RatingScaleComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
+ 
+  selectedTab:any=[];
   rating: number;
   // thumbLabel = false;
   // value = 0;
   disabled = true;
   submitted = false;
   type="";
-  ans=0;
+  //ans=0;
   @Input() data: any;
   @Output() changedData = new EventEmitter<any>();
+
   model = {
     comp:'RatingScaleComponent',
     qns:'',
-    ans:''
+    ans:'',
+    ansType:'',
     }
     edit() {
       this.config.userResponse ? this.submitted=true : this.submitted=false;
@@ -48,5 +51,15 @@ export class RatingScaleComponent implements OnInit {
     this.changedData.emit(this.data);
     console.log(this.data)
   }
+
+  selectOption(num:any){
+    if(this.config.userResponse){
+      // tab.selected = !tab.selected;
+      this.model.ans = num;
+      // console.log(tab);
+    }
+  }
+
+  numbers = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9','10'];
 }
 

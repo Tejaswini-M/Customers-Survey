@@ -1,42 +1,40 @@
 <div class ="container">
   <div *ngIf="!submitted">
     <h3 class="center-align">Rating-Scale Question</h3>
-          <div class= "mul-qns" >
+        <div class= "mul-qns" >
+            <div class="text-btns">
+              <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}" class="edit-tab">Star Rating</button>
+              <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit-tab">Number Rating</button>
+              <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
+            </div>
+          <br>
               <label>Enter your question  : </label>
               <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
               <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
           </div>          
-          <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
+          <button [class.disabled]="qns.invalid || model.ansType=='' "  (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
-          <h3>{{model.qns}}</h3>
-          <!-- <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp">
-            <mat-card-content>
-                <mat-slider disable [(ngModel)]="ans" name="ans"></mat-slider>
-              <section class="section">
-                <mat-form-field class="margin" style="width: 83px;">
-                  <input matInput type="number" [(ngModel)]="ans" class="number" name="ans">
-                </mat-form-field>
-              </section>
-            </mat-card-content>
-          </mat-card> -->
-          <!-- <mat-card class="center-align" style="box-shadow: none;" *ngIf="model.comp" >
-            <mat-card-content>
-                <mat-slider thumbLabel [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" ></mat-slider>
-              <section class="section">
-                <mat-form-field class="margin" style="width: 83px;">
-                  <input matInput type="number" [class.disabled]="!this.config.userResponse" [(ngModel)]="model.ans" class="number">
-                </mat-form-field>
-              </section>
-            </mat-card-content>
-        </mat-card> -->
-        <div class="cont">
-          <div class="stars">
-            <ngx-star-rating [(ngModel)]="model.ans" [id]="'rating'" 
-            [class.disabled]="!this.config.userResponse"></ngx-star-rating >
+          <h3 class="question font-bold">{{model.qns}}</h3>
+          <div class="flex-display content-left">
+            <div  style="margin-top: -30px;" >
+              <ngx-star-rating [(ngModel)] ="model.ans" name="ans" #ans="ngModel" 
+                [id]="'rating'" *ngIf="model.ansType=='star'" [class.disabled]="!this.config.userResponse">
+              </ngx-star-rating >
+            </div>
+              <div  class="flex-display content-left" *ngIf="model.ansType=='number'">
+                <!-- <p class="left-label">Least Likely</p> -->
+                <div *ngFor= "let num of numbers" >
+                  <button class="btn num-rate" type="button"  
+                  (click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
+                  [class.disabled]="!this.config.userResponse">{{num}}</button>
+                </div>
+                <!-- <p class="right">Most Likely</p> -->
+                <!-- <div class="label"><p>Least Likely</p></div>
+                <div class="label"><p>Most Likely</p></div> -->
+              </div>
+            <!-- </div> -->
           </div>
-          <!-- <div>Rating: {{ rating3 }}</div> -->
-        </div>
       <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>
