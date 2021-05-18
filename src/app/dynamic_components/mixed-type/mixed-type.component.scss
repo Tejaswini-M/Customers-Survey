@@ -1,14 +1,14 @@
-.input1{
-  //width: 400px;
-  margin: 5px;
-  padding: 5px 5px;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  min-width: 200px;
-}
+// .input1{
+//   //width: 400px;
+//   margin: 5px;
+//   padding: 5px 5px;
+//   display:flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   width: auto;
+//   min-width: 200px;
+// }
 .mixed-type{
   width: auto;
   justify-content: space-evenly;
@@ -25,28 +25,28 @@
 .comment{
   //min-width: fit-content; 
     /* font-weight: 500; */
-    height: 40px;
+    // height: 40px;
     font-size: 16px;
     /* padding: 10px; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     //margin: 10px;
     margin-top: 24px;
 }
 
-.btn-tab{
-  width: 25px;
-  margin: 5px;
-  /* padding: 5px; */
-  /* color: #000000; */
-  /* box-sizing: border-box; */
-  cursor: pointer;
-  font-size: 16px;
-  overflow: hidden;
-  float: left;
-}
+// .btn-tab{
+//   width: 25px;
+//   margin: 5px;
+//   /* padding: 5px; */
+//   /* color: #000000; */
+//   /* box-sizing: border-box; */
+//   cursor: pointer;
+//   font-size: 16px;
+//   overflow: hidden;
+//   float: left;
+// }
 
 // .delete-tab {
 //   margin-top:-20px;
@@ -68,8 +68,17 @@ table .error-message {
 // .btn-tab:hover{
 //   background-color: #00a3ad;
 // }
-// .btn-tab {
-//   width: auto;
-//   margin: 10px;
-//   min-width: 150px
-// }
+.btn-tab {
+  width: auto;
+  margin: 8px;
+  min-width: 50px
+}
+.num-rate{
+  background-color: #D1D7DA;
+  // width: 37px;
+  /* min-width: 50px; */
+  /* width: 52px; */
+  // padding: 5px;
+  margin: 5px;
+  margin-top: 24px;
+}

@@ -177,7 +177,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     justify-content: left;
 }
 label.star::before{
-    font-size: 25px;
+    font-size: 24px;
     padding: 0px !important;
 }
 
@@ -194,10 +194,14 @@ div.stars{
     h3 {
         font-size: 14px;
     }
+
+}
+@media screen and (max-width:300px) {
     label.star::before{
-        font-size: 15px;
-        margin-left: -30% !important;
-        padding: -5px !important;
+        font-size: 13px;
+        // margin-left: -30% !important;
+        padding: 0px !important;
         float: none;
     }
+    
 }

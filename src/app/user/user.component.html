@@ -57,9 +57,7 @@
                     <div  class="flex-display content-left" *ngIf="cmp.ansType=='number'">
                         <!-- <p class="left-label">Least Likely</p> -->
                             <div *ngFor= "let num of numbers" >
-                              <button class="btn num-rate" type="button" 
-                              
-                              (click)="this.cmp.ans =num"                 
+                              <button class="btn num-rate" type="button" (click)="this.cmp.ans =num"                 
                               [ngClass]="{'active':cmp.ans=== num}"
                               >{{num}}</button>
                             </div>
@@ -108,31 +106,19 @@
         <div *ngIf="cmp.comp=='MixedTypeComponent'" class="each">
             <!-- <app-mixed-type></app-mixed-type> -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
-                <!-- <div class="mixed font-bold  line">                
-                    <div class="mixed-type flex-display dynamic">
-                        <div *ngFor="let tab of cmp.tabs; let i=index;">
-                            <input type="radio" class="btn-tab" id="{{tab.selected}}" 
-                            [(ngModel)]="tab.selected" [class.active]="tab.selected" 
-                            value="{{tab.value}}" name="selected" >{{tab.value}}
+                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>                
+                    <div class="flex-display content-left line">
+                        <div *ngFor= "let num of options" >
+                            <input class="btn-tab-mul bg-grey" type="radio" (click)="this.cmp.tab =num" 
+                            [ngClass]="{'active':cmp.tab=== num}" name="cmp.tab">{{num}}
                         </div>
-                    </div>
-                    <div class="comment">
-                        <label class="comment1">Any Comments ? </label> 
-                        <input class="input1" type="text" [(ngModel)] ="cmp.ans" #ans="ngModel" placeholder="please type here...">
-                    </div>
-                </div> -->
-                <div class="flex-display dynamic line">
-                    <div *ngFor="let tab of cmp.tabs; let i=index;">
-                        <input type="radio"  *ngIf="tab.value" class="btn-tab bg-grey" (click)="tab.selected =!tab.selected" 
-                        [class.active]="tab.selected" value="tab.selected" [checked]="tab.selected">{{tab.value}}
-                    </div>
-                    <div class="comment">
-                        <label class="comment1">Any Comments ? </label> 
-                        <input class="input1" type="text" [(ngModel)] ="cmp.ans" #ans="ngModel" placeholder="please type here..." required> 
-                        <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
-                    </div>
-                </div>
+                    </div>   
+                        <div>
+                            <label >Any Comments ? </label> 
+                            <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." >                    
+                            <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
+                        </div>
+                
             </div>
         </div>
         <div *ngIf="cmp.comp=='ImageChoiceComponent'" class="each">          

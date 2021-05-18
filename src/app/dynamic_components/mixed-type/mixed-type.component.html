@@ -8,22 +8,22 @@
                     <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                     <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
                 </div>
-                <div>
+                <!-- <div>
                     <label>Enter your answer</label>
                     <table>
                         <tr *ngFor="let item of model.tabs; let i=index">
                             <td><input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="item.value" name="value" #ans="ngModel" required></td>                           
                             <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
                             <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
-                        </tr>
+                        <!-- </tr>
                     </table>
                     <button (click)="addTable()" class="add-tab glyphicon glyphicon-plus"></button>
-                </div>
+                </div>  -->
             </div>
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         <!-- </form> -->
         </div>
-        <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
+        <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
             <h3 class="question font-bold">{{model.qns}}</h3>
             <!-- <div class="mixed font-bold  line">
                 <div class="mixed-type flex-display dynamic">
@@ -40,17 +40,17 @@
                     <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
                 </div>
             </div> -->
-            <div class="flex-display dynamic line">
-                <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
-                    <input type="radio" *ngIf="tab.value" class="btn-tab bg-grey" (click)="selectOption(tab)" 
-                    [class.active]="tab.selected" value="tab.selected" [checked]="tab.selected">{{tab.value}}
-                </div>
-                <div class="comment">
-                    <label class="comment1 font-bold">Any Comments ? </label> 
-                    <input class="input1" type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="please type here..." required>
-                    <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
-                </div>
-            </div>
+                <div class="flex-display content-left line">
+                    <div *ngFor= "let num of options" >
+                        <input class="btn-tab bg-grey" type="radio" (click)="selectOption(num)" [ngClass]="{'active':model.tab=== num}"
+                        [class.disabled]="!this.config.userResponse" name="model.tab">{{num}}
+                    </div>                
+                </div>   
+                    <div>
+                        <label >Any Comments ? </label> 
+                        <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="please type here..." [class.disabled]="!this.config.userResponse">                    
+                        <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
+                    </div>
         <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>
 </div>
