@@ -11,6 +11,7 @@ export class RatingScaleComponent implements OnInit {
 
   constructor(public config:ConfigService) { 
     this.rating = 0;
+    this.selectedValue = 0;
   }
 
   ngOnInit(): void {}
@@ -51,7 +52,17 @@ export class RatingScaleComponent implements OnInit {
     this.changedData.emit(this.data);
     console.log(this.data)
   }
-
+  stars = ['1', '2', '3', '4', '5'];
+    selectedValue: number;   
+    
+    countStar(star: any) {
+      if(this.config.userResponse){
+        // tab.selected = !tab.selected;
+        this.model.ans = star;
+        // console.log(tab);
+      }
+    }
+  
   selectOption(num:any){
     if(this.config.userResponse){
       // tab.selected = !tab.selected;
