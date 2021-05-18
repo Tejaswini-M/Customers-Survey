@@ -29,6 +29,7 @@ export class MixedTypeComponent implements OnInit {
       { id:3, value:'',selected:false}
     ]
   }
+
   submitted = false; 
   tabsLength: any;
   selectedTab:any=[];
@@ -61,9 +62,24 @@ export class MixedTypeComponent implements OnInit {
   drop(event: CdkDragDrop<any[]>){
     moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
   }
-  // selectOption(){
-  //   this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
-  //   console.log(this.selectedTab);
-  // }
+
+  selectOption(tab:any){
+    if(this.config.userResponse){
+      // tab.selected = !tab.selected;
+      this.model.tabs
+      // console.log(tab.selected);
+    }
+    //this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
+    //console.log(this.selectedTab);
+  }
+
+//   example($event) {
+//     console.log(event.target['checked']);
+//  }
+//  example(event: any) {
+//   console.log(event.target['checked']);
+//   this.radioStatus = false;
+// }
+
 
 }

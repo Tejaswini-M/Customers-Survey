@@ -19,8 +19,8 @@
         <!-- </form> -->
     </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
-        <h3>{{model.qns}}</h3>
-        <div class="flex-display dynamic ">
+        <h3 class="question font-bold">{{model.qns}}</h3>
+        <div class="flex-display content-left line">
             <!-- <input type="text" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='short'">
             <textarea rows="5" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea> -->
             <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="model.ansType=='short'">

@@ -9,45 +9,53 @@
     margin: 4px;
     width: 70px;
   }
-  
-  .mat-slider-horizontal {
-    width: 400px;
-  }
-  
-  .mat-slider-vertical {
-    height: 300px;
-  }
-  
-  .mat-card + .mat-card {
-    margin-top: 8px;
-  }
-
-  .number{
-    width: 70px;
-    height: 30px;
-    text-align: center;
-  }
-
-  .mat-form-field{
-    width: auto;
-  }  
 
   //new code
 
-  .cont {
-    //width: 93%;
-    max-width: 350px;
-    text-align: center;
-    margin: 1% auto;
-    padding: 1px 0;
-    //background: #111;
-    color: #EEE;
-    //border-radius: 5px;
-    //border: thin solid #444;
-    //overflow: hidden;
-  }
+  // .cont {
+  //   //max-width: 513px; 
+  //   text-align: center;
+  //   /* margin: 1% auto; */
+  //   color: #EEE;
+  //   margin-top: -30px;
+  //   /* min-width: 254px; */
+  // }
   
   div.stars {
-    width: 270px;
-    display: inline-block;
+    width: auto !important;
+    // width: 270px;
+    // display: inline-block;
+    display: flex;
+    justify-content: center;
   }
+
+.num-rate{
+  background-color: #D1D7DA;
+  width: 37px;
+  /* min-width: 50px; */
+  /* width: 52px; */
+  padding: 5px;
+  margin: 5px;
+  margin-top: 24px;
+}
+
+.text-btns {
+  float:right;
+  //margin-left:-10px !important;
+}
+.text-btns button{
+  margin:10px;
+}
+
+// button:hover{
+//   background-color: #00a3ad;
+// }
+
+// button:active {
+//   background-color:#03aab3 !important;
+//   cursor: pointer;
+// }
+
+.left-label{
+  position: absolute;
+}

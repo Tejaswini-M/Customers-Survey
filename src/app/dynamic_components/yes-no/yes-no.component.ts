@@ -15,10 +15,14 @@ export class YesNoComponent implements OnInit {
     comp:'YesNoComponent',
     qns:'',
     tab:'',
+    // tabs:[
+    //   { id:'', value:'',selected:false},
+    //   { id:'', value:'',selected:false},
+    // ]
   }
   @Input() data: any;
   @Output() changedData = new EventEmitter<any>();
-  tab:any;
+  
 
   ngOnInit(): void {
   }
@@ -43,9 +47,10 @@ export class YesNoComponent implements OnInit {
   }
   captureSentiment(sentiment:any) {
     if(this.config.userResponse){
-      console.log(sentiment);
+      // console.log(sentiment);
+      // sentiment.selected=true;
       this.model.tab=sentiment;
-      //return sentiment=='like' ? this.model.tab=sentiment :  this.model.tab=sentiment;
+      // return sentiment=='yes' ? this.model.tab=sentiment :  this.model.tab=sentiment;
     }
   }
 }

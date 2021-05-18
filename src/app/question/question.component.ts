@@ -210,7 +210,7 @@ export const dynamicComponents = [
   {name:MultiSelectComponent,isDisable:false,comp:'Multi Select',icon:'glyphicon glyphicon-list'}, 
   {name:YesNoComponent,isDisable:false,comp:'Yes or No',icon:'glyphicon glyphicon-thumbs-up'}, 
   {name:MatrixComponent,isDisable:false,comp:'Matrix',icon:'glyphicon glyphicon-th'},
-  {name:RatingScaleComponent,isDisable:false,comp:'Rating Scale',icon:'glyphicon glyphicon-star'},
+  {name:RatingScaleComponent,isDisable:false,comp:'Rating',icon:'glyphicon glyphicon-star'},
   {name:RankingComponent,isDisable:false,comp:'Ranking',icon:'glyphicon glyphicon-stats'}, 
   {name:OpenEndedComponent,isDisable:false,comp:'Open Ended',icon:'glyphicon glyphicon-pencil'}, 
   {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type',icon:'glyphicon glyphicon-tasks'},

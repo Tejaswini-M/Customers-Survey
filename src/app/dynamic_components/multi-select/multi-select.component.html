@@ -25,8 +25,8 @@
         <!-- </form> -->
     </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true">
-        <h3>{{model.qns}}</h3>
-        <div class="flex-display dynamic">
+        <h3 class="question font-bold">{{model.qns}}</h3>
+        <div class="flex-display content-left line">
             <!-- <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
                 <button  *ngIf="tab.value" class="btn-tab bg-grey">{{tab.value}}</button>
             </div> -->

@@ -29,5 +29,7 @@ export class UserComponent implements OnInit {
   }
 
   status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];
+  
+  numbers = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9','10'];
 
 }

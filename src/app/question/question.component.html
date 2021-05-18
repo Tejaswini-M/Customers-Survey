@@ -1,7 +1,6 @@
 <app-header></app-header>
 <!-- <h1 class="center-align">Survey Home</h1> -->  
-<div class="flex-display container" *ngIf="!config.userResponse">
-    <h3 class="glyphicon glyphicon-home" routerLink="/"></h3>
+<div class="flex-display content bg-white" *ngIf="!config.userResponse">
     <div class="survey-name">
         <input type="text" placeholder="Enter Survey Name" class="survey-title font-bold" value={{config.survey.title}}
         [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
@@ -29,7 +28,7 @@
             <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag>
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <button  data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-yes-no></app-yes-no>
     
                     <!-- <div><i *ngIf="!cmp.isDisable" class="disable">reorder</i>
@@ -40,14 +39,14 @@
                 <div *ngIf="cmp.componentType.name=='RankingComponent'" class="each">
 
                     <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-ranking></app-ranking>
             
                 </div>
                 <div *ngIf="cmp.componentType.name=='RatingScaleComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-rating-scale></app-rating-scale>
             
                    
@@ -55,7 +54,7 @@
                 <div *ngIf="cmp.componentType.name=='MultiSelectComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal"  *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                    <app-multi-select></app-multi-select>
             
                     
@@ -63,7 +62,7 @@
                 <div *ngIf="cmp.componentType.name=='MatrixComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal"  *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-matrix></app-matrix>
                     
                     
@@ -71,21 +70,21 @@
                 <div *ngIf="cmp.componentType.name=='MixedTypeComponent'" class="each">
 
                     <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-mixed-type></app-mixed-type>
                     
                 </div>
                 <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'" class="each">
 
                     <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-image-choice></app-image-choice>
                    
                 </div>
                 <div *ngIf="cmp.componentType.name=='OpenEndedComponent'" class="each">
 
                     <button data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal"  *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button> 
-                    <p >{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}. </p>
                     <app-open-ended></app-open-ended>
                     
                    
@@ -112,7 +111,8 @@
 
         <div class="send" *ngIf="!config.userResponse">
             <div *ngIf="config.allValues.length!=components.length && components.length>0"  class="error-message">Please fill all selected questionarie!!!</div>
-            <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse" id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
+            <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse || config.survey.title=='' || config.survey.description==''" 
+                id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
         </div>
         <div class="send" *ngIf="config.userResponse" >
             <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()" id="listOfRecords">Done</button>
