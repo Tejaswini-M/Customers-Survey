@@ -17,7 +17,7 @@
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
           <h3 class="question font-bold">{{model.qns}}</h3>
           <div class="flex-display content-left">
-            <div  style="margin-top: -30px;" >
+            <div  style="margin-top: -35px;" >
               <ngx-star-rating [(ngModel)] ="model.ans" name="ans" #ans="ngModel" 
                 [id]="'rating'" *ngIf="model.ansType=='star'" [class.disabled]="!this.config.userResponse">
               </ngx-star-rating >

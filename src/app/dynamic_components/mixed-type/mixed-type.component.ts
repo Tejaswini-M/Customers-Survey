@@ -20,30 +20,31 @@ export class MixedTypeComponent implements OnInit {
   ];
 
   model = {
-    comp:'MixedTypeComponent',
     qns:'',
+    tab:'',
     ans:'',
-    tabs:[
-      { id:1, value:'',selected:false},
-      { id:2, value:'',selected:false},
-      { id:3, value:'',selected:false}
-    ]
+    comp:'MixedTypeComponent'    
+    // tabs:[
+    //   { id:1, value:'',selected:false},
+    //   { id:2, value:'',selected:false},
+    //   { id:3, value:'',selected:false}
+    // ]
   }
 
   submitted = false; 
   tabsLength: any;
   selectedTab:any=[];
 
-  addTable() {
-    const obj =  { id:this.model.tabs.length+1, value:'',selected:false};
-    this.model.tabs.push(obj);
-  }
-  deleteRow(i:any) {
-    this.model.tabs.splice(i,1);
-  }
+  // addTable() {
+  //   const obj =  { id:this.model.tabs.length+1, value:'',selected:false};
+  //   this.model.tabs.push(obj);
+  // }
+  // deleteRow(i:any) {
+  //   this.model.tabs.splice(i,1);
+  // }
  
   onSubmit() {
-    this.tabsLength=this.model.tabs.length;
+    // this.tabsLength=this.model.tabs.length;
     console.log(this.tabsLength);
     console.log("value");
     this.submitted =true;
@@ -59,27 +60,19 @@ export class MixedTypeComponent implements OnInit {
   edit() {
     this.config.userResponse ? this.submitted=true : this.submitted=false;
   }
-  drop(event: CdkDragDrop<any[]>){
-    moveItemInArray(this.model.tabs, event.previousIndex, event.currentIndex);
-  }
+  // drop(event: CdkDragDrop<any[]>){
+  //   moveItemInArray(this.model.tab, event.previousIndex, event.currentIndex);
+  // }
 
-  selectOption(tab:any){
+  selectOption(num:any){
     if(this.config.userResponse){
-      // tab.selected = !tab.selected;
-      this.model.tabs
-      // console.log(tab.selected);
+      // tab.selected =!tab.selected;
+      this.model.tab=num;    
     }
     //this.selectedTab = this.model.tabs.filter(v=> v.selected== true);
     //console.log(this.selectedTab);
   }
 
-//   example($event) {
-//     console.log(event.target['checked']);
-//  }
-//  example(event: any) {
-//   console.log(event.target['checked']);
-//   this.radioStatus = false;
-// }
-
+  options = ['Very satisfied','Satisfied', 'Neutral', 'Dissatisfied','Very dissatisfied'];
 
 }

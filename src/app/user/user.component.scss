@@ -206,15 +206,9 @@ margin-left: 50px;
   }
   
   .btn-tab{
-    width: 25px;
-    margin: 5px;
-    /* padding: 5px; */
-    /* color: #000000; */
-    /* box-sizing: border-box; */
-    cursor: pointer;
-    font-size: 16px;
-    overflow: hidden;
-    float: left;
+    width: auto;
+  margin: 8px;
+  min-width: 50px
   }
 
   //Matrix
@@ -265,18 +259,6 @@ margin-left: 50px;
     margin: 4px;
     width: 70px;
   }
-
-  //new code
-
-  // .cont {
-  //   //max-width: 513px; 
-  //   text-align: center;
-  //   /* margin: 1% auto; */
-  //   color: #EEE;
-  //   margin-top: -30px;
-  //   /* min-width: 254px; */
-  // }
-  
  
   .num-rate{
     background-color: #D1D7DA;
