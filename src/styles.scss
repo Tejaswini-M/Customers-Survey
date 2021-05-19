@@ -55,15 +55,9 @@ button {
     font-family: markPro-Bold;
     opacity: 0.9;
 }
-<<<<<<< HEAD
-// button:hover {
-//     opacity: 0.9;
-// }
-=======
 button:hover {
     opacity: 1.0;
 }
->>>>>>> ed372309e1897dd498c5bb654880e41f8c489618
 .flex-display {
     display:flex;
     flex-direction: row;
@@ -191,18 +185,13 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     justify-content: left;
 }
 label.star::before{
-<<<<<<< HEAD
-    font-size: 25px;
-=======
     font-size: 24px;
->>>>>>> ed372309e1897dd498c5bb654880e41f8c489618
     padding: 0px !important;
 }
 
 div.stars{
     width: auto !important;
 }
-<<<<<<< HEAD
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
@@ -218,8 +207,6 @@ input:-webkit-autofill:focus {
 .modal-footer {
     border-top :0px !important;
 }
-=======
->>>>>>> ed372309e1897dd498c5bb654880e41f8c489618
 @media screen  and (max-width:767px) {
     body {
         margin:0 18px;
@@ -234,11 +221,6 @@ input:-webkit-autofill:focus {
     }
     .content-left{
         justify-content: center;
-<<<<<<< HEAD
-    }
-=======
-
->>>>>>> ed372309e1897dd498c5bb654880e41f8c489618
 }
 @media screen and (max-width:300px) {
     label.star::before{

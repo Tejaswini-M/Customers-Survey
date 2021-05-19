@@ -181,13 +181,13 @@ export class QuestionComponent implements OnInit{
     // }
     // const componentFactory = this.compFactoryResolver.resolveComponentFactory(adItem.component);
     const cmpFactory= this.compFactoryResolver.resolveComponentFactory(name);
-    const cmpRef= this.viewContainerRef.createComponent(cmpFactory);
+    // const cmpRef= this.viewContainerRef.createComponent(cmpFactory);
     // let compAndData = new CompType();
     //     compAndData.component = cmpFactory;
     //     compAndData.data = this.data;
     //     this.components.push(compAndData);
     // this.config.compns=this.components;
-    // this.components.push(cmpFactory);
+    this.components.push(cmpFactory);
     // this.components.push( this.viewContainerRef.createComponent(cmpFactory));
     // const adItem = this.ads;
     // cmpRef.instance.data = AdItem;
