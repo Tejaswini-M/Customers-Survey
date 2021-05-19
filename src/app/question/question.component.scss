@@ -1,6 +1,23 @@
 .survey-name, .survey-desc {
-    // margin: 0 10px;
-    padding:10px;
+    width:100%;
+    input,
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+        // border: 1px solid grey  !important;
+        border:0 !important;
+        border-bottom: 1px solid !important;
+        // -webkit-text-fill-color:black !important;
+        -webkit-box-shadow: 0 0 0px 1000px #f1f4f6 inset !important;
+                box-shadow: 0 0 0px 1000px #f1f4f6 inset !important;
+        transition: background-color 5000s ease-in-out 0s !important;
+    }
+    .survey-title {
+        font-size:16px !important;
+    }
+    input.ng-invalid.ng-touched {
+        border-bottom: 1px solid  red !important;
+    }
 }
 .new {
     width:100% !important;
@@ -107,6 +124,20 @@ p{
 #myPageLabel {
     margin-top: 5px!important;
     color: #16325c;
+}
+.modal-footer {
+    .closed, .yes-delete {
+        // color:white;
+        border-color:#ACAFB2 ;
+    }
+    .closed{
+        background-color:white;
+        // color:black;
+    }
+    .yes-delete{
+        background-color:#D93A1B;
+        color:white;
+    }
 }
 
 @media screen  and (max-width:767px){

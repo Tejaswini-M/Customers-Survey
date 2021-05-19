@@ -26,3 +26,14 @@ img {
     width:100px;
     padding:10px;
 }
+.file {
+    visibility: hidden;
+    position: absolute;
+  }
+.file-name {
+    width:80% !important;
+}
+.browse {
+    margin-right:40px;
+    border:none;
+}

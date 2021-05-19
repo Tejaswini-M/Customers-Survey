@@ -1,5 +1,5 @@
-export class Item {
-    comp!: number;
-    qns!: string;
-    ans!: string;
-  }
+import { Type } from '@angular/core';
+
+export class AdItem {
+  constructor(public component: Type<any>, public data: any) {}
+}
