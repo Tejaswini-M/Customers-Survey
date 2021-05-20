@@ -1,10 +1,6 @@
 <app-header></app-header>
 <!-- <h1 class="center-align">Survey Home</h1> -->  
-<<<<<<< HEAD
 <!-- <div class="flex-col content survey-top bg-white" *ngIf="!config.userResponse">
-=======
-<div class="flex-display content bg-white" *ngIf="!config.userResponse">
->>>>>>> feature_branch
     <div class="survey-name">
         <input type="text" placeholder="Enter Survey Name" class="input-field survey-title font-bold" value={{config.survey.title}}
         [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
@@ -45,13 +41,8 @@
             </div>
         </div> -->
         <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
-<<<<<<< HEAD
            
             <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag [cdkDragDisabled]="config.userResponse">
-=======
-            <!-- <ng-container #appDynamic></ng-container> -->
-            <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag>
->>>>>>> feature_branch
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <button  data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p class="question font-bold">{{i+1}}. </p>
