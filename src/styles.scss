@@ -123,7 +123,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     //padding: 20px 10px;
     padding: 15px;
     margin-bottom: 10px;
-    border-bottom: solid 1px #E3E9EC;
+    border-bottom: solid 2px #acafb2;
     flex-wrap: wrap;
     justify-content: center;
     color: #000000;
@@ -146,14 +146,18 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     margin-top: 10px;
 }
 .save-tab{
-    margin-top: 5%;
+    // margin-top: 5%;
     background-color: #D1D7DA;
+    border: 2px solid #acafb2;
+    float: right;
 }
 .save-tab:hover{
     background-color:#acafb2;
 }
 .edit-tab{
     background-color: #D1D7DA;
+    float: right;
+    border: 2px solid #acafb2;
 }
 .edit-tab:hover{
     background-color:#acafb2;
@@ -177,7 +181,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 
 }
 .line{
-    margin-top: 24px;
+    margin-top: 14px;
 }
 
 .content-left {
@@ -221,6 +225,7 @@ input:-webkit-autofill:focus {
     }
     .content-left{
         justify-content: center;
+
 }
 @media screen and (max-width:300px) {
     label.star::before{

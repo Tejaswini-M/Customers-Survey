@@ -56,15 +56,21 @@
                         [id]="'rating'" *ngIf="cmp.ansType=='star'"
                         ></ngx-star-rating >
                     </div>
-                    <div  class="flex-display content-left" *ngIf="cmp.ansType=='number'">
-                        <!-- <p class="left-label">Least Likely</p> -->
-                            <div *ngFor= "let num of numbers" >
-                              <button class="btn num-rate" type="button" (click)="this.cmp.ans =num"                 
-                              [ngClass]="{'active':cmp.ans=== num}"
-                              >{{num}}</button>
-                            </div>
-                            <!-- <p class="right">Most Likely</p> -->
-                    </div>
+                    <div *ngIf="cmp.ansType=='number'">
+                        <div class="left-label"><p>Least Likely</p></div>
+                        <div  class="flex-display content-left" >
+                          <!-- <p class="left-label">Least Likely</p> -->
+                          <div *ngFor= "let num of numbers" >
+                            <button class="num-rate" (click)="this.cmp.ans =num"                 
+                            [ngClass]="{'active':cmp.ans=== num}"
+                            >{{num}}</button>
+                          </div>
+                          <!-- <p class="right">Most Likely</p> -->
+                          <!-- <div class="label"><p>Least Likely</p></div>-->
+                          <!-- <div class="right-label"><p>Most Likely</p></div>  -->
+                        </div>
+                        <div class="right-label"><p>Most Likely</p></div> 
+                      </div>
                 </div>
             </div>
         </div>
@@ -111,7 +117,7 @@
                 <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>                
                     <div class="flex-display content-left line">
                         <div *ngFor= "let num of options" >
-                            <input class="btn-tab-mul bg-grey" type="radio" (click)="this.cmp.tab =num" 
+                            <input class="btn-tab bg-grey" type="radio" (click)="this.cmp.tab =num" 
                             [ngClass]="{'active':cmp.tab=== num}" name="cmp.tab">{{num}}
                         </div>
                     </div>   
