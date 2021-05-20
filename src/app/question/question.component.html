@@ -1,7 +1,6 @@
 <app-header></app-header>
 <!-- <h1 class="center-align">Survey Home</h1> -->  
-<div class="flex-display container" *ngIf="!config.userResponse">
-    <h3 class="glyphicon glyphicon-home" routerLink="/"></h3>
+<div class="flex-display content bg-white" *ngIf="!config.userResponse">
     <div class="survey-name">
         <input type="text" placeholder="Enter Survey Name" class="survey-title font-bold" value={{config.survey.title}}
         [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
@@ -26,7 +25,7 @@
     <div class="comps2" [ngClass]="{'new': config.userResponse==true}">
         <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
             <!-- <ng-container #appDynamic></ng-container> -->
-            <div *ngFor="let cmp of components; let i=index" class="box bg-white" cdkDrag>
+            <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag>
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <button  data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
                     <p class="question font-bold">{{i+1}}. </p>
@@ -109,21 +108,44 @@
                   </div>
             </div>
         </div>
+
         <div class="send" *ngIf="!config.userResponse">
-            <div *ngIf="config.allValues.length!=components.length && components.length>0" class="error-message">Please fill all selected questionarie!!!</div>
-            <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
+            <div *ngIf="config.allValues.length!=components.length && components.length>0"  class="error-message">Please fill all selected questionarie!!!</div>
+            <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse || config.survey.title=='' || config.survey.description==''" 
+                id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
         </div>
-        <div class="send" *ngIf="config.userResponse">
-            <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button>
+        <div class="send" *ngIf="config.userResponse" >
+            <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()" id="listOfRecords">Done</button>
             <!-- <button routerLink="/thank" [class.disabled]="(config.allValues.length!=config.survey.list.length && config.survey.list.length>0) || config.userResponse" *ngIf="config.survey.list.length>0" (click)="onSubmit()">Done</button> -->
         </div>
     </div>
+    
+
     <!-- <form [formGroup]="masterForm" (ngSubmit)="onSave()"> -->
     
     <!-- </form> -->
     <!-- masterForm = {{ masterForm.value | json }} -->
     <!-- [class.disabled]="config.allValues.length!=components.length || config.adminResponse==false"  -->
 </div>
+<div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
+
+    <pagination-controls  id="listOfRecords" maxsize = "5" (pageChange)="page = $event"></pagination-controls>
+</div>
+<!-- <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
+    <button type="button" class="btn btn-default btn-sm repeater-prev page-end" disabled="disabled" style="height: 25px; width: 35px;">
+       <span class="glyphicon glyphicon-chevron-left" style="top: 0! important;"></span>
+       <span class="sr-only">Previous Page</span>
+    </button>
+    <label class="page-label" id="myPageLabel" style="margin: 0.5rem;">Page</label>
+    <input type="text" class="form-control repeater-secondaryPaging" aria-labelledby="myPageLabel" value=1 style="margin:0! important; background-color: none! important; width: 35px; height: 25px;">
+    <span style="margin: 0.5rem; font-family: 'MarkPro-Bold';">of<span class="repeater-pages" style="margin: 0.5rem; font-family: 'MarkPro-Bold';">{{totalPages}}</span></span>
+    <button type="button" class="btn btn-default btn-sm repeater-next" style="height: 25px; width: 35px;">
+        <span class="glyphicon glyphicon-chevron-right" style="top: 0! important;"></span>
+        <span class="sr-only">Next Page</span>
+    </button>
+</div> -->
+ 
+
 <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button> -->
 
 <!-- Modal -->

@@ -3,8 +3,8 @@
     <h3 class="center-align">Rating-Scale Question</h3>
         <div class= "mul-qns" >
             <div class="text-btns">
-              <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}" class="edit-tab">Star Rating</button>
-              <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit-tab">Number Rating</button>
+              <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}"  class="edit">Star Rating</button>
+              <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit">Number Rating</button>
               <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
             </div>
           <br>
@@ -22,18 +22,18 @@
                 [id]="'rating'" *ngIf="model.ansType=='star'" [class.disabled]="!this.config.userResponse">
               </ngx-star-rating >
             </div>
-              <div  class="flex-display content-left" *ngIf="model.ansType=='number'">
+            <div *ngIf="model.ansType=='number'">
+              <div class="left-label"><p>Least Likely</p></div>
+              <div  class="flex-display content-left" >
                 <!-- <p class="left-label">Least Likely</p> -->
                 <div *ngFor= "let num of numbers" >
-                  <button class="btn num-rate" type="button"  
+                  <button class="num-rate"   
                   (click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
                   [class.disabled]="!this.config.userResponse">{{num}}</button>
                 </div>
-                <!-- <p class="right">Most Likely</p> -->
-                <!-- <div class="label"><p>Least Likely</p></div>
-                <div class="label"><p>Most Likely</p></div> -->
               </div>
-            <!-- </div> -->
+              <div class="right-label"><p>Most Likely</p></div> 
+            </div>
           </div>
       <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>

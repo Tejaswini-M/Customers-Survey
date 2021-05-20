@@ -22,15 +22,22 @@ export class QuestionComponent implements OnInit{
 
   cmpRef: any;
   comps: any;
+  totalPages = 10;
   qnsType = dynamicComponents;
   components: any[] = [];
   //components: CompType[] = [];
   masterForm!: FormGroup;
   viewOption:any;
+    collection = { count: 20, data: [] };
+
   // title:any;
   // description:any;
   createResponse=false;
   deleteIndex:any;
+ data:any;
+ totalRecords: any;
+ page: number = 1;
+  
   ngOnInit(): void {
     this.config.userResponse=false;
     this.viewOption=this.route.snapshot.data.viewOption;
@@ -49,6 +56,8 @@ export class QuestionComponent implements OnInit{
     this.config.userValues=this.config.allComps[index].list;
   }
   count=0;
+
+ 
   onSave() {
     console.log(this.config.allComps)
     //console.log(this.masterForm.value);
@@ -87,6 +96,10 @@ export class QuestionComponent implements OnInit{
     this.config.allValues=[];
     this.config.components.push(this.components);
     console.log( this.config.components);
+    this.data = new Array<any>()
+    this.data = this.config.components;
+    console.log("data at pagination:", this.data);
+
   //   this.components.forEach(component => {
   //     // how to access the data from each component??
   //     console.log(component.data);
@@ -118,8 +131,8 @@ export class QuestionComponent implements OnInit{
       
         //return false;
     });//window.location.hash="no-back-button";
-
-     //window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+    
+  //window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
      //window.onhashchange=function(){confirm("Changes you made may not be saved.")}
   }
   
@@ -144,7 +157,7 @@ export class QuestionComponent implements OnInit{
   // }
  
 
-
+  
   loadComponent(name:any) {
     // const viewContainerRef = this.entryContainer.viewContainerRef;
     //const cmpClass = this.qnsType.find(cmp => cmp.name === name);

@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
     //   this.config.userValues=this.config.allComps[index].list;
     // }
   }
+  
   viewAdmin(index : any){
     //this.config.userResponse=false;
     //this.config.adminResponse=true;

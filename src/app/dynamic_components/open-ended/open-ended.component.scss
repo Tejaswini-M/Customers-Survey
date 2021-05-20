@@ -4,11 +4,12 @@ textarea {
 }
 .text-btns {
     float:right;
+    padding: 5px;
     //margin-left:-10px !important;
 }
-.text-btns button{
-    margin:10px;
-}
+// .text-btns button{
+//     margin:10px;
+// }
 .answer {
     float:left;
 }
@@ -19,3 +20,18 @@ textarea {
     width: 100%;
     //margin: 10px;
 }
+.edit{
+    text-decoration:none;
+      float:left;
+      width:130px;
+      // height:35px;
+      background:none;
+      border:2px solid rgb(204, 204, 211);
+      // border-radius: 0px;
+  }
+  
+  .edit.active{
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border: 1px solid rgb(107, 216, 247);
+    background-color: white !important;
+  }

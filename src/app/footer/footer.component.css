@@ -11,19 +11,21 @@
 .row{
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
+    /* margin-right: -15px; */
     /* margin-left: -15px; */
+    margin: 10px;
 }
 .row1{
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
+    /* margin-right: -15px; */
     /* margin-left: -15px; */
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    /* margin: 10px; */
 }
-.support{
+/* .support{
 	margin: 10px;
-}
+} */
 .heading{
     color: white;
 }
@@ -31,7 +33,7 @@ ul {
 	margin:0;
 	padding:0;
 	list-style:none;
-	width:25%;
+	width:30%;
 }
 a {
 	color: teal;
@@ -53,31 +55,27 @@ a:hover, a:active {
     display: flex;
     text-align: left;
     flex-flow: row wrap;
-    margin-left: -10px;
+    /* margin-left: -10px; */
 }
 .foot{
     padding: 5px;
     margin-right: 5px;
 }
 
-@media only screen and (max-width: 768px){
-    .row {
-        /* min-width: 165%; */
-        margin-left: 0px;
-        /* flex-direction: column; */
+@media only screen and (max-width: 767px){
+    #site-footer ,h4{
+        font-size: 10px;
+    }
+    .row .row1 {
+        margin: 10px;
     }
     .icon{
         margin: 0px;
-        /* margin-top: 20px; */
         text-align: left;
         width: 40%  ;
-        /* margin-left: -10px; */
-    }
-    .row1{
-        margin-left: 10px;
-        /* flex-direction: column; */
+        font-size: 10px;
     }
     ul{
-        width: 42%;
+        width: 50%;
     }
 }

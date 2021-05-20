@@ -53,9 +53,10 @@ button {
     padding: 10px;
     border-radius: 5px;
     font-family: markPro-Bold;
+    opacity: 0.9;
 }
 button:hover {
-    box-shadow: yellow;
+    opacity: 1.0;
 }
 .flex-display {
     display:flex;
@@ -65,8 +66,9 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
-.line{
-    margin-top: 24px;
+.content-left {
+    flex-wrap: wrap;
+    justify-content: left;
 }
 label {
     margin-top: 24px !important;
@@ -121,7 +123,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     //padding: 20px 10px;
     padding: 15px;
     margin-bottom: 10px;
-    border-bottom: solid 1px #E3E9EC;
+    border-bottom: solid 2px #acafb2;
     flex-wrap: wrap;
     justify-content: center;
     color: #000000;
@@ -142,17 +144,21 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
 }
 
 .save-tab{
-    margin-top: 5%;
+    // margin-top: 5%;
     background-color: #D1D7DA;
+    border: 2px solid #acafb2;
+    float: right;
 }
 .save-tab:hover{
-    background-color:#ACAFB2;
+    background-color:#acafb2;
 }
 .edit-tab{
     background-color: #D1D7DA;
+    float: right;
+    border: 2px solid #acafb2;
 }
 .edit-tab:hover{
-    background-color:#ACAFB2;
+    background-color:#acafb2;
 }
 .delete-tab {
     margin-left: -20px;
@@ -171,6 +177,9 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     }
 
 }
+.line{
+    margin-top: 14px;
+}
 
 .content-left {
     flex-wrap: wrap;
@@ -185,6 +194,9 @@ div.stars{
     width: auto !important;
 }
 @media screen  and (max-width:767px) {
+    body {
+        margin:0 18px;
+    }
     .mod-head {
         .close {
             margin-left: 0 !important;
@@ -194,6 +206,8 @@ div.stars{
     h3 {
         font-size: 14px;
     }
+    .content-left{
+        justify-content: center;
 
 }
 @media screen and (max-width:300px) {
@@ -204,4 +218,4 @@ div.stars{
         float: none;
     }
     
-}
+}}
