@@ -4,7 +4,7 @@
         <!-- <form #mulForm="ngForm"> -->
             <div class= "mul-qns">
                 <label>Enter your question</label>
-                <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                 <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
             </div>
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
@@ -23,7 +23,7 @@
             </div>
         </div> -->
         <h3 class="question font-bold">{{model.qns}}</h3>
-        <div class="thumb flex-display content-left">
+        <div class="thumb flex-display content-left line">
             <div (click)="captureSentiment('yes')" [ngClass]="{'active':model.tab==='yes'}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
                 <input type="radio" id="yes" class="radio-check" value="yes" [checked]="model.tab=='yes'">

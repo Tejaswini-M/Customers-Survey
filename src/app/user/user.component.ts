@@ -24,10 +24,9 @@ export class UserComponent implements OnInit {
     moveItemInArray(this.config.userValues.list[i].tabs, event.previousIndex, event.currentIndex);
   }
 
-  status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];
-  
+  stars = ['1', '2', '3', '4', '5'];
+  status = ['Very Good', 'Good', 'Fair', 'Poor', 'Very Poor'];  
   numbers = ['0','1', '2', '3', '4', '5', '6', '7', '8', '9','10'];
-
   options = ['Very satisfied','Satisfied', 'Neutral', 'Dissatisfied','Very dissatisfied'];
 
 }

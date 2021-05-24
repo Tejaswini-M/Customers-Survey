@@ -5,7 +5,7 @@
             <div class= "mul-qns">
                 <div>
                     <label>Enter your question</label>
-                    <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                    <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                     <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
                 </div>
                 
@@ -13,8 +13,25 @@
                     <label>Enter your answer</label>                    
                     <table>
                         <tr *ngFor="let item of model.tabs; let i=index">
-                            <td><input type="file" (change)="onFileChanged($event,i)" 
-                                class="input-field" required></td>
+                            <td>
+                                <div class="flex-display">
+                                    <input style="display: none"type="file" (change)="onFileChanged($event,i)" #fileInput>
+                                    <input type="text" class="input-field file-name" disabled value={{item.name}} placeholder="Upload File" id="file">
+                                    <!-- <div class="input-group-append"> -->
+                                      <button type="button" (click)="fileInput.click()" style="margin-top:10px;border-top-left-radius: 0; border-bottom-left-radius: 0;" 
+                                      class="browse btn btn-primary">Browse</button>
+                                    <!-- </div> -->
+                                </div>
+                                <!-- <input type="file" name="img[]" class="file" #fileInput  (change)="onFileChanged($event,i)" accept="image/*">
+                                <div class="input-group my-3 flex-display">
+                                    <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
+                                    <div class="input-group-append">
+                                      <button type="button" class="browse btn btn-primary" (click)="fileInput.click()">Browse...</button>
+                                    </div>
+                                </div> -->
+                            </td>
+                            <!-- <td><input type="file" (change)="onFileChanged($event,i)" 
+                                class="input-field" value="Browse" required></td> -->
                                 <!-- [(ngModel)] ="item.value" name="ans" #ans="ngModel"  -->
                             <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
                             <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->

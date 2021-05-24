@@ -1,4 +1,4 @@
-import { Component, HostListener, ComponentFactoryResolver, ComponentRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, HostListener, ComponentFactoryResolver, ComponentRef, OnInit, ViewChild, ViewContainerRef, Input } from '@angular/core';
 import { MatrixComponent } from '../dynamic_components/matrix/matrix.component';
 import { MultiSelectComponent } from '../dynamic_components/multi-select/multi-select.component';
 import { YesNoComponent } from '../dynamic_components/yes-no/yes-no.component';
@@ -12,6 +12,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ConfigService } from '../services/config.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlatformLocation } from '@angular/common';
+import { AdItem } from '../item';
 
 @Component({
   selector: 'app-question',
@@ -119,6 +120,7 @@ export class QuestionComponent implements OnInit{
   onSubmit(){
     console.log(this.config.userValues);
   }
+  @Input() ads: AdItem[] = [];
   @ViewChild('appDynamic', { static: true, read: ViewContainerRef })
   viewContainerRef:any;
   //component: ComponentRef<any>[]=[];
@@ -177,16 +179,18 @@ export class QuestionComponent implements OnInit{
     //     this.components.push(componentRef);
     //   }
     // }
+    // const componentFactory = this.compFactoryResolver.resolveComponentFactory(adItem.component);
     const cmpFactory= this.compFactoryResolver.resolveComponentFactory(name);
-    //const cmpRef= this.viewContainerRef.createComponent(cmpFactory);
+    // const cmpRef= this.viewContainerRef.createComponent(cmpFactory);
     // let compAndData = new CompType();
     //     compAndData.component = cmpFactory;
     //     compAndData.data = this.data;
     //     this.components.push(compAndData);
     // this.config.compns=this.components;
     this.components.push(cmpFactory);
-    //this.components.push( this.viewContainerRef.createComponent(cmpFactory));
-    
+    // this.components.push( this.viewContainerRef.createComponent(cmpFactory));
+    // const adItem = this.ads;
+    // cmpRef.instance.data = AdItem;
     //let currentComponent = componentRef.instance;
     //this.components.push(componentRef);
     console.log(this.components);
@@ -210,7 +214,7 @@ export const dynamicComponents = [
   {name:MultiSelectComponent,isDisable:false,comp:'Multi Select',icon:'glyphicon glyphicon-list'}, 
   {name:YesNoComponent,isDisable:false,comp:'Yes or No',icon:'glyphicon glyphicon-thumbs-up'}, 
   {name:MatrixComponent,isDisable:false,comp:'Matrix',icon:'glyphicon glyphicon-th'},
-  {name:RatingScaleComponent,isDisable:false,comp:'Rating Scale',icon:'glyphicon glyphicon-star'},
+  {name:RatingScaleComponent,isDisable:false,comp:'Rating',icon:'glyphicon glyphicon-star'},
   {name:RankingComponent,isDisable:false,comp:'Ranking',icon:'glyphicon glyphicon-stats'}, 
   {name:OpenEndedComponent,isDisable:false,comp:'Open Ended',icon:'glyphicon glyphicon-pencil'}, 
   {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type',icon:'glyphicon glyphicon-tasks'},

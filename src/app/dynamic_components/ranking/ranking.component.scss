@@ -1,9 +1,3 @@
-// .delete-tab {
-//   margin-top:-20px;
-//   margin-left: 10px;
-//   // float:right;
-//   background-color: #D1D7DA;
-// }
 .center-align{
   text-align: -webkit-center;   
 }
@@ -18,49 +12,32 @@ table .error-message {
   //  float:right;
    background-color: #D1D7DA;
 }
-//    .drag-icon {
-//     position: relative;
-//     background-color: #acafb2;
-//     color: #fff;
-//     text-align: center;
-//     padding: 8px 15px;
-//     margin: 0px 20px;
-//   }
-//   .drag-icon i {
-//     cursor: move;
-//   }
-//   i.disable{
-//     position: absolute;
-//     cursor: not-allowed !important;
-//     top: 0;
-//     left: 0;
-//     bottom: 0;
-//     right: 0;
-//     color: transparent;
-//   }
 
-  .drag-index {
+.drag-index {
     font-size: 16px;
     font-weight: 500;
-    padding: 9px;
-    margin-left: 10px;
-    padding-left: 15px;    
+    padding: 5px;
+    margin-left: 30px;
+    width: 50px;
+    // padding-left: 15px;    
 }
 
 .example-box {
-  // border: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  align-items: center;
-  background: white;
-  font-size: 16px;
-  width: auto;
-  max-width: 300px;
-  margin-bottom: 15px;
-  cursor: move;
-  border-radius: 5px;
-  font-family: 'MarkPro-Bold';
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    /* background: white; */
+    font-size: 16px;
+    width: auto;
+    max-width: 60%;
+    margin-bottom: 15px;
+    cursor: move;
+    border-radius: 4px;
+    font-family: "MarkPro-Bold";
+    // border: 2px solid #00a3ad;
+    // box-shadow: 1px 1px 4px #00a3ad;
+    /* border: 1px solid #FF6E7E; */
+    // background-color: #F1F4F6 !important;
 }
 
 .sort{
@@ -70,16 +47,13 @@ table .error-message {
   font-size: 15px !important;
   color: black;
   text-align: center;
-  /* border-style: solid; */
-  /* border-width: 1px; */
-  /* border-color: #ccc; */
-  //font-family: "MarkPro";
   font-size: 16px;
   line-height: normal;
   padding: 0.5rem;
-  border-radius: 5px;
-  width: 40px;
-  border: 2px rgb(150 150 150) solid;
+  border-radius: 4px;
+  width: 30px;
+  /* border: 2px #969696 solid; */
+  border: 1px #575859 solid;
 }
 .dot{
   height: 33px;
@@ -89,5 +63,5 @@ table .error-message {
 }
 .values{
   width: 200px;
-  margin-left: 50px;
+  margin-left: 15px;
 }

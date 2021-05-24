@@ -13,9 +13,9 @@ export class ImageChoiceComponent implements OnInit {
     comp:'ImageChoiceComponent',
     qns:'',
     tabs:[
-      { id:'', value:'',selected:false},
-      { id:'', value:'',selected:false},
-      { id:'', value:'',selected:false}
+      { id:'', value:'',name:'',selected:false},
+      { id:'', value:'',name:'',selected:false},
+      { id:'', value:'',name:'',selected:false}
     ]
   }
   submitted = false;
@@ -27,7 +27,7 @@ export class ImageChoiceComponent implements OnInit {
   }
 
   addTable() {
-    const obj =  { id:'', value:'',selected:false};
+    const obj =  { id:'', value:'',name:'',selected:false};
     this.model.tabs.push(obj);
   }
   deleteRow(i:any) {
@@ -65,24 +65,14 @@ export class ImageChoiceComponent implements OnInit {
   onFileChanged(event:any,index:number) {
     if(event.target.files && event.target.files[0]){
       var mount = event.target.files.length;
+      console.log(event.target.files); 
       for(let i=0; i<mount; i++) {
         let reader = new FileReader();
+        console.log(event.target.files[i].name); 
+        this.model.tabs[index].name=event.target.files[i].name;
         reader.readAsDataURL(event.target.files[i]);
         reader.onload = (event:any) => {
-          
-        //this.urls.push(event.target.result);
-        //for(let i=0; i<10; i++) {
-        //let p=this.model.tabs.findIndex(obj=>obj.value=='' || obj.value!='')
-        console.log(index,i)
-        //if(index==i){
-          this.model.tabs[index].value=event.target.result;
-       // }
-          // this.model.tabs.push({id:'',value:event.target.result, selected:false});
-          // console.log(this.model.tabs);
-        //}
-        
-
-        //this.model.tabs=this.urls;
+        this.model.tabs[index].value=event.target.result;
         }
       }
     }
