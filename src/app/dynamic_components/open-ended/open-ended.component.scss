@@ -30,8 +30,8 @@ textarea {
       border-radius: 0px;
   }
   
-  .edit.active{
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    border: 1px solid rgb(107, 216, 247);
+.edit.active{
+    box-shadow: 1px 1px 4px #00a3ad;
+    border: 2px solid #00a3ad;
     background-color: white !important;
-  }
+}

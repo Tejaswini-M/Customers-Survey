@@ -53,15 +53,15 @@ export class RatingScaleComponent implements OnInit {
     console.log(this.data)
   }
   stars = ['1', '2', '3', '4', '5'];
-    selectedValue: number;   
-    
-    countStar(star: any) {
-      if(this.config.userResponse){
-        // tab.selected = !tab.selected;
-        this.model.ans = star;
-        // console.log(tab);
-      }
+  selectedValue: number;   
+  
+  countStar(star: any) {
+    if(this.config.userResponse){
+      // tab.selected = !tab.selected;
+      this.model.ans = star;
+      // console.log(tab);
     }
+  }
   
   selectOption(num:any){
     if(this.config.userResponse){

@@ -36,12 +36,15 @@
                             <!-- <i *ngIf="tabs.isDisable" class="material-icons disable">reorder</i> -->
                             <!-- <i  class="material-icons" >reorder</i>
                         </div> -->
-                        <div class="values" >
-                            <span *ngIf="tab.value">{{tab.value}}</span>
-                        </div>
                         <div class="drag-index">
                             <div class="sort font-bold">{{i+1}}</div>
                         </div>
+                        <div class="values" >
+                            <span *ngIf="tab.value">{{tab.value}}</span>
+                        </div>
+                        <!-- <div class="drag-index">
+                            <div class="sort font-bold">{{i+1}}</div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -51,17 +54,19 @@
             <div>
                 <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
                 <div class="flex-display content-left">
-                    <div  style="margin-top: -30px;" >
-                        <ngx-star-rating [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" 
-                        [id]="'rating'" *ngIf="cmp.ansType=='star'"
-                        ></ngx-star-rating >
-                    </div>
+                     <div  *ngIf="cmp.ansType=='star'">
+                        <ul class="list-inline rating-list" *ngFor="let star of stars" >
+                          <li (click)="this.cmp.ans=star" [ngClass]="{'active': (star <= cmp.ans)}">
+                            <i class="fa fa-star"></i>
+                          </li> 
+                        </ul>
+                      </div>
                     <div *ngIf="cmp.ansType=='number'">
                         <div class="left-label"><p>Least Likely</p></div>
-                        <div  class="flex-display content-left" >
+                        <div  class="flex-display content-left rating" >
                           <!-- <p class="left-label">Least Likely</p> -->
                           <div *ngFor= "let num of numbers" >
-                            <button class="num-rate" (click)="this.cmp.ans =num"                 
+                            <button class="num-rate bg-grey" (click)="this.cmp.ans =num"                 
                             [ngClass]="{'active':cmp.ans=== num}"
                             >{{num}}</button>
                           </div>
@@ -100,10 +105,11 @@
                             <th>Poor</th>
                             <th>Very Poor</th>                  
                         </tr>            
-                        <tr *ngFor="let tab of cmp.tabs" >
-                            <th class="btn-tab1">{{tab.value}}</th>  
+                        <tr *ngFor="let tab of cmp.tabs" class="matrix">
+                            <th><div><button class="btn-tab-rank bg-grey">{{tab.value}}</button></div>
+                            </th>   
                             <th *ngFor="let state of status">
-                                <input type="radio" id="opt1+{{tab.id}}" [(ngModel)]="tab.status" 
+                                <input type="radio" id="opt1+{{tab.id}}" class="radio-check" [(ngModel)]="tab.status" 
                                 value="{{state}}" name="option+{{tab.id}}">
                             </th>              
                         </tr>
@@ -116,17 +122,16 @@
             <div>
                 <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>                
                     <div class="flex-display content-left line">
-                        <div *ngFor= "let num of options" >
-                            <input class="btn-tab bg-grey" type="radio" (click)="this.cmp.tab =num" 
+                        <div *ngFor= "let num of options" class="mixed" >
+                            <input class="btn-tab-mix" type="radio" (click)="this.cmp.tab =num" 
                             [ngClass]="{'active':cmp.tab=== num}" name="cmp.tab">{{num}}
                         </div>
                     </div>   
                         <div>
                             <label >Any Comments ? </label> 
-                            <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." >                    
+                            <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." >                    
                             <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
-                        </div>
-                
+                        </div>                
             </div>
         </div>
         <div *ngIf="cmp.comp=='ImageChoiceComponent'" class="each">          
@@ -146,8 +151,8 @@
             <div>
                 <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
                 <div class="flex-display content-left line">                
-                    <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='short'">
-                    <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="please type here..." *ngIf="cmp.ansType=='long'"></textarea>
+                    <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='short'">
+                    <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='long'"></textarea>
                 </div>
             </div>
         </div>

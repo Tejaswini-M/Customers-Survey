@@ -9,7 +9,7 @@
             </div>
           <br>
               <label>Enter your question  : </label>
-              <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+              <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
               <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
           </div>          
           <button [class.disabled]="qns.invalid || model.ansType=='' "  (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
@@ -17,18 +17,20 @@
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
           <h3 class="question font-bold">{{model.qns}}</h3>
           <div class="flex-display content-left">
-            <div  style="margin-top: -35px;" >
-              <ngx-star-rating [(ngModel)] ="model.ans" name="ans" #ans="ngModel" 
-                [id]="'rating'" *ngIf="model.ansType=='star'" [class.disabled]="!this.config.userResponse">
-              </ngx-star-rating >
+            <div  *ngIf="model.ansType=='star'">
+              <ul class="list-inline rating-list" *ngFor="let star of stars" >
+                <li (click)="countStar(star)" [ngClass]="{'active': (star <= model.ans)}"
+                  [class.disabled]="!this.config.userResponse">
+                  <i class="fa fa-star"></i>
+                </li> 
+              </ul>
             </div>
-            <div *ngIf="model.ansType=='number'">
+            <div *ngIf="model.ansType=='number'" >
               <div class="left-label"><p>Least Likely</p></div>
               <div  class="flex-display content-left" >
                 <!-- <p class="left-label">Least Likely</p> -->
                 <div *ngFor= "let num of numbers" >
-                  <button class="num-rate"   
-                  (click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
+                  <button class="num-rate bg-grey"(click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
                   [class.disabled]="!this.config.userResponse">{{num}}</button>
                 </div>
               </div>

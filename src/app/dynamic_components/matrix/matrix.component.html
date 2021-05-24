@@ -4,14 +4,14 @@
             <div class= "mul-qns">
                 <div>
                     <label>Enter your question  : </label>
-                    <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                    <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                     <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
                 </div>
                 <div>
                     <label>Enter your answer</label>
                     <table>                  
                         <tr *ngFor="let item of model.tabs; let i=index">
-                            <td><input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="item.value" name="value" #ans="ngModel" required></td>                        
+                            <td><input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="item.value" name="value" #ans="ngModel" required></td>                        
                             <td><button (click)="deleteRow(i)" class="delete-tab glyphicon glyphicon-trash"></button></td>
                             <!-- <td><div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div></td> -->
                         </tr>
@@ -35,10 +35,14 @@
                     <th>Very Poor</th>                  
                 </tr>            
                 <tr *ngFor="let tab of model.tabs" cdkDrag>
-                    <th class="btn-tab">{{tab.value}}</th>  
+                    <th>
+                        <div>
+                            <button class="btn-tab bg-grey">{{tab.value}}</button> 
+                        </div>
+                    </th>  
                     <th *ngFor="let state of status">
-                        <input type="radio" id="opt1+{{tab.id}}" [(ngModel)]="tab.status" 
-                        value="{{state}}" name="option+{{tab.id}}">
+                        <input type="radio" id="opt1+{{tab.id}}" class="radio-check" [(ngModel)]="tab.status" 
+                        value="{{state}}" name="option+{{tab.id}}" [checked]="tab.status"> 
                     </th>              
                 </tr>
             </table>

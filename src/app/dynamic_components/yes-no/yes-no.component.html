@@ -4,7 +4,7 @@
         <!-- <form #mulForm="ngForm"> -->
             <div class= "mul-qns">
                 <label>Enter your question</label>
-                <input type="text" placeholder="please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+                <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                 <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
             </div>
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>

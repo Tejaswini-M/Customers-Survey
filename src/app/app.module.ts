@@ -25,7 +25,6 @@ import { HomeComponent } from './home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { FilterPipe } from './filter.pipe';
-import { NgxStarRatingModule } from 'ngx-star-rating';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 
@@ -57,7 +56,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
-    NgxStarRatingModule,
     NgxPaginationModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

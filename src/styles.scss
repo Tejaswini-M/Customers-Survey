@@ -10,7 +10,9 @@ body {
     border-bottom: 1px solid #ddd;
 }
 .bg-grey {
-    background-color: #D1D7DA !important;
+    background-color: #F1F4F6 !important;
+    box-shadow: 1px 1px 4px #00a3ad;
+    border: 2px solid #00a3ad;
 }
 .dflt-padding {
     padding: 3%;
@@ -51,7 +53,7 @@ button {
     cursor: pointer;
     height:38px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 4px;
     font-family: markPro-Bold;
     opacity: 0.9;
 }
@@ -75,6 +77,9 @@ label {
     margin-right:10px;
     font-family: markPro-Bold;
 }
+// h3{
+//     margin-left: 10px;
+// }
 select,input[type="text"], input[type="phone"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
     color: #acafb2;
     margin-top: 10px !important;
@@ -158,6 +163,7 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     background-color: #D1D7DA;
     float: right;
     border: 2px solid #acafb2;
+    margin-top: 2%;
 }
 .edit-tab:hover{
     background-color:#acafb2;

@@ -61,3 +61,7 @@ input[type=radio]:checked:before {
   color:#00a3ad !important;
   // border-radius: 50% !important;
 }
+
+tr:nth-child(even){
+  background-color: #D1D7DA;
+}

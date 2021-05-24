@@ -1,21 +1,21 @@
-// .input1{
-//   //width: 400px;
-//   margin: 5px;
-//   padding: 5px 5px;
-//   display:flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   width: auto;
-//   min-width: 200px;
-// }
 .mixed-type{
   width: auto;
   justify-content: space-evenly;
 }
+
+table {
+  width:100%;
+}
+
+table .error-message {
+  float:right;
+}
+.add-tab {
+  //  float:right;
+   background-color: #D1D7DA;
+}
 .mixed{
-  margin-bottom: 50px;
-  font-size: 16px;
+  margin-right: 20px;
 }
 .comment1{  
     margin-top: 15px !important;
@@ -36,49 +36,44 @@
     margin-top: 24px;
 }
 
-// .btn-tab{
-//   width: 25px;
-//   margin: 5px;
-//   /* padding: 5px; */
-//   /* color: #000000; */
-//   /* box-sizing: border-box; */
-//   cursor: pointer;
-//   font-size: 16px;
-//   overflow: hidden;
-//   float: left;
-// }
-
-// .delete-tab {
-//   margin-top:-20px;
-//   margin-left: 10px;
-//   // float:right;
-//   background-color: #D1D7DA;
-// }
-table {
-  width:100%;
-}
-
-table .error-message {
-  float:right;
-}
-.add-tab {
-  //  float:right;
-   background-color: #D1D7DA;
-}
-// .btn-tab:hover{
-//   background-color: #00a3ad;
-// }
-.btn-tab {
+.btn-tab-mix {
   width: auto;
   margin: 5px;
-  min-width: 25px
+  min-width: 25px;
+  // border: 2px solid #00a3ad;
+  box-shadow: 0px 0px 0px white;
 }
-.num-rate{
-  background-color: #D1D7DA;
-  // width: 37px;
-  /* min-width: 50px; */
-  /* width: 52px; */
-  // padding: 5px;
-  margin: 5px;
-  margin-top: 24px;
+
+input[type=radio] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  outline: none;
+  content: none;
+  margin: 2px;
+}
+
+input[type=radio]:before {
+  font-family: "FontAwesome";
+  content: "\f00c";
+  font-size: 15px;
+  color: transparent !important;
+  background: #D1D7DA;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #888A8C; 
+  border-radius: 50%;
+    padding: 2px;
+  // border: 2px solid black;
+  // margin-right: 5px;
+  // border-radius: 50% !important;
+  // padding:1px;
+}
+
+input[type=radio]:checked:before {
+  color:#00a3ad !important;
+  // border-radius: 50% !important;
+}
+.btn-tab-mix.active{
+  background-color: white !important;
 }
