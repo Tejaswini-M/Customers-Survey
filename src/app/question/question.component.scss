@@ -6,14 +6,21 @@
     input:-webkit-autofill:focus {
         // border: 1px solid grey  !important;
         border:0 !important;
-        border-bottom: 1px solid !important;
-        // -webkit-text-fill-color:black !important;
+        border-bottom: 1px solid #D1D7DA  !important;
+        //   -webkit-text-fill-color: #ACAFB2 !important;
         -webkit-box-shadow: 0 0 0px 1000px #f1f4f6 inset !important;
                 box-shadow: 0 0 0px 1000px #f1f4f6 inset !important;
         transition: background-color 5000s ease-in-out 0s !important;
+        font-family: MarkPro-Bold;
+        height:30px;
+        line-height: 1.6;
     }
     .survey-title {
         font-size:16px !important;
+        // color: #ACAFB2 !important;
+    }
+    .survey-description {
+        -webkit-text-fill-color: #ACAFB2 !important;
     }
     input.ng-invalid.ng-touched {
         border-bottom: 1px solid  red !important;
@@ -46,7 +53,7 @@
 }
 .comps2 {
     width:80%;
-    margin-left:50px;
+    margin-left:10px;
     margin-top:-5px;
 }
 .list {

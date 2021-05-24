@@ -77,9 +77,9 @@ label {
     margin-right:10px;
     font-family: markPro-Bold;
 }
-// h3{
-//     margin-left: 10px;
-// }
+.each h3 span{
+    margin-right: 10px;
+}
 select,input[type="text"], input[type="phone"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"] {
     color: #acafb2;
     margin-top: 10px !important;
@@ -96,6 +96,9 @@ select,input[type="text"], input[type="phone"], input[type="password"], input[ty
     padding: .5rem;
     border-radius: 0;
     width:100%;
+}
+input[type=radio]:before {
+    border: 1px solid #888A8C;
 }
 .active {
     background-color:#00a3ad !important;

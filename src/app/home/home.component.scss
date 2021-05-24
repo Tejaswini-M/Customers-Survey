@@ -42,10 +42,16 @@
 .card {
     min-height: 80px;
     margin-bottom :10px;
+    border: 1px solid #006280;
+    border-bottom: 2px solid #00A3AD;
+    box-shadow: 2px 2px 2px grey;
+ 
 }
 .card:hover {
-    border: 1px solid grey;
     cursor: pointer;
+    -ms-transform: scale(1.01); /* IE 9 */
+    -webkit-transform: scale(1.01); /* Safari 3-8 */
+    transform: scale(1.01); 
 }
 .views {
     width:100%;

@@ -22,19 +22,19 @@
                 <p class="naming">No</p>
             </div>
         </div> -->
-        <h3 class="question font-bold">{{model.qns}}</h3>
+        <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3>
         <div class="thumb flex-display content-left line">
             <div (click)="captureSentiment('yes')" [ngClass]="{'active':model.tab==='yes'}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
-                <input type="radio" id="yes" class="radio-check" value="yes" [checked]="model.tab=='yes'">
-                <p class="naming font-bold">Yes</p>
+                <input type="radio" id="yes"  class="radio-check" value="yes" [checked]="model.tab=='yes'">Yes
+                <!-- <p class="naming font-bold">Yes</p> -->
             </div>
             <div (click)="captureSentiment('no')" [ngClass]="{'active':model.tab==='no'}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-down"></p> -->
-                <input type="radio" id="no" class="radio-check" value="no" [checked]="model.tab=='no'">
-                <p class="naming font-bold">No</p>
+                <input type="radio" id="no"  class="radio-check" value="no" [checked]="model.tab=='no'">No
+                <!-- <p class="naming font-bold">No</p> -->
             </div>
-        </div>       
+        </div>        
         <br>
         <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
     </div>

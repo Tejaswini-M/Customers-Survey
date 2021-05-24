@@ -15,7 +15,7 @@
           <button [class.disabled]="qns.invalid || model.ansType=='' "  (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
         </div>
     <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
-          <h3 class="question font-bold">{{model.qns}}</h3>
+          <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3>
           <div class="flex-display content-left">
             <div  *ngIf="model.ansType=='star'">
               <ul class="list-inline rating-list" *ngFor="let star of stars" >

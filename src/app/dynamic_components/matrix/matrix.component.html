@@ -23,7 +23,7 @@
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
     </div>
     <div *ngIf="submitted" cdkDropList (cdkDropListDropped)="drop($event)" (click)="edit();config.adminResponse=true" required>
-        <h3 class="question font-bold">{{model.qns}}</h3>
+        <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3>
         <div class="flex-display content-left line">
             <table >
                 <tr class="data font-bold">

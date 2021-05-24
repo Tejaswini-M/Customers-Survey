@@ -24,13 +24,13 @@
     </div>
     <div class="comps2" [ngClass]="{'new': config.userResponse==true}">
         <div class="flex-col" *ngIf="!config.userResponse">
-            <div class="survey-name font-bold">
+            <div class="survey-name">
                 <input type="text" placeholder="Untitled Survey" class="input-field survey-title" value={{config.survey.title}}
                 [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
                 <div *ngIf="title.invalid && title.touched" class="error-message">Please enter survey title.</div>
             </div>
-            <div class="survey-desc font-bold ">
-                <input  type="text" placeholder="Untitled Survey Descrption" class="input-field survey-descrption font-bold" value={{config.survey.description}}
+            <div class="survey-desc">
+                <input  type="text" placeholder="Untitled Survey Descrption" class="input-field survey-description font-bold" value={{config.survey.description}}
                 [(ngModel)] ="config.survey.description" name="description" #description="ngModel" required>
                 <div *ngIf="description.invalid && description.touched" class="error-message">Please enter survey description.</div>
             </div>
@@ -45,7 +45,7 @@
             <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag [cdkDragDisabled]="config.userResponse">
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <button  data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp glyphicon glyphicon-remove"></button>
-                    <p class="question font-bold">{{i+1}}. </p>
+                    <p class="question font-bold">{{i+1}}.</p>
                     <app-yes-no></app-yes-no>
     
                 </div>

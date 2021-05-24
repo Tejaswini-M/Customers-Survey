@@ -4,24 +4,24 @@
     <div *ngFor="let cmp of config.userValues.list; let i=index" class="box">
         <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
-                <div class="thumb flex-display content-left line">
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
+                <div class="thumb flex-display content-left line font-bold">
                     <div (click)="cmp.tab='yes'" [ngClass]="{'active':cmp.tab==='yes'}" class="bg-grey">
                         <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
-                        <input type="radio" id="yes" class="radio-check" value="yes" [checked]="cmp.tab=='yes'">
-                        <p class="naming font-bold">Yes</p>
+                        <input type="radio" id="yes" class="radio-check" value="yes" [checked]="cmp.tab=='yes'">Yes
+                        <!-- <p class="naming font-bold">Yes</p> -->
                     </div>
                     <div (click)="cmp.tab='no'" [ngClass]="{'active':cmp.tab==='no'}" class="bg-grey">
                         <!-- <p class="glyphicon glyphicon-thumbs-down"></p> -->
-                        <input type="radio" id="no" class="radio-check" value="no" [checked]="cmp.tab=='no'">
-                        <p class="naming font-bold">No</p>
+                        <input type="radio" id="no" class="radio-check" value="no" [checked]="cmp.tab=='no'">No
+                        <!-- <p class="naming font-bold">No</p> -->
                     </div>
                 </div>
             </div>
         </div>
         <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event,i)">
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="line">
                     <div class="example-box bg-grey" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag cdkDragHandle>
                         <div class="dot">&#xFE19;</div>
@@ -52,7 +52,7 @@
         <div *ngIf="cmp.comp=='RatingScaleComponent'" class="each">
             <!-- <app-rating-scale></app-rating-scale>     -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="flex-display content-left">
                      <div  *ngIf="cmp.ansType=='star'">
                         <ul class="list-inline rating-list" *ngFor="let star of stars" >
@@ -82,7 +82,7 @@
         <div *ngIf="cmp.comp=='MultiSelectComponent'" class="each">
             <!-- <app-multi-select></app-multi-select> -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="flex-display content-left line">
                     <div *ngFor="let tab of cmp.tabs; let i=index;">
                         <button  *ngIf="tab.value" class="btn-tab-mul bg-grey" (click)="tab.selected =!tab.selected" 
@@ -94,7 +94,7 @@
         <div *ngIf="cmp.comp=='MatrixComponent'" class="each">
             <!-- <app-matrix></app-matrix> -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="flex-display content-left line">
                     <table>
                         <tr class="data font-bold">
@@ -120,7 +120,7 @@
         <div *ngIf="cmp.comp=='MixedTypeComponent'" class="each">
             <!-- <app-mixed-type></app-mixed-type> -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>                
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>                
                     <div class="flex-display content-left line">
                         <div *ngFor= "let num of options" class="mixed" >
                             <input class="btn-tab-mix" type="radio" (click)="this.cmp.tab =num" 
@@ -137,7 +137,7 @@
         <div *ngIf="cmp.comp=='ImageChoiceComponent'" class="each">          
             <!-- <app-image-choice></app-image-choice> -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="flex-display content-left line">
                     <div *ngFor="let url of cmp.tabs; let i=index;">
                         <img *ngIf="url.value" (click)="url.selected =!url.selected"
@@ -149,7 +149,7 @@
         <div *ngIf="cmp.comp=='OpenEndedComponent'" class="each">
             <!-- <app-open-ended></app-open-ended> -->
             <div>
-                <h3 class="question font-bold">{{i+1}}.{{cmp.qns}}</h3>
+                <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="flex-display content-left line">                
                     <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='short'">
                     <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='long'"></textarea>
