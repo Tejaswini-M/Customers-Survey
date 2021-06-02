@@ -11,7 +11,7 @@ export class ImageChoiceComponent implements OnInit {
 
   model = {
     comp:'ImageChoiceComponent',
-    qns:'',
+    qns:'Please enter question',
     tabs:[
       { id:'', value:'',name:'',selected:false},
       { id:'', value:'',name:'',selected:false},
@@ -25,7 +25,22 @@ export class ImageChoiceComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public editing = false;
+  touchtime = 0;
+  public singleClick() {
+    if(!this.config.userResponse) {
+      if (this.touchtime === 0) {
+        this.touchtime = new Date().getTime();
+      } else {
+        if (new Date().getTime() - this.touchtime < 400) {
+          this.editing = true;
+          this.touchtime = 0;
+        } else {
+          this.touchtime = new Date().getTime();
+        }
+      }
+    }
+  }
   addTable() {
     const obj =  { id:'', value:'',name:'',selected:false};
     this.model.tabs.push(obj);

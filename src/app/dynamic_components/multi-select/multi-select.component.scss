@@ -1,8 +1,22 @@
+
+.input-btn {
+    margin-right:5px !important;
+    width:100%;
+}
+.checkbox {
+    margin:20px 20px 20px 0;
+    height:20px;
+    width:20px;
+}
 .btn-tab {
     width: auto;
     margin: 10px;
     min-width: 150px;
     border: 2px solid #00a3ad;
+}
+.active {
+    background-color:#00a3ad !important;
+    cursor: pointer;
 }
 // .delete-tab {
 //     margin-top:-20px;

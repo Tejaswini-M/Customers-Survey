@@ -1,10 +1,12 @@
+
 textarea {
     resize:none;
     width:100%;
 }
 .text-btns {
-    float:right;
-    padding: 5px;
+    // float:right;
+    margin:10px 0;
+    margin-bottom:50px;
     //margin-left:-10px !important;
 }
 // .text-btns button{
@@ -21,7 +23,7 @@ textarea {
     //margin: 10px;
 }
 .edit{
-    text-decoration:none;
+      text-decoration:none;
       float:left;
       width:130px;
       // height:35px;

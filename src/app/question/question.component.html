@@ -121,7 +121,10 @@
                   </div>
             </div> 
         </div>
+        <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
 
+            <pagination-controls  id="listOfRecords" maxsize = "5" (pageChange)="page = $event"></pagination-controls>
+        </div>
         <div class="send" *ngIf="!config.userResponse">
             <div *ngIf="config.allValues.length!=components.length && components.length>0"  class="error-message">Please fill all selected questionarie!!!</div>
             <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse || config.survey.title=='' || config.survey.description==''" 
@@ -140,10 +143,10 @@
     <!-- masterForm = {{ masterForm.value | json }} -->
     <!-- [class.disabled]="config.allValues.length!=components.length || config.adminResponse==false"  -->
 </div>
-<div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
+<!-- <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
 
     <pagination-controls  id="listOfRecords" maxsize = "5" (pageChange)="page = $event"></pagination-controls>
-</div>
+</div> -->
 <!-- <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
     <button type="button" class="btn btn-default btn-sm repeater-prev page-end" disabled="disabled" style="height: 25px; width: 35px;">
        <span class="glyphicon glyphicon-chevron-left" style="top: 0! important;"></span>

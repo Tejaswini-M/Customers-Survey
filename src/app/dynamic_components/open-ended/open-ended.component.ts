@@ -12,15 +12,30 @@ export class OpenEndedComponent implements OnInit {
   //model:any;
   model = {
     comp:'OpenEndedComponent',
-    qns:'',
+    qns:'Please enter question',
     ans:'',
-    ansType:''
+    ansType:'short'
   }
   type="";
   tab:any;
   //parent!: FormGroup;
   constructor(public config:ConfigService) { }
-
+  public editing = false;
+  touchtime = 0;
+  public singleClick() {
+    if(!this.config.userResponse) {
+      if (this.touchtime === 0) {
+        this.touchtime = new Date().getTime();
+      } else {
+        if (new Date().getTime() - this.touchtime < 400) {
+          this.editing = true;
+          this.touchtime = 0;
+        } else {
+          this.touchtime = new Date().getTime();
+        }
+      }
+    }
+  }
   ngOnInit(): void {
     //return sentiment=='like' ? this.tab=sentiment :  this.tab=sentiment;
   //   this.parent = this.controlContainer.control as FormGroup;

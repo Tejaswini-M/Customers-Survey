@@ -27,14 +27,23 @@ img {
     margin:10px;
     padding:5px;
 }
+.img-tab {
+    width:100%;
+}
 .file {
     visibility: hidden;
     position: absolute;
   }
 .file-name {
-    width:80% !important;
+    // margin-left:0px;
+    width:100% !important;
 }
 .browse {
-    margin-right:40px;
+    // margin-right:20px;
     border:none;
 }
+// @media screen  and (max-width:767px) {
+//     .img-tab {
+//         width:100%;
+//     }
+// }

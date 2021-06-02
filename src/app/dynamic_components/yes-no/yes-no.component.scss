@@ -1,3 +1,7 @@
+.edit {
+  margin:0 !important;
+  height:30px;
+}
 .thumb {
   text-align: center;
 }
@@ -16,27 +20,16 @@
   border-radius: 5px;
   // box-shadow: 1px 1px 4px #00a3ad;
   justify-content: flex-start;
+  span {
+    margin-left:10px !important;
+  }
 }
 .thumb div.active{
   background-color:#00a3ad;
   cursor: pointer; 
-  // .glyphicon {
-  //   background-color: white;
-  // }
-  .naming {
-    color:white;
-  }
+  
 }
-// .glyphicon {
-//   margin:2px;
-//   border-radius:50%;
-//   padding:6px;
-// }
-.naming {
-  // margin-left:10px;
-  padding:12px;
-  font-size:18px;
-}
+
 input[type=radio] {
   -moz-appearance: none;
   -webkit-appearance: none;

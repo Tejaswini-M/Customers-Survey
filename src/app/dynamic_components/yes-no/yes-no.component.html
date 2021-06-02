@@ -1,42 +1,44 @@
 <div class ="container">
-    <div *ngIf="!submitted">
+    <!-- <div *ngIf="!submitted">
         <h3 class="center-align">Yes or No Question</h3>
-        <!-- <form #mulForm="ngForm"> -->
+       
             <div class= "mul-qns">
                 <label>Enter your question</label>
                 <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
                 <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
             </div>
             <button [class.disabled]="qns.invalid" (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
-        <!-- </form> -->
-    </div>
-    <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
-        <!-- <h3>{{model.qns}}</h3>
-        <div class="thumb flex-display dynamic">
-            <div class="bg-grey">
-                <p class="glyphicon glyphicon-thumbs-up"></p>
-                <p class="naming">Yes</p>
-            </div>
-            <div class="bg-grey">
-                <p class="glyphicon glyphicon-thumbs-down"></p>
-                <p class="naming">No</p>
-            </div>
-        </div> -->
-        <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3>
+        
+    </div> -->
+    <!-- <input type="text" id="name" class="form-control" placeholder="Please enter question..."
+    name="qns" #qns="ngModel" [(ngModel)] ="model.tab" required disabled>
+    <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
+
+   <div class="ans-box">
+        <input type="text" name="qns" class="input-field" placeholder="Please enter question..."
+        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
+        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold" style="margin-top:17px;">{{model.qns}}</p>
+       
         <div class="thumb flex-display content-left line">
             <div (click)="captureSentiment('yes')" [ngClass]="{'active':model.tab==='yes'}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
-                <input type="radio" id="yes"  class="radio-check" value="yes" [checked]="model.tab=='yes'">Yes
-                <!-- <p class="naming font-bold">Yes</p> -->
+                <input type="radio" id="yes"  [class.disabled]="!this.config.userResponse" class="radio-check" value="yes" [checked]="model.tab=='yes'">
+                <input type="text" class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="like">
+                <span *ngIf="!editing" (click)="singleClick()">{{like}}</span>
+                
             </div>
             <div (click)="captureSentiment('no')" [ngClass]="{'active':model.tab==='no'}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-down"></p> -->
-                <input type="radio" id="no"  class="radio-check" value="no" [checked]="model.tab=='no'">No
-                <!-- <p class="naming font-bold">No</p> -->
+                <input type="radio" id="no"  [class.disabled]="!this.config.userResponse"  class="radio-check" value="no" [checked]="model.tab=='no'">
+                <input type="text"  class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="dislike">
+                <span *ngIf="!editing" (click)="singleClick()">{{dislike}}</span>
+               
             </div>
         </div>        
         <br>
-        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
+        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
 </div>
 

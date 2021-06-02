@@ -1,12 +1,12 @@
 <div class ="container">
-    <div *ngIf="!submitted">
+    <!-- <div *ngIf="!submitted">
         <h3 class="center-align">Open Ended Question</h3>
-        <!-- <form #mulForm="ngForm"> -->
+       
             <div class= "mul-qns">
                 <div class="text-btns">
                     <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
                     <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>
-                    <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
+                    
                 </div>
                 <br>
                 <div>
@@ -16,20 +16,33 @@
                 </div>
             </div>
             <button [class.disabled]="qns.invalid || model.ansType=='' " (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
-        <!-- </form> -->
-    </div>
-    <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
-        <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3>
-        <div class="flex-display content-left line">
-            <!-- <input type="text" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='short'">
-            <textarea rows="5" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea> -->
+       
+    </div> -->
+    <div class="ans-box">
+        <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter question..." class="input-field editable" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+        <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
+        <!-- <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3> -->
+        <input type="text" name="qns" class="input-field" placeholder="Please enter question..."
+        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
+        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold" style="margin-top:17px;">{{model.qns}}</p>
+        <div class="text-btns" *ngIf="!config.userResponse">
+            <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
+            <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>
+            
+        </div>
+        <div class="line">
+           
             <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='short'">
-            <textarea rows="5" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='long'"></textarea>
+            <textarea rows="5" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='long'" style="margin-top:10px"></textarea>
         </div>
                
         <br>
-        <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
+        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
 </div>
+ <!-- <input type="text" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='short'">
+            <textarea rows="5" class="btn-tab" placeholder="please type here..." *ngIf="model.ansType=='long'"></textarea> -->
 
 

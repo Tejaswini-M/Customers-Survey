@@ -18,11 +18,11 @@ export class MultiSelectComponent implements OnInit {
   tabsLength: any;
   model = {
     comp:'MultiSelectComponent',
-    qns:'',
+    qns:'Please enter question',
     tabs:[
-      { id:'', value:'',selected:false},
-      { id:'', value:'',selected:false},
-      { id:'', value:'',selected:false}
+      { id:'', value:'Option 1',selected:false},
+      { id:'', value:'Option 2',selected:false},
+      { id:'', value:'Option 3',selected:false}
     ]
   }
   submitted = false;
@@ -35,7 +35,22 @@ export class MultiSelectComponent implements OnInit {
   //     //ans: new FormControl("", [Validators.required])
   //   });
   constructor(public config:ConfigService,private fb: FormBuilder,) { }
-
+  public editing = false;
+  touchtime = 0;
+  public singleClick() {
+    if(!this.config.userResponse) {
+      if (this.touchtime === 0) {
+        this.touchtime = new Date().getTime();
+      } else {
+        if (new Date().getTime() - this.touchtime < 400) {
+          this.editing = true;
+          this.touchtime = 0;
+        } else {
+          this.touchtime = new Date().getTime();
+        }
+      }
+    }
+  }
   ngOnInit(): void {
   //   this.parent = 
   //   this.controlContainer.control as FormGroup;
@@ -67,7 +82,7 @@ export class MultiSelectComponent implements OnInit {
   //   return control;
   // }
   addTable() {
-    const obj =  { id:'', value:'',selected:false};
+    const obj =  { id:'', value:'Option',selected:false};
     this.model.tabs.push(obj);
   }
   deleteRow(i:any) {
