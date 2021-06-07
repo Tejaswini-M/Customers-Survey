@@ -1,42 +1,52 @@
 <div class ="container">
-  <div *ngIf="!submitted">
+  <!-- <div *ngIf="!submitted">
     <h3 class="center-align">Rating-Scale Question</h3>
         <div class= "mul-qns" >
             <div class="text-btns">
               <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}"  class="edit">Star Rating</button>
               <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit">Number Rating</button>
-              <!-- <div *ngIf="model.ans==''" class="error-message">Please select answer type</div> -->
+              
             </div>
-          <br>
-              <label>Enter your question  : </label>
-              <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
-              <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
-          </div>          
-          <button [class.disabled]="qns.invalid || model.ansType=='' "  (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
-        </div>
-    <div *ngIf="submitted" (click)="edit();config.adminResponse=true">
-          <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3>
-          <div class="flex-display content-left">
-            <div  *ngIf="model.ansType=='star'">
-              <ul class="list-inline rating-list" *ngFor="let star of stars" >
-                <li (click)="countStar(star)" [ngClass]="{'active': (star <= model.ans)}"
-                  [class.disabled]="!this.config.userResponse">
-                  <i class="fa fa-star"></i>
-                </li> 
-              </ul>
-            </div>
-            <div *ngIf="model.ansType=='number'" >
-              <div class="left-label"><p>Least Likely</p></div>
-              <div  class="flex-display content-left" >
-                <!-- <p class="left-label">Least Likely</p> -->
-                <div *ngFor= "let num of numbers" >
-                  <button class="num-rate bg-grey"(click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
-                  [class.disabled]="!this.config.userResponse">{{num}}</button>
-                </div>
-              </div>
-              <div class="right-label"><p>Most Likely</p></div> 
-            </div>
-          </div>
-      <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button>
+            <br>
+            <label>Enter your question  : </label>
+            <input type="text" placeholder="Please type here..." class="input-field" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
+            <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div>
+        </div>          
+    <button [class.disabled]="qns.invalid || model.ansType=='' "  (click)="onSubmit();config.adminResponse=false" class="save-tab">Save</button>
+  </div> -->
+  <div class="ans-box">
+    <!-- <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3> -->
+    <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
+    required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+    <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
+    <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+    <div class="text-btns" *ngIf="!config.userResponse">
+      <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}"  class="edit">Star Rating</button>
+      <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit">Number Rating</button>
+      
     </div>
+    <div class="flex-display content-left">
+      <div  *ngIf="model.ansType=='star'" style="margin-top:10px" class="ml-10">
+        <ul class="list-inline rating-list" *ngFor="let star of stars" >
+          <li (click)="countStar(star)" [ngClass]="{'active': (star <= model.ans)}"
+            [class.disabled]="!this.config.userResponse">
+            <i class="fa fa-star"></i>
+          </li> 
+        </ul>
+      </div>
+      <div *ngIf="model.ansType=='number'" style="margin-top:10px">
+        <!-- <div class="left-label"><p>Least Likely</p></div> -->
+        <div  class="flex-display content-left" >
+          <!-- <p class="left-label">Least Likely</p> -->
+          <div *ngFor= "let num of numbers" >
+            <button class="num-rate bg-grey"(click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
+            [class.disabled]="!this.config.userResponse">{{num}}</button>
+          </div>
+        </div>
+        <!-- <div class="right-label"><p>Most Likely</p></div>  -->
+      </div>
+    </div>
+    <button (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+    <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
+  </div>
 </div>

@@ -22,19 +22,19 @@
         <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter question..." class="input-field editable" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
         <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <!-- <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3> -->
-        <input type="text" name="qns" class="input-field" placeholder="Please enter question..."
+        <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
         <div class="text-btns" *ngIf="!config.userResponse">
             <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
             <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>
             
         </div>
-        <div class="line">
+        <div class="line ml-10">
            
             <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='short'">
-            <textarea rows="5" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='long'" style="margin-top:10px"></textarea>
+            <textarea rows="3" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='long'" style="margin-top:10px"></textarea>
         </div>
                
         <br>

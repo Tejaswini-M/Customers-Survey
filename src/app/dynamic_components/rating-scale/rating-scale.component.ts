@@ -29,12 +29,28 @@ export class RatingScaleComponent implements OnInit {
 
   model = {
     comp:'RatingScaleComponent',
-    qns:'',
+    qns:'Please enter question',
     ans:'',
-    ansType:'',
+    ansType:'star',
     }
     edit() {
       this.config.userResponse ? this.submitted=true : this.submitted=false;
+    }
+    public editing = false;
+    touchtime = 0;
+    public singleClick() {
+      if(!this.config.userResponse) {
+        if (this.touchtime === 0) {
+          this.touchtime = new Date().getTime();
+        } else {
+          if (new Date().getTime() - this.touchtime < 400) {
+            this.editing = true;
+            this.touchtime = 0;
+          } else {
+            this.touchtime = new Date().getTime();
+          }
+        }
+      }
     }
   onSubmit() {
     this.config.ratingValues=[];

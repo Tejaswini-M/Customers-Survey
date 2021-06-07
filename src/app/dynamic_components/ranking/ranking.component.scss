@@ -1,3 +1,8 @@
+.ans-box {
+  .rank-edit {
+    border:0 !important;
+  }
+}
 .center-align{
   text-align: -webkit-center;   
 }
@@ -25,11 +30,12 @@ table .error-message {
 .example-box {
   color: rgba(0, 0, 0, 0.87);
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    // align-items: center;
     /* background: white; */
     font-size: 16px;
-    width: auto;
-    max-width: 60%;
+    width: 100%;
+    // max-width: 60%;
     margin-bottom: 15px;
     cursor: move;
     border-radius: 4px;
@@ -42,7 +48,7 @@ table .error-message {
 
 .sort{
   color: #acafb2;
-  height: 30px;
+  // height: 30px;
   box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
   font-size: 15px !important;
   color: black;
@@ -56,12 +62,14 @@ table .error-message {
   border: 1px #575859 solid;
 }
 .dot{
-  height: 33px;
+  // height: 33px;
   width: 10px;
   font-size: 25px;
   color: black;
 }
 .values{
-  width: 200px;
+  width: 100%;
+  display:flex;
   margin-left: 15px;
+  margin-top:-9px !important;
 }

@@ -1,6 +1,7 @@
 // .rating{
 //   justify-content: center !important;
 // }
+
 .num-rate{
   // background-color: #D1D7DA;
   // width: 37px;
@@ -11,7 +12,7 @@
   // margin-top: 14px;
     width: auto;
     padding: 5px;
-    margin: 15px;
+    margin: 10px;
     margin-top: 20px;
     font-size: 16px;
     min-width: 50px;
@@ -19,8 +20,10 @@
 }
 
 .text-btns {
-  float:right;
-  padding: 5px;
+  // float:right;
+  // padding: 5px;
+  margin:10px;
+  margin-bottom:50px;
   //margin-left:-10px !important;
 }
 

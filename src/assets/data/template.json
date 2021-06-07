@@ -12,7 +12,7 @@
 
             "comp":"YesNoComponent",
 
-            "qns":"Do you like this chocolate ?",
+            "qns":"Do you like this website?",
 
             "tab":""
 
@@ -22,7 +22,7 @@
 
             "comp":"RatingScaleComponent",
 
-            "qns":"How satisfied with Dairy milk chocolate ?",
+            "qns":"How satisfied are you with your job ?",
 
             "ans":"",
 
@@ -34,11 +34,11 @@
 
             "comp":"OpenEndedComponent",
 
-            "qns":"Desscribe about your favorite chocolate.",
+            "qns":"Desscribe about your skills and technologies",
 
             "ans":"",
 
-            "ansType":"short"
+            "ansType":"long"
 
         },
 
@@ -46,7 +46,7 @@
 
             "comp":"ImageChoiceComponent",
 
-            "qns":"Which is your fav logo?",
+            "qns":"Choose the image which all are suitable",
 
             "tabs": [
 
@@ -64,15 +64,15 @@
 
             "comp":"MultiSelectComponent",
 
-            "qns":"Which is your fav chololates?",
+            "qns":"What are all the technologies you are familiar with?",
 
             "tabs": [
 
-                { "id":"1", "value":"Dairy milk","selected":false},
+                { "id":"1", "value":"Angular","selected":false},
 
-                { "id":"2", "value":"Kit kat","selected":false},
+                { "id":"2", "value":"Java","selected":false},
 
-                { "id":"3", "value":"Five star","selected":false}
+                { "id":"3", "value":"React","selected":false}
 
             ]
 
@@ -82,15 +82,15 @@
 
             "comp":"RankingComponent",
 
-            "qns":"Which is your fav chololates?",
+            "qns":"Please rank your favourite job role",
 
             "tabs": [
 
-                { "id":"1", "value":"Dairy milk"},
+                { "id":"1", "value":"Developer"},
 
-                { "id":"2", "value":"Kit kat"},
+                { "id":"2", "value":"Tester"},
 
-                { "id":"3", "value":"Five star"}
+                { "id":"3", "value":"Application support"}
 
             ]
 
@@ -100,15 +100,15 @@
 
             "comp":"MatrixComponent",
 
-            "qns":"Which is your fav chololates?",
+            "qns":"How satisfied or dissatisfied with each of the following?",
 
             "tabs": [
 
-                { "id":"1", "value":"Dairy milk","status":null},
+                { "id":"1", "value":"Job role","status":null},
 
-                { "id":"2", "value":"Kit kat","status":null},
+                { "id":"2", "value":"Salary","status":null},
 
-                { "id":"3", "value":"Five star","status":null}
+                { "id":"3", "value":"Company atmosphere","status":null}
 
             ]
 
@@ -118,7 +118,7 @@
 
             "comp":"MixedTypeComponent",
 
-            "qns":"Which is your fav chololates?",
+            "qns":"How satisfied you are with your current job?",
 
             "tab":"",
 

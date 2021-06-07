@@ -5,7 +5,7 @@
         <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="thumb flex-display content-left line font-bold">
+                <div class="thumb flex-display content-left line font-bold ml-10">
                     <div (click)="cmp.tab='yes'" [ngClass]="{'active':cmp.tab==='yes'}" class="bg-grey">
                         <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
                         <input type="radio" id="yes" class="radio-check" value="yes" [checked]="cmp.tab=='yes'">Yes
@@ -22,8 +22,8 @@
         <div *ngIf="cmp.comp=='RankingComponent'" class="each" cdkDropList (cdkDropListDropped)="drop($event,i)">
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="line">
-                    <div class="example-box bg-grey" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag cdkDragHandle>
+                <div class="line pl-10">
+                    <div class="example-box bg-grey ml-10" *ngFor="let tab of cmp.tabs; let i=index" cdkDrag cdkDragHandle>
                         <div class="dot">&#xFE19;</div>
                         <div class="dot">&#xFE19;</div>
                         <!-- <div class="drag-index"> -->
@@ -53,15 +53,15 @@
             <!-- <app-rating-scale></app-rating-scale>     -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="flex-display content-left">
-                     <div  *ngIf="cmp.ansType=='star'">
+                <div class="flex-display content-left ml-10">
+                     <div  *ngIf="cmp.ansType=='star'" class="pl-10">
                         <ul class="list-inline rating-list" *ngFor="let star of stars" >
                           <li (click)="this.cmp.ans=star" [ngClass]="{'active': (star <= cmp.ans)}">
                             <i class="fa fa-star"></i>
                           </li> 
                         </ul>
                       </div>
-                    <div *ngIf="cmp.ansType=='number'">
+                    <div *ngIf="cmp.ansType=='number'"  class="pl-10">
                         <div class="left-label"><p>Least Likely</p></div>
                         <div  class="flex-display content-left rating" >
                           <!-- <p class="left-label">Least Likely</p> -->
@@ -83,7 +83,7 @@
             <!-- <app-multi-select></app-multi-select> -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="flex-display content-left line">
+                <div class="flex-display content-left line ml-10">
                     <div *ngFor="let tab of cmp.tabs; let i=index;">
                         <button  *ngIf="tab.value" class="btn-tab-mul bg-grey" (click)="tab.selected =!tab.selected" 
                         [class.active]="tab.selected">{{tab.value}}</button>
@@ -95,7 +95,7 @@
             <!-- <app-matrix></app-matrix> -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="flex-display content-left line">
+                <div class="flex-display content-left line ml-10">
                     <table>
                         <tr class="data font-bold">
                             <th></th>
@@ -121,15 +121,17 @@
             <!-- <app-mixed-type></app-mixed-type> -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>                
-                    <div class="flex-display content-left line">
-                        <div *ngFor= "let num of options" class="mixed" >
+                    <div class="flex-display content-left line ml-10">
+                        <div *ngFor= "let num of options" class="mixed pl-10" >
                             <input class="btn-tab-mix" type="radio" (click)="this.cmp.tab =num" 
                             [ngClass]="{'active':cmp.tab=== num}" name="cmp.tab">{{num}}
                         </div>
                     </div>   
-                        <div>
+                        <div  class="pl-10 ml-10">
                             <label >Any Comments ? </label> 
-                            <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." >                    
+                            <br>
+                            <textarea rows="3" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel"  style="width:100%"></textarea> 
+                            <!-- <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." >                     -->
                             <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
                         </div>                
             </div>
@@ -138,7 +140,7 @@
             <!-- <app-image-choice></app-image-choice> -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="flex-display content-left line">
+                <div class="flex-display content-left line pl-10">
                     <div *ngFor="let url of cmp.tabs; let i=index;">
                         <img *ngIf="url.value" (click)="url.selected =!url.selected"
                         [src]="url.value" [class.active]="url.selected">
@@ -150,9 +152,9 @@
             <!-- <app-open-ended></app-open-ended> -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
-                <div class="flex-display content-left line">                
-                    <input type="text" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='short'">
-                    <textarea rows="5" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='long'"></textarea>
+                <div class="flex-display content-left line pl-10">                
+                    <input type="text" class="ml-10" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='short'">
+                    <textarea rows="3" class="ml-10" [(ngModel)] ="cmp.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="cmp.ansType=='long'"></textarea>
                 </div>
             </div>
         </div>

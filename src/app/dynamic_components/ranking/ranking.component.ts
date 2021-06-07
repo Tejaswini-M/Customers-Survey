@@ -26,11 +26,11 @@ export class RankingComponent implements OnInit {
   
   model = {
     comp:'RankingComponent',
-    qns:'',
+    qns:'Please enter question',
     tabs:[
-      { id:'', value:''},
-      { id:'', value:''},
-      { id:'', value:''}
+      { id:'', value:'Option1'},
+      { id:'', value:'Option2'},
+      { id:'', value:'Option3'}
     ]
   }
   submitted = false; 
@@ -46,6 +46,22 @@ export class RankingComponent implements OnInit {
   }
   edit() {
     this.config.userResponse ? this.submitted=true : this.submitted=false;
+  }
+  public editing = false;
+  touchtime = 0;
+  public singleClick() {
+    if(!this.config.userResponse) {
+      if (this.touchtime === 0) {
+        this.touchtime = new Date().getTime();
+      } else {
+        if (new Date().getTime() - this.touchtime < 400) {
+          this.editing = true;
+          this.touchtime = 0;
+        } else {
+          this.touchtime = new Date().getTime();
+        }
+      }
+    }
   }
   onSubmit() {
     this.config.rankingValues=[];

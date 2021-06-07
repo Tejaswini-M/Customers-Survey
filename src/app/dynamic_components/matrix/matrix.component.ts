@@ -17,23 +17,38 @@ export class MatrixComponent implements OnInit {
   
   model = {
     comp:'MatrixComponent',
-    qns:'',
+    qns:'Please enter question',
     ans:'',
     tabs:[
-      { id:1, value:'',status:null},
-      { id:2, value:'',status:null},
-      { id:3, value:'',status:null}
+      { id:1, value:'Option1',status:null},
+      { id:2, value:'Option2',status:null},
+      { id:3, value:'Option3',status:null}
     ]
   }
   submitted = false;
   tabsLength: any;
 
   constructor(public config:ConfigService) { }
-
+  public editing = false;
+  touchtime = 0;
+  public singleClick() {
+    if(!this.config.userResponse) {
+      if (this.touchtime === 0) {
+        this.touchtime = new Date().getTime();
+      } else {
+        if (new Date().getTime() - this.touchtime < 400) {
+          this.editing = true;
+          this.touchtime = 0;
+        } else {
+          this.touchtime = new Date().getTime();
+        }
+      }
+    }
+  }
   ngOnInit(): void {}
 
     addTable() {
-      const obj =  { id:this.model.tabs.length+1, value:'',status:null};
+      const obj =  { id:this.model.tabs.length+1, value:'Option',status:null};
       this.model.tabs.push(obj);
     }
     

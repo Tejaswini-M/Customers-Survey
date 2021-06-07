@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+
 body {
     background-color: #f1f4f6 !important;
     font-family: MarkPro;
@@ -151,6 +153,7 @@ input[type=radio]:before {
 }
 .add-tab {
     margin-top: 10px;
+    margin-left:10px;
 }
 .save-tab{
     margin-top: 2%;
@@ -222,6 +225,12 @@ input:-webkit-autofill:focus {
 }
 .modal-footer {
     border-top :0px !important;
+}
+.ml-10 {
+    margin:0 10px;
+}
+.pl-10 {
+    padding:0 10px;
 }
 @media screen  and (max-width:767px) {
     body {

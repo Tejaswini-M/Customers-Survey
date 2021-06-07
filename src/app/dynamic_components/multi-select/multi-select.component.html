@@ -28,10 +28,10 @@
         <!-- <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3> -->
         <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter question..." class="input-field editable" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
         <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <input type="text" name="qns" class="input-field" placeholder="Please enter question..."
+        <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
 
         <div class="flex-display content-left line">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag class="flex-display">
