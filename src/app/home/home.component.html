@@ -83,16 +83,17 @@
                           </div>
                 
                           <div class="align-self-center view4">
-                            <a class="dropdown" href="" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                              <span class="glyphicon glyphicon-option-vertical"></span>
-                            </a>
-                          
+                            <div class="dropdown">
+                            <a class="glyphicon glyphicon-option-vertical dropdown-toggle" href="" dropdown-toggle="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                                                    
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                               <!-- <li><a class="dropdown-item" href="#">Edit survey</a></li> -->
                               <li><a class="dropdown-item"  data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;duplicateSurvey(i)">duplicate</a></li>
                               <li><a class="dropdown-item" *ngIf="!(i==0)" data-toggle="modal" data-target="#myModal" (click)="closeSurvey(i)">delete</a></li>
                             </ul>
                           </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
