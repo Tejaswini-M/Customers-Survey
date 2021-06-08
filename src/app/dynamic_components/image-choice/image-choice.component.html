@@ -54,7 +54,7 @@
                    
                       <button type="button" (click)="fileInput.click()" style="margin-top:10px;border-top-left-radius: 0; border-bottom-left-radius: 0;" 
                       class="browse btn btn-primary">Browse</button>
-                      <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab glyphicon glyphicon-trash"></button>
+                      <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab"><i class="fa fa-trash-o"></i></button>
                 </div>
             </div>
             <div  *ngFor="let url of model.tabs; let i=index;">
@@ -62,7 +62,7 @@
                 [src]="url.value" [class.active]="url.selected">
             </div>
         </div>
-        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab glyphicon glyphicon-plus"></button>
+        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
         <button (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>

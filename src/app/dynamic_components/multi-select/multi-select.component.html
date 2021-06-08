@@ -39,10 +39,10 @@
                 required (focusout)="editing=false" [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
                 <button  class="btn-tab bg-grey" (click)="selectOption(tab)"  
                 [class.active]="tab.selected" *ngIf="!editing" (click)="singleClick()">{{tab.value}}</button>
-                <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab glyphicon glyphicon-trash"></button>
+                <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab"><i class="fa fa-trash-o"></i></button>
             </div>
         </div>
-        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab glyphicon glyphicon-plus"></button>
+        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
         <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <div class="flex-display content-left line">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>

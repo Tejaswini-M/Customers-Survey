@@ -49,13 +49,13 @@
                 </div>
                 </div>
                   
-                <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab glyphicon glyphicon-trash"></button>
+                <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab"><i class="fa fa-trash-o"></i></button>
                 <!-- <div class="drag-index">
                     <div class="sort font-bold">{{i+1}}</div>
                 </div> -->
             </div>
         </div>
-        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab glyphicon glyphicon-plus"></button>
+        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
         <button (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>

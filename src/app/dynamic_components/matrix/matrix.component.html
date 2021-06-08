@@ -53,11 +53,11 @@
                         <input type="radio" id="opt1+{{tab.id}}" class="radio-check" [(ngModel)]="tab.status" style="margin-top:10px;"
                         value="{{state}}" name="option+{{tab.id}}" [checked]="tab.status" [class.disabled]="!this.config.userResponse"> 
                     </th> 
-                    <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab glyphicon glyphicon-trash"></button>             
+                    <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab"><i class="fa fa-trash-o"></i></button>             
                 </tr>
             </table>
         </div>
-        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab glyphicon glyphicon-plus"></button>
+        <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
         <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();;config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>

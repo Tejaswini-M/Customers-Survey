@@ -176,10 +176,12 @@ input[type=radio]:before {
     background-color:#acafb2;
 }
 .delete-tab {
-    margin-left:10px;
+    // margin-left:10px;
     // margin-right:10px;
     background-color: #D1D7DA;
-    margin-top:20px;
+    margin-top: 18px !important;
+    font-size: 18px;
+    margin: 10px;
     height: 0px;
     padding: 0px;
   }
