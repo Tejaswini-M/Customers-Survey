@@ -43,14 +43,14 @@
                         <div>
                             <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter option..." 
                             class="input-field editable btn-tab" [(ngModel)] ="tab.value" #ans="ngModel" name="value"  required> -->
-                            <input type="text" name="tab" class="input-field" placeholder="Option"
+                            <input type="text" name="tab" class="input-field ml-10" placeholder="Option"
                             required (focusout)="editing=false" [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
                             <button  class="btn-tab bg-grey" *ngIf="!editing" (click)="singleClick()">{{tab.value}}</button>
                             <!-- <button class="btn-tab bg-grey">{{tab.value}}</button>  -->
                         </div>
                     </th>  
                     <th *ngFor="let state of status">
-                        <input type="radio" id="opt1+{{tab.id}}" class="radio-check" [(ngModel)]="tab.status" style="margin-top:5px;"
+                        <input type="radio" id="opt1+{{tab.id}}" class="radio-check" [(ngModel)]="tab.status" style="margin-top:10px;"
                         value="{{state}}" name="option+{{tab.id}}" [checked]="tab.status" [class.disabled]="!this.config.userResponse"> 
                     </th> 
                     <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab glyphicon glyphicon-trash"></button>             

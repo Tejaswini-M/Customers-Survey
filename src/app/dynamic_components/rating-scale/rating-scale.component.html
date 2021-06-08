@@ -36,13 +36,13 @@
       </div>
       <div *ngIf="model.ansType=='number'" style="margin-top:10px">
         <!-- <div class="left-label"><p>Least Likely</p></div> -->
-        <div  class="flex-display content-left" >
+        <!-- <div  class="flex-display content-left" > -->
           <!-- <p class="left-label">Least Likely</p> -->
           <div *ngFor= "let num of numbers" >
             <button class="num-rate bg-grey"(click)="selectOption(num)" [ngClass]="{'active':model.ans=== num}"
             [class.disabled]="!this.config.userResponse">{{num}}</button>
           </div>
-        </div>
+        <!-- </div> -->
         <!-- <div class="right-label"><p>Most Likely</p></div>  -->
       </div>
     </div>

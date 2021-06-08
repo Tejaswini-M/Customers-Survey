@@ -15,7 +15,7 @@
   font-size: 16px;
   // background-color: #D1D7DA;
   height:auto;
-  width: 200px;
+  width: 150px;
   min-height: 35px;
   /* font-weight: 450; */
   // border-radius: 5px;
@@ -31,6 +31,9 @@
 
 table {
   width:100%;
+  .input-field {
+    width:150px;
+  }
 }
 th {
   text-align: center;
@@ -80,10 +83,13 @@ input[type=radio]:checked:before {
 @media screen and (max-width:767px) {
   table{
     font-size: 10px;
+    .input-field {
+      width:50px;
+    }
   }
   .btn-tab{
     font-size: 10px;
-    width: 80px;
+    width: 50px;
     //max-width: 50px;
     // padding: 0px !important;
   }

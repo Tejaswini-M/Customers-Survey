@@ -29,9 +29,9 @@
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
-        <div class="flex-display content-left line ml-10">
+        <div class="flex-display content-left line">
             <div class="flex-display" style="width:100%" *ngFor="let mul of model.tabs; let i=index" cdkDrag cdkDragHandle>
-                <div class="example-box bg-grey">
+                <div class="example-box bg-grey ml-10">
                     <div class="dot">&#xFE19;</div>
                     <div class="dot">&#xFE19;</div>
                

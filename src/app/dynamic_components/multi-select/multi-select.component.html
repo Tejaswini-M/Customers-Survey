@@ -35,7 +35,7 @@
 
         <div class="flex-display content-left line">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag class="flex-display">
-                <input type="text" name="tab" class="input-field" placeholder="Option"
+                <input type="text" name="tab" class="input-field ml-10" placeholder="Option"
                 required (focusout)="editing=false" [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
                 <button  class="btn-tab bg-grey" (click)="selectOption(tab)"  
                 [class.active]="tab.selected" *ngIf="!editing" (click)="singleClick()">{{tab.value}}</button>

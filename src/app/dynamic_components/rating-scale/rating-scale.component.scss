@@ -36,11 +36,11 @@
   margin-top: -10px;
 }
 .rating-list li {
-  float: right;
+  // float: right;
   color: #D1D7DA;
   /* padding: 10px 20px; */
   font-size: 30px;
-  /* margin: 10px; */
+  // margin: 10px;
   margin-right: 50px;
   width: auto;
   max-width: 25px;
@@ -72,4 +72,9 @@
   border: 2px solid #00a3ad;
   background-color: white !important;
 }
+// @media screen and (max-width:767px)  {
+//   .rating-list li {
+//     margin:0;
+//   }
+// }
 
