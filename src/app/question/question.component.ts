@@ -126,27 +126,12 @@ export class QuestionComponent implements OnInit{
   //component: ComponentRef<any>[]=[];
   constructor(public fb: FormBuilder,private rout: Router, private route: ActivatedRoute,
     public config:ConfigService,private compFactoryResolver: ComponentFactoryResolver, private location: PlatformLocation) {
-    this.location.onPopState(() => {        
-       alert("Changes you made may not be saved.");
-       //window.location.href = window.location.href + '/qns';
-       console.log(window.location.href);
-      
-        //return false;
-    });//window.location.hash="no-back-button";
-    
+        
   //window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
      //window.onhashchange=function(){confirm("Changes you made may not be saved.")}
   }
   
-  @HostListener("window:beforeunload", ["$event"]) unloadHandler(event: Event) {
-    let result = confirm("Changes you made may not be saved.");
-    if (result) {
-      console.log("Clicked on refresh button");
-      //history.back();
-    } 
-        event.returnValue = false; // stay on same page
-  }
-
+  
   // @HostListener('window:popstate', ['$event'])
   // onPopState(event: Event) {
   //   console.log('Back button pressed');
