@@ -3,8 +3,8 @@
 
 body {
     background-color: #f1f4f6 !important;
-    font-family: MarkPro;
-    font-size: 14px;
+    font-family: MarkPro !important;
+    font-size: 14px !important;
     color:black;
 }
 .bg-white {
@@ -57,7 +57,7 @@ button {
     height:38px;
     padding: 10px;
     border-radius: 4px;
-    font-family: markPro-Bold;
+    font-family: markPro-Bold !important;
 }
 // button:hover {
 //     opacity: 1.0;
