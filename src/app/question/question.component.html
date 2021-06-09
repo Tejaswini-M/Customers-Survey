@@ -25,12 +25,12 @@
     <div class="comps2" [ngClass]="{'new': config.userResponse==true}">
         <div class="flex-col" *ngIf="!config.userResponse">
             <div class="survey-name">
-                <input type="text" placeholder="Untitled Survey" class="input-field survey-title" value={{config.survey.title}}
+                <input type="text" maxLength="50" placeholder="Untitled Survey" class="input-field survey-title" value={{config.survey.title}}
                 [(ngModel)] ="config.survey.title" name="title" #title="ngModel" required>
                 <div *ngIf="title.invalid && title.touched" class="error-message">Please enter survey title.</div>
             </div>
             <div class="survey-desc">
-                <input  type="text"  maxLength="50" placeholder="Untitled Survey Descrption" class="input-field survey-description font-bold" value={{config.survey.description}}
+                <input  type="text"  maxLength="100" placeholder="Untitled Survey Descrption" class="input-field survey-description font-bold" value={{config.survey.description}}
                 [(ngModel)] ="config.survey.description" name="description" #description="ngModel" required>
                 <div *ngIf="description.invalid && description.touched" class="error-message">Please enter survey description.</div>
             </div>

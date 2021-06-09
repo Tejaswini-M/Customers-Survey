@@ -196,12 +196,12 @@ export class QuestionComponent implements OnInit{
 
 }
 export const dynamicComponents = [
-  {name:MultiSelectComponent,isDisable:false,comp:'Multi Select',icon:'glyphicon glyphicon-list'}, 
-  {name:YesNoComponent,isDisable:false,comp:'Yes or No',icon:'glyphicon glyphicon-thumbs-up'}, 
-  {name:MatrixComponent,isDisable:false,comp:'Matrix',icon:'glyphicon glyphicon-th'},
-  {name:RatingScaleComponent,isDisable:false,comp:'Rating',icon:'glyphicon glyphicon-star'},
-  {name:RankingComponent,isDisable:false,comp:'Ranking',icon:'glyphicon glyphicon-stats'}, 
-  {name:OpenEndedComponent,isDisable:false,comp:'Open Ended',icon:'glyphicon glyphicon-pencil'}, 
-  {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type',icon:'glyphicon glyphicon-tasks'},
-  {name:ImageChoiceComponent,isDisable:false,comp:'Image Choice',icon:'glyphicon glyphicon-picture'}
+  {name:MultiSelectComponent,isDisable:false,comp:'Multi Select',icon:'fa fa-list'}, 
+  {name:YesNoComponent,isDisable:false,comp:'Yes or No',icon:'fa fa-thumbs-up'}, 
+  {name:MatrixComponent,isDisable:false,comp:'Matrix',icon:'fa fa-th'},
+  {name:RatingScaleComponent,isDisable:false,comp:'Rating',icon:'fa fa-star'},
+  {name:RankingComponent,isDisable:false,comp:'Ranking',icon:'fa fa-bar-chart'}, 
+  {name:OpenEndedComponent,isDisable:false,comp:'Open Ended',icon:'fa fa-pencil'}, 
+  {name:MixedTypeComponent,isDisable:false,comp:'Mixed Type',icon:'fa fa-tasks'},
+  {name:ImageChoiceComponent,isDisable:false,comp:'Image Choice',icon:'fa fa-picture-o'}
 ];

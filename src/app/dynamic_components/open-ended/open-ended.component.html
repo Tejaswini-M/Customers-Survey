@@ -26,15 +26,18 @@
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
-        <div class="text-btns" *ngIf="!config.userResponse">
-            <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
-            <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>
+        
+        <div>
+            <div class="text-btns ml-10" *ngIf="!config.userResponse">
+                <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
+                <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>
+                
+            </div>
+            <div class="ml-10">
+                <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='short'">
+                <textarea rows="3" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='long'" style="margin-top:10px"></textarea>
+            </div>
             
-        </div>
-        <div class="line ml-10">
-           
-            <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='short'">
-            <textarea rows="3" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." *ngIf="model.ansType=='long'" style="margin-top:10px"></textarea>
         </div>
                
         <br>

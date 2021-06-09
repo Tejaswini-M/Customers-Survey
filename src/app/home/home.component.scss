@@ -40,7 +40,8 @@
     //margin-left:5%;
 }
 .card {
-    min-height: 80px;
+    min-height:80px;
+    // height: 150px;
     margin-bottom :10px;
     border: 1px solid #006280;
     border-bottom: 2px solid #00A3AD;
@@ -85,6 +86,7 @@
     border-radius:50%;
     padding:10px;
     text-align: center;
+    font-size:18px;
     background-color:#f1f4f6;
 }
 .dropdown:hover {
@@ -92,7 +94,7 @@
 }
 @media screen  and (max-width:767px) {
     .users {
-        margin:0 !important
+        margin:0 18px !important;
     }
     .views {
         flex-direction: column;
@@ -102,12 +104,17 @@
         flex-direction: column;
         justify-content: center;
     }
-    .view2 {
-        justify-content: center;
-    }
+    // .view2 {
+    //     justify-content: center;
+    // }
     .view1,.view2 {
-        width:auto;
-        margin:0;
+        width:100%;
+    }
+    .text-right {
+        text-align:center !important;
+    }
+    .view4 {
+        justify-content: center;
     }
     .new-survey {
         button {

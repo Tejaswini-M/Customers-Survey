@@ -28,8 +28,8 @@
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
-        <div class="flex-display content-left line">
-            <table >
+        <div class="flex-display content-left">
+            <table style="margin:10px;">
                 <tr class="data font-bold">
                     <th></th>
                     <th>Very Good</th>

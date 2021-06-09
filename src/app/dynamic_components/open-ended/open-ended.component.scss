@@ -3,12 +3,12 @@ textarea {
     resize:none;
     width:100%;
 }
-.text-btns {
-    // float:right;
-    margin:10px;
-    margin-bottom:50px;
-    //margin-left:-10px !important;
-}
+// .text-btns {
+//     // float:right;
+//     margin:10px 0;
+//     margin-bottom:50px;
+//     //margin-left:-10px !important;
+// }
 // .text-btns button{
 //     margin:10px;
 // }
@@ -29,7 +29,7 @@ textarea {
       // height:35px;
       background:none;
       border:2px solid rgb(204, 204, 211);
-      border-radius: 0px;
+      border-radius: 0px !important;
   }
   
 .edit.active{

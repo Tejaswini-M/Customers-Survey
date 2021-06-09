@@ -14,7 +14,7 @@
           [(ngModel)] ="config.survey.title"  name="title" #title="ngModel" required>
           <div *ngIf="title.invalid && title.touched" class="error-message">Please enter title of the survey.</div>
           <label>Survey description</label>
-          <input type="text" placeholder="Enter Survey Descrption" class="font-bold"
+          <input type="text" placeholder="Enter Survey Descrption" class="input-field"
           [(ngModel)] ="config.survey.description" name="description" #description="ngModel" required>
           <div *ngIf="description.invalid && description.touched" class="error-message">Please enter survey description.</div>
         </div>
@@ -43,7 +43,7 @@
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search survey" [(ngModel)]="searchText" style="border-radius: 5px;margin-top:0px !important;border-top-right-radius: 0; border-bottom-right-radius: 0;">
           <div class="input-group-append" >
-            <button class="btn btn-secondary" style="background-color: #00a3ad!important;border-top-left-radius: 0; border-bottom-left-radius: 0;" type="button">
+            <button class="btn btn-secondary" style="background-color: #00a3ad !important;border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;" type="button">
               <i class="fa fa-search"></i>
             </button>
           </div>
@@ -69,8 +69,8 @@
                     <div class="card-body">
                       <div class="media d-flex views">
                         <div class="view1">
-                          <div (click)="viewDetail(i);" class="align-self-center view-title font-bold">{{user.title}}</div>
-                            <div contenteditable='true' class="align-self-center ">{{user.description}}</div>   
+                          <div (click)="viewDetail(i);" class="align-self-center font-bold">{{user.title}}</div>
+                          <div class="align-self-center ">{{user.description}}</div>   
                         </div>
                       
                         <!-- <div class="align-self-center view2">
@@ -83,14 +83,15 @@
                           </div>
                 
                           <div class="align-self-center view4">
-                            <div class="dropdown">
-                            <i class="fa fa-ellipsis-v" href="" dropdown-toggle="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <div>
+                              <i class="fa fa-ellipsis-v dropdown" href="" dropdown-toggle="dropdown" role="button" 
+                              id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                                     
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <!-- <li><a class="dropdown-item" href="#">Edit survey</a></li> -->
-                              <li><a class="dropdown-item"  data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;duplicateSurvey(i)">duplicate</a></li>
-                              <li><a class="dropdown-item" *ngIf="!(i==0)" data-toggle="modal" data-target="#myModal" (click)="closeSurvey(i)">delete</a></li>
-                            </ul>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <!-- <li><a class="dropdown-item" href="#">Edit survey</a></li> -->
+                                <li><a class="dropdown-item"  data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;duplicateSurvey(i)">duplicate</a></li>
+                                <li><a class="dropdown-item" *ngIf="!(i==0)" data-toggle="modal" data-target="#myModal" (click)="closeSurvey(i)">delete</a></li>
+                              </ul>
                           </div>
                           </div>
 

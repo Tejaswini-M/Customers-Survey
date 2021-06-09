@@ -20,7 +20,7 @@
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
        
-        <div class="thumb flex-display content-left line">
+        <div class="thumb flex-display content-left">
             <div (click)="captureSentiment('yes')" [ngClass]="{'active':model.tab==='yes'}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
                 <input type="radio" id="yes"  [class.disabled]="!this.config.userResponse" class="radio-check" value="yes" [checked]="model.tab=='yes'">

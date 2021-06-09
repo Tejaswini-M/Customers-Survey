@@ -46,13 +46,13 @@
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
-        <div class="flex-display content-left line">
+        <div class="flex-display content-left">
             <div *ngFor="let url of model.tabs; let i=index;" cdkDrag class="img-tab ml-10">
                 <div class="flex-display" *ngIf="!config.userResponse">
                     <input style="display: none" type="file" (change)="onFileChanged($event,i)" #fileInput>
                     <input type="text" class="input-field file-name" disabled value={{url.name}} placeholder="Upload File" id="file">
                    
-                      <button type="button" (click)="fileInput.click()" style="margin-top:10px;border-top-left-radius: 0; border-bottom-left-radius: 0;" 
+                      <button type="button" (click)="fileInput.click()" style="margin-top:10px;border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;" 
                       class="browse btn btn-primary">Browse</button>
                       <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab"><i class="fa fa-trash-o"></i></button>
                 </div>
