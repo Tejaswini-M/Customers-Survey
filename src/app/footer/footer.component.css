@@ -18,9 +18,9 @@
 .row1{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
     /* margin-right: -15px; */
     /* margin-left: -15px; */
-    /* margin-top: 20px; */
     /* margin: 10px; */
 }
 /* .support{
