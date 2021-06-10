@@ -10,16 +10,12 @@
         </div>
         <div class="modal-body">
           <label>Survey title</label>
-          <input type="text" placeholder="Start typing..." class="input-field" 
+          <input type="text" placeholder="Enter Survey title" class="input-field" 
           [(ngModel)] ="config.survey.title"  name="title" #title="ngModel" required>
           <div *ngIf="title.invalid && title.touched" class="error-message">Please enter title of the survey.</div>
           <label>Survey description</label>
-<<<<<<< Updated upstream
           <input type="text" placeholder="Enter Survey Descrption" class="input-field"
           [(ngModel)] ="config.survey.description" name="description" #description="ngModel" required>
-=======
-          <input type="text" placeholder="Enter Survey Descrption" class="font-bold" [(ngModel)] ="config.survey.description" name="description" #description="ngModel" required>
->>>>>>> Stashed changes
           <div *ngIf="description.invalid && description.touched" class="error-message">Please enter survey description.</div>
         </div>
         <div class="modal-footer">

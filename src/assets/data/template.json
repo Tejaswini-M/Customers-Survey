@@ -14,8 +14,10 @@
 
             "qns":"Do you like this website?",
 
-            "tab":""
-
+            "tabYes":{"value":"Yes","selected":false},
+            
+            "tabNo":{"value":"No","selected":false}
+            
         },
 
         {

@@ -32,7 +32,7 @@ textarea {
     -o-appearance: none;
     outline: none;
     content: none;
-    margin: 2px;
+    margin-left: 10px;
   }
   
   input[type=radio]:before {
@@ -46,7 +46,7 @@ textarea {
     // border: 2px solid black;
     margin-right: 5px;
     border-radius: 50% !important;
-    padding:1px;
+    // padding:1px;
   }
   
   input[type=radio]:checked:before {
@@ -69,6 +69,9 @@ textarea {
   border-radius: 5px;
   // box-shadow: 1px 1px 4px #00a3ad;
   justify-content: flex-start;
+  span {
+    margin-left:10px !important;
+  }
 }
 .thumb div.active{
   background-color:#00a3ad;
@@ -343,7 +346,7 @@ th {
 @media screen  and (max-width:767px){
   .content {
       margin:0 18px !important;
-      width:100%;
+      // width:100%;
   }
   .rating-list li{
     float: right;
@@ -359,5 +362,8 @@ th {
   }
   .data {
     font-size:10px;
+  }
+  .mix-col {
+    flex-direction: column !important;
   }
 }

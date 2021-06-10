@@ -69,7 +69,13 @@ table .error-message {
 }
 .values{
   width: 100%;
-  display:flex;
-  margin-left: 15px;
-  margin-top:-9px !important;
+  height:30px;
+  margin: 0 10px;
+  input {
+    margin-top:1px !important;
+  }
+  p {
+    margin-top:7px !important;
+  }
+  // margin-top:-9px !important;
 }

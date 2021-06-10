@@ -14,14 +14,11 @@ export class YesNoComponent implements OnInit {
   model={
     comp:'YesNoComponent',
     qns:'Please enter question',
-    tab:'',
-    // tabs:[
-    //   { id:'', value:'',selected:false},
-    //   { id:'', value:'',selected:false},
-    // ]
+    tabYes: { value: 'Yes', selected: false },
+    tabNo:{value:'No',selected:false}
+    // like:'like',
+    // dislike:"diskike",
   }
-  like="Yes";
-  dislike="No";
   @Input() data: any;
   @Output() changedData = new EventEmitter<any>();
 
@@ -66,9 +63,16 @@ export class YesNoComponent implements OnInit {
   }
   captureSentiment(sentiment:any) {
     if(this.config.userResponse){
-      // console.log(sentiment);
+      console.log(sentiment);
       // sentiment.selected=true;
-      this.model.tab=sentiment;
+      if(sentiment==this.model.tabYes) {
+        this.model.tabYes.selected=true;
+        this.model.tabNo.selected=false;
+      }
+      else {
+        this.model.tabYes.selected=false;
+        this.model.tabNo.selected=true;
+      }
       // return sentiment=='yes' ? this.model.tab=sentiment :  this.model.tab=sentiment;
     }
   }

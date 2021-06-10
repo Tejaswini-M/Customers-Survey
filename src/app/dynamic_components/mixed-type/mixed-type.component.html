@@ -18,20 +18,20 @@
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
-            <div class="flex-display content-left ml-10">
-                <div *ngFor= "let num of options" class="mixed">
-                    <input class="btn-tab-mix radio-check" type="radio" (click)="selectOption(num)" [ngClass]="{'active':model.tab=== num}"
-                    [class.disabled]="!this.config.userResponse" name="model.tab">{{num}}
-                </div>                
-            </div>   
-            <div class="ml-10">
-                <label >Any Comments ? </label>
-                <br>
-                <textarea rows="3" [class.disabled]="!config.userResponse"[(ngModel)] ="model.ans" name="ans" #ans="ngModel"  style="width:100%"></textarea> 
-                <!-- <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." [class.disabled]="!this.config.userResponse">                     -->
-                <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
-            </div>
-            <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <div class="flex-display content-left line">
+            <div *ngFor= "let num of options" class="mixed">
+                <input class="btn-tab-mix radio-check" type="radio" (click)="selectOption(num)" [ngClass]="{'active':model.tab=== num}"
+                [class.disabled]="!this.config.userResponse" name="model.tab">{{num}}
+            </div>                
+        </div>   
+        <div class="ml-10">
+            <label >Any Comments ? </label>
+            <br>
+            <textarea rows="3" [class.disabled]="!config.userResponse"[(ngModel)] ="model.ans" name="ans" #ans="ngModel"  style="width:100%"></textarea> 
+            <!-- <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." [class.disabled]="!this.config.userResponse">                     -->
+            <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
+        </div>
+        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
       
