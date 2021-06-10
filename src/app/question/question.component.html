@@ -41,6 +41,7 @@
         </div> -->
         <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
            
+
             <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag [cdkDragDisabled]="config.userResponse" style="display: inline-block;">
 
                 <div class="btn-group dropleft del-cmp">
@@ -56,9 +57,9 @@
                 </div> 
                 <div *ngIf="cmp.componentType.name=='YesNoComponent'" class="each">
                     <button  data-toggle="modal" (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp"></button>
+
                     <p class="question font-bold">{{i+1}}.</p>
                     <app-yes-no></app-yes-no>
-    
                 </div>
                 <div *ngIf="cmp.componentType.name=='RankingComponent'" class="each">
 
@@ -113,59 +114,6 @@
                     
                    
                 </div>
-
-              
-
-                <!-- <div class="_not-critical" id="modal">
-                    <div id="DeleteAutomation">
-                        <div class="modal in" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" style="display: block;">
-                            <div class="modal-dialog modal-sm">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="modalLabel">Delete Automation?</h4>
-                                    </div>
-                                <div class="modal-body">
-                                    <p>You are about to delete this automation.</p>
-                                    <p>Are you sure you want to do this?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" data-dismiss="modal" class="btn btn-default cancelButton" data-dismiss="modal">Cancel</button>
-                                    <button type="button" data-dismiss="modal" (click)="deleteComponent(deleteIndex)" class="btn btn-primary okButton">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="btn-group dropleft del-cmp">
-              <i class="fa fa-remove dropdown" style="font-size: large;" (click)="deleteIndex=i" dropdown-toggle="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                <div class="dropdown-menu dropdown-shadow">
-                    <span class="m-4">Are you sure?</span>
-                    <div class="dropdown-divider"></div>
-                    <div>
-                        <button type="button" class="btn btn-deafult closed" data-dismiss="modal">Cancel</button>
-                       <button type="button" class="btn btn-default okButton" data-dismiss="modal"(click)="deleteComponent(deleteIndex)">Yes, Delete</button>
-                    </div>
-                </div>
-            </div> -->
-                <!-- <div class="modal in" id="myModal" role="dialog">
-                    <div class="modal-dialog modal-sm">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <h4 class="modal-title">Delete Question</h4>
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                              You are deleting a question. Are you sure?
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-deafult closed" data-dismiss="modal">Cancel</button>
-                              <button type="button" class="btn btn-default okButton" data-dismiss="modal"(click)="deleteComponent(deleteIndex)">Yes, Delete</button>
-                            </div>
-                      </div>
-                    </div>
-                </div> -->
             </div> 
         </div>
         <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">

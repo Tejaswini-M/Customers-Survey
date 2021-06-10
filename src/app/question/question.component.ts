@@ -189,7 +189,7 @@ export class QuestionComponent implements OnInit{
       moveItemInArray(this.components, event.previousIndex, event.currentIndex);
     //console.log(event.container.data);
   }
-  deleteComponent(i:any) {
+  deleteComponent(i:any) {    
     this.components.splice(i,1);
     this.config.allValues.splice(i,1);
   }
