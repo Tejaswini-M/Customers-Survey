@@ -6,16 +6,34 @@
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>
                 <div class="thumb flex-display content-left line font-bold ml-10">
-                    <div (click)="cmp.tab='yes'" [ngClass]="{'active':cmp.tab==='yes'}" class="bg-grey">
+                    <div (click)="cmp.tabYes.selected=true;cmp.tabNo.selected=false" [ngClass]="{'active':cmp.tabYes.selected==true}" class="bg-grey">
                         <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
-                        <input type="radio" id="yes" class="radio-check" value="yes" [checked]="cmp.tab=='yes'">Yes
-                        <!-- <p class="naming font-bold">Yes</p> -->
+                        <input type="radio" id="yes" class="radio-check" value="yes"
+                         [checked]="cmp.tabYes.selected==true">
+                        <!-- <input type="text" class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="model.tabYes.value"> -->
+                        <span class="font-bold">{{cmp.tabYes.value}}</span>
+                        
+                    </div>
+                    <div (click)="cmp.tabNo.selected=true;cmp.tabYes.selected=false" [ngClass]="{'active':cmp.tabNo.selected==true}" class="bg-grey">
+                        <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
+                        <input type="radio" id="yes"  class="radio-check" value="no"
+                         [checked]="cmp.tabNo.selected==true">
+                        <!-- <input type="text" class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="model.tabYes.value"> -->
+                        <span class="font-bold">{{cmp.tabNo.value}}</span>
+                        
+                    </div>
+                    <!-- <div (click)="cmp.tab='yes'" [ngClass]="{'active':cmp.tab==='yes'}" class="bg-grey">
+                        
+                        <input type="radio" id="yes" class="radio-check" value="yes" [checked]="cmp.tab=='yes'">
+                        <span>Yes</span>
+                        
                     </div>
                     <div (click)="cmp.tab='no'" [ngClass]="{'active':cmp.tab==='no'}" class="bg-grey">
-                        <!-- <p class="glyphicon glyphicon-thumbs-down"></p> -->
-                        <input type="radio" id="no" class="radio-check" value="no" [checked]="cmp.tab=='no'">No
-                        <!-- <p class="naming font-bold">No</p> -->
-                    </div>
+                        
+                        <input type="radio" id="no" class="radio-check" value="no" [checked]="cmp.tab=='no'">
+                        <span>No</span>
+                        
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -121,7 +139,7 @@
             <!-- <app-mixed-type></app-mixed-type> -->
             <div>
                 <h3 class="question font-bold"><span >{{i+1}}.</span>{{cmp.qns}}</h3>                
-                    <div class="flex-display content-left line ml-10">
+                    <div class="flex-display content-left mix-col line ml-10">
                         <div *ngFor= "let num of options" class="mixed pl-10" >
                             <input class="btn-tab-mix" type="radio" (click)="this.cmp.tab =num" 
                             [ngClass]="{'active':cmp.tab=== num}" name="cmp.tab">{{num}}

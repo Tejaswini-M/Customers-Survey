@@ -27,7 +27,7 @@
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
         
-        <div>
+        <div class="line">
             <div class="text-btns ml-10" *ngIf="!config.userResponse">
                 <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
                 <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>

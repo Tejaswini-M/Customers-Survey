@@ -36,7 +36,7 @@ input[type=radio] {
   -o-appearance: none;
   outline: none;
   content: none;
-  margin: 2px;
+  margin-left: 10px;
 }
 
 input[type=radio]:before {
@@ -50,7 +50,7 @@ input[type=radio]:before {
   // border: 2px solid black;
   margin-right: 5px;
   border-radius: 50% !important;
-  padding:1px;
+  // padding:1px;
 }
 
 input[type=radio]:checked:before {

@@ -20,19 +20,19 @@
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
        
-        <div class="thumb flex-display content-left">
-            <div (click)="captureSentiment('yes')" [ngClass]="{'active':model.tab==='yes'}" class="bg-grey">
+        <div class="thumb flex-display content-left line">
+            <div (click)="captureSentiment(model.tabYes)" [ngClass]="{'active':model.tabYes.selected===true}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
-                <input type="radio" id="yes"  [class.disabled]="!this.config.userResponse" class="radio-check" value="yes" [checked]="model.tab=='yes'">
-                <input type="text" class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="like">
-                <span *ngIf="!editing" (click)="singleClick()">{{like}}</span>
+                <input type="radio" id="yes"  [class.disabled]="!this.config.userResponse" class="radio-check" value="yes" [checked]="model.tabYes.selected===true">
+                <input type="text" class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="model.tabYes.value">
+                <span *ngIf="!editing" (click)="singleClick()" class="font-bold">{{model.tabYes.value}}</span>
                 
             </div>
-            <div (click)="captureSentiment('no')" [ngClass]="{'active':model.tab==='no'}" class="bg-grey">
+            <div (click)="captureSentiment(model.tabNo)" [ngClass]="{'active':model.tabNo.selected===true}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-down"></p> -->
-                <input type="radio" id="no"  [class.disabled]="!this.config.userResponse"  class="radio-check" value="no" [checked]="model.tab=='no'">
-                <input type="text"  class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="dislike">
-                <span *ngIf="!editing" (click)="singleClick()">{{dislike}}</span>
+                <input type="radio" id="no"  [class.disabled]="!this.config.userResponse"  class="radio-check" value="no" [checked]="model.tabNo.selected===true">
+                <input type="text"  class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="model.tabNo.value">
+                <span *ngIf="!editing" (click)="singleClick()" class="font-bold">{{model.tabNo.value}}</span>
                
             </div>
         </div>        

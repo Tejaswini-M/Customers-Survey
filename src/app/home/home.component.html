@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body">
           <label>Survey title</label>
-          <input type="text" placeholder="Start typing..." class="input-field" 
+          <input type="text" placeholder="Enter Survey title" class="input-field" 
           [(ngModel)] ="config.survey.title"  name="title" #title="ngModel" required>
           <div *ngIf="title.invalid && title.touched" class="error-message">Please enter title of the survey.</div>
           <label>Survey description</label>

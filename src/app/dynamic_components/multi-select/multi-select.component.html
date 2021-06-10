@@ -33,7 +33,7 @@
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
 
-        <div class="flex-display content-left">
+        <div class="flex-display content-left line">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag class="flex-display">
                 <input type="text" name="tab" class="input-field ml-10" placeholder="Option"
                 required (focusout)="editing=false" [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
