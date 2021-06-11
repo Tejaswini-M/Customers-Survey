@@ -18,14 +18,7 @@
         <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
         required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <!-- <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p> -->
-        <p  appSurveyEdit [editing]="true" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
-        <!-- <p *ngIf="!editing" (dblclick)="editing=true" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p> -->
-        <!-- <p appSurveyEdit>highlight me</p>
-        <p appSurveyEdit editValue="pink">highlight me</p>
-        <p (click)="color='green'">green</p>
-        <p (click)="color='yellow'">yellow</p>
-        <p appSurveyEdit [editValue]="'yellow'">highlight me on click</p> -->
+        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
         <div class="thumb flex-display content-left line">
             <div (click)="captureSentiment(model.tabYes)" [ngClass]="{'active':model.tabYes.selected===true}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
