@@ -12,18 +12,7 @@ export class RankingComponent implements OnInit {
   constructor(public config:ConfigService) { }
 
   ngOnInit(): void { }
-  
-  public onChange(event : any):void{
-    const newVal = event.target.value;
-    console.log(newVal);
-  }
-
-  tabs=[
-    { id:'', value:''},
-    { id:'', value:''},
-    { id:'', value:''}
-  ];
-  
+ 
   model = {
     comp:'RankingComponent',
     qns:'Please enter question',
@@ -37,7 +26,7 @@ export class RankingComponent implements OnInit {
   type="";
 
   addTable() {
-    const obj =  { id:'', value:''};
+    const obj =  { id:'', value:'Option'};
     this.model.tabs.push(obj);
   }
   
@@ -48,21 +37,7 @@ export class RankingComponent implements OnInit {
     this.config.userResponse ? this.submitted=true : this.submitted=false;
   }
   public editing = false;
-  touchtime = 0;
-  public singleClick() {
-    if(!this.config.userResponse) {
-      if (this.touchtime === 0) {
-        this.touchtime = new Date().getTime();
-      } else {
-        if (new Date().getTime() - this.touchtime < 400) {
-          this.editing = true;
-          this.touchtime = 0;
-        } else {
-          this.touchtime = new Date().getTime();
-        }
-      }
-    }
-  }
+  
   onSubmit() {
     this.config.rankingValues=[];
     console.log("value");

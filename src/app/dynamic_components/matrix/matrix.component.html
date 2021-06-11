@@ -25,9 +25,9 @@
     <div cdkDropList (cdkDropListDropped)="drop($event)" class="ans-box">
         <!-- <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3> -->
         <input type="text" name="qns" class="input-field ml-10 qns-box" placeholder="Please enter question..."
-        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        required [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
         <div class="flex-display content-left line">
             <table style="margin:10px;">
                 <tr class="data font-bold">
@@ -44,8 +44,8 @@
                             <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter option..." 
                             class="input-field editable btn-tab" [(ngModel)] ="tab.value" #ans="ngModel" name="value"  required> -->
                             <input type="text" name="tab" class="input-field" placeholder="Option"
-                            required (focusout)="editing=false" [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
-                            <button  class="btn-tab bg-grey" *ngIf="!editing" (click)="singleClick()">{{tab.value}}</button>
+                            required  [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
+                            <button  class="btn-tab bg-grey" *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event">{{tab.value}}</button>
                             <!-- <button class="btn-tab bg-grey">{{tab.value}}</button>  -->
                         </div>
                     </th>  
@@ -58,7 +58,7 @@
             </table>
         </div>
         <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
-        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <button  (click)="onSubmit();config.adminResponse=false;editing=false;"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();;config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
 </div>

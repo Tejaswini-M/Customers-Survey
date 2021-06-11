@@ -44,14 +44,14 @@
 
             <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag [cdkDragDisabled]="config.userResponse" style="display: inline-block;">
 
-                <div class="btn-group dropleft del-cmp">
+                <div class="btn-group dropleft del-cmp" *ngIf="!config.userResponse">
                   <i class="fa fa-remove dropdown" style="font-size: large;" (click)="deleteIndex=i" dropdown-toggle="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
                     <div class="dropdown-menu dropdown-shadow">
                         <span class="m-4">Are you sure?</span>
                         <div class="dropdown-divider"></div>
                         <div>
                            <i class="fa fa-check float-right mr-2" (click)="deleteComponent(deleteIndex)" style="font-size: large;color:#7EC848">delete </i>
-                            <i class="fa fa-times float-right mr-2" style="font-size: large; color:#D93A1B">cancel</i>
+                           <i class="fa fa-times float-right mr-2" style="font-size: large; color:#D93A1B">cancel</i>
                         </div>
                     </div>
                 </div> 
@@ -101,7 +101,7 @@
                 </div>
                 <div *ngIf="cmp.componentType.name=='ImageChoiceComponent'" class="each">
                    
-                    <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp"><i class="fa fa-remove"></i></button>
+                    <button data-toggle="modal"  (click)="deleteIndex=i" data-target="#myModal" *ngIf="!config.userResponse" title="delete question" class="del-cmp"></button>
                     <p class="question font-bold">{{i+1}}. </p>
                     <app-image-choice></app-image-choice>
                    

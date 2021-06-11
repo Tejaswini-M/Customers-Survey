@@ -15,28 +15,31 @@
     <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
 
    <div class="ans-box">
+        <!-- <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
+        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing"> -->
         <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
-        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        required [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+        
         <div class="thumb flex-display content-left line">
             <div (click)="captureSentiment(model.tabYes)" [ngClass]="{'active':model.tabYes.selected===true}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-up"></p> -->
                 <input type="radio" id="yes"  [class.disabled]="!this.config.userResponse" class="radio-check" value="yes" [checked]="model.tabYes.selected===true">
-                <input type="text" class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="model.tabYes.value">
-                <span *ngIf="!editing" (click)="singleClick()" class="font-bold">{{model.tabYes.value}}</span>
+                <input type="text" class="edit" *ngIf="editing" [(ngModel)] ="model.tabYes.value">
+                <span *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="font-bold">{{model.tabYes.value}}</span>
                 
             </div>
             <div (click)="captureSentiment(model.tabNo)" [ngClass]="{'active':model.tabNo.selected===true}" class="bg-grey">
                 <!-- <p class="glyphicon glyphicon-thumbs-down"></p> -->
                 <input type="radio" id="no"  [class.disabled]="!this.config.userResponse"  class="radio-check" value="no" [checked]="model.tabNo.selected===true">
-                <input type="text"  class="edit" (focusout)="editing=false" *ngIf="editing" [(ngModel)] ="model.tabNo.value">
-                <span *ngIf="!editing" (click)="singleClick()" class="font-bold">{{model.tabNo.value}}</span>
+                <input type="text"  class="edit" *ngIf="editing" [(ngModel)] ="model.tabNo.value">
+                <span *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="font-bold">{{model.tabNo.value}}</span>
                
             </div>
         </div>        
         <br>
-        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <button  (click)="onSubmit();config.adminResponse=false;editing=false;"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
 </div>

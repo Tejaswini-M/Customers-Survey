@@ -26,9 +26,9 @@
         <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter question..." class="input-field editable" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
         <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
-        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        required [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
         <div class="flex-display content-left line">
             <div class="flex-display" style="width:100%" *ngFor="let mul of model.tabs; let i=index" cdkDrag cdkDragHandle>
                 <div class="example-box bg-grey ml-10">
@@ -43,8 +43,8 @@
                     class="input-field editable btn-tab rank-edit" [(ngModel)] ="mul.value" #ans="ngModel" name="value"  required> -->
                     <!-- <span *ngIf="mul.value">{{mul.value}}</span> -->
                     <input type="text" name="ans" class="input-field" placeholder="Please enter question..."
-                    required (focusout)="editing=false" [(ngModel)] ="mul.value" #ans="ngModel" *ngIf="editing">
-                    <p *ngIf="!editing" (click)="singleClick()" class="question font-bold">{{mul.value}}</p>
+                    required  [(ngModel)] ="mul.value" #ans="ngModel" *ngIf="editing">
+                    <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold">{{mul.value}}</p>
                     
                 </div>
                 </div>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
-        <button (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <button (click)="onSubmit();config.adminResponse=false;editing=false;"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
 </div>

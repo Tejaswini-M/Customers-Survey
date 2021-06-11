@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, TemplateRef, ViewContainerRef } from '@angular/core';
 import { ConfigService } from './services/config.service';
 
 @Directive({
@@ -6,9 +6,29 @@ import { ConfigService } from './services/config.service';
 })
 export class SurveyEditDirective {
 
-  constructor(private el:ElementRef,config:ConfigService) {
-    //  console.log("value",this.appSurveyEdit);
-    //  console.log("edit-value",this.editValue);
-   }
+  constructor(private config:ConfigService) {}
+ 
+  @Output() editSurvey = new EventEmitter<any>();
+  @Output() dbclick = new EventEmitter();
+  
+  @HostListener('click') onClick () {
+    // this.editSurvey.emit(true);
+    this.singleClick();
+  }
+  touchtime = 0;
+  public singleClick() {
+    if(!this.config.userResponse) {
+      if (this.touchtime === 0) {
+        this.touchtime = new Date().getTime();
+      } else {
+        if (new Date().getTime() - this.touchtime < 400) {
+          this.editSurvey.emit(true);
+          this.touchtime = 0;
+        } else {
+          this.touchtime = new Date().getTime();
+        }
+      }
+    }
+  }
 
 }
