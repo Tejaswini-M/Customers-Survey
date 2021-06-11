@@ -11,6 +11,9 @@
 .modal-body {
     margin-top:-24px !important
 }
+[hidden] {
+ display: none !important;
+}
 .survey-list {
     width:100%;
     display: flex !important;
@@ -136,4 +139,16 @@
     .usersList {
         width:100%;
     }
+}
+.desc {
+    line-height: 1.5;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.btn:hover {
+    background-color: #00a3ad;
 }

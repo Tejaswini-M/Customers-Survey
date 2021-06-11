@@ -26,6 +26,9 @@
         border-bottom: 1px solid  red !important;
     }
 }
+.dropdown-shadow {
+    box-shadow: 2px 2px 3px grey;
+}
 .new {
     width:100% !important;
     margin:0 !important;
@@ -105,7 +108,7 @@
 //     position:relative;
 // }
 .box i{
-    cursor: move;
+    cursor: pointer;
 }
 .box i.disable {
     position: absolute;

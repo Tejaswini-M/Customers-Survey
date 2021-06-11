@@ -21,7 +21,7 @@ export class YesNoComponent implements OnInit {
   }
   @Input() data: any;
   @Output() changedData = new EventEmitter<any>();
-
+  color="";
   public editing = false;
   touchtime = 0;
   public singleClick() {

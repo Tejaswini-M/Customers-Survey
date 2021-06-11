@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   default:boolean=false
   duplicateIndex:any;
   dupTitle:any;
+  selectedIndex:any;
   copySurvey:boolean=false;
   closedSurvey:boolean=false;
   constructor(public config:ConfigService,private rout: Router) { }
@@ -80,6 +81,9 @@ export class HomeComponent implements OnInit {
   }
   closeSurvey(i:any) {
     this.closedSurvey=true;
+    this.selectedIndex = i;
+  }
+  deleteSurvey(i:any) {
     this.config.allComps.splice(i,1);
   }
   reset() {

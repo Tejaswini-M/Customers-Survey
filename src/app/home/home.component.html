@@ -24,16 +24,19 @@
            <button type="button" class="btn btn-default" [class.disabled]="title.invalid || description.invalid"
             data-dismiss="modal" (click)="updateTitle()">Duplicate Survey</button>
         </div>
-      </div>
-      <div class="modal-content" *ngIf="closedSurvey">
-        <div style="background-color:#c3c4c2;">
-          <button type="button" class="close" data-dismiss="modal" style="margin-right: 10px;">&times;</button>
-        </div>
-        <div class="modal-body">                
-          <label>Deleted</label>
-          <p>Survey is deleted successfully!</p>                
-        </div>
-      </div>
+
+        
+      </div> 
+     <!--  <div class="modal-content" *ngIf="closedSurvey">
+          <div style="background-color:#c3c4c2;">
+            <button type="button" class="close" data-dismiss="modal" style="margin-right: 10px;">x</button>
+          </div>
+          <div class="modal-body">                
+            <label>Deleted</label>
+            <p>Survey is deleted successfully!</p>                
+          </div>
+        </div> -->
+      
     </div>
   </div>
 
@@ -67,13 +70,13 @@
                 <div class="card" style="border-radius: 5px;">
                   <div class="card-content">
                     <div class="card-body">
-                      <div class="media d-flex views">
+                      <div class="media d-flex views" *ngIf="!closedSurvey || this.selectedIndex != i">
                         <div class="view1">
 
                           <div (click)="viewDetail(i);" class="align-self-center font-bold">{{user.title}}</div>
-                          <div class="align-self-center ">{{user.description}}</div>   
+                          <div class="desc align-self-center" contenteditable="true">{{user.description}}</div>   
 
-                        </div>
+                        </div>                         
                       
                         <!-- <div class="align-self-center view2">
                           <i class="icon-pencil primary font-large-2 float-left"></i>
@@ -92,13 +95,24 @@
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <!-- <li><a class="dropdown-item" href="#">Edit survey</a></li> -->
                                 <li><a class="dropdown-item"  data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;duplicateSurvey(i)">duplicate</a></li>
-                                <li><a class="dropdown-item" *ngIf="!(i==0)" data-toggle="modal" data-target="#myModal" (click)="closeSurvey(i)">delete</a></li>
+                                <li><a ng-model="clicked" class="dropdown-item" *ngIf="!(i==0)" data-target="#myModal" (click)="closeSurvey(i)">delete</a></li>
                               </ul>
                           </div>
                           </div>
 
                         </div>
                       </div>
+
+                      <div *ngIf="closedSurvey && this.selectedIndex==i">                        
+                          <div class="align-self-center" style="text-align: center;">                          
+                            You are deleting a Survey. Are you sure?
+                          </div>
+                          <div class="modal-footer" style="justify-content: space-around !important;">
+                            <button type="button" class="btn btn-deafult closed" data-dismiss="modal" style="border-color: black;">Cancel</button>
+                            <button type="button" class="btn btn-default okButton" data-dismiss="modal" (click)="deleteSurvey(i)" style="border-color: black;">Yes, Delete</button>
+                          </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>
