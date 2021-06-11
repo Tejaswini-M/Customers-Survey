@@ -9,12 +9,6 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class MatrixComponent implements OnInit {
 
-  tabs=[
-    { id:1, value:'',status:null},
-    { id:2, value:'',status:null},
-    { id:3, value:'',status:null}
-  ];
-  
   model = {
     comp:'MatrixComponent',
     qns:'Please enter question',
@@ -30,21 +24,7 @@ export class MatrixComponent implements OnInit {
 
   constructor(public config:ConfigService) { }
   public editing = false;
-  touchtime = 0;
-  public singleClick() {
-    if(!this.config.userResponse) {
-      if (this.touchtime === 0) {
-        this.touchtime = new Date().getTime();
-      } else {
-        if (new Date().getTime() - this.touchtime < 400) {
-          this.editing = true;
-          this.touchtime = 0;
-        } else {
-          this.touchtime = new Date().getTime();
-        }
-      }
-    }
-  }
+  
   ngOnInit(): void {}
 
     addTable() {

@@ -17,9 +17,9 @@
   <div class="ans-box">
     <!-- <h3 class="question font-bold" style="margin-left: 10px;">{{model.qns}}</h3> -->
     <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
-    required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+    required [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
     <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-    <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+    <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
     <div class="text-btns" *ngIf="!config.userResponse">
       <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}"  class="edit">Star Rating</button>
       <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit">Number Rating</button>
@@ -46,7 +46,7 @@
         <!-- <div class="right-label"><p>Most Likely</p></div>  -->
       </div>
     </div>
-    <button (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+    <button (click)="onSubmit();config.adminResponse=false;editing=false;"  *ngIf="!config.userResponse" class="save-tab">Save</button>
     <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
   </div>
 </div>

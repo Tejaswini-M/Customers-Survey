@@ -29,21 +29,21 @@
         <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter question..." class="input-field editable" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required>
         <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
-        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        required [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
 
         <div class="flex-display content-left line">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag class="flex-display">
                 <input type="text" name="tab" class="input-field ml-10" placeholder="Option"
-                required (focusout)="editing=false" [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
+                required [(ngModel)] ="tab.value" #tab.value="ngModel" *ngIf="editing">
                 <button  class="btn-tab bg-grey" (click)="selectOption(tab)"  
-                [class.active]="tab.selected" *ngIf="!editing" (click)="singleClick()">{{tab.value}}</button>
+                [class.active]="tab.selected" *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event">{{tab.value}}</button>
                 <button (click)="deleteRow(i)" *ngIf="!config.userResponse" class="delete-tab"><i class="fa fa-trash-o"></i></button>
             </div>
         </div>
         <button (click)="addTable()"  *ngIf="!config.userResponse" class="add-tab"><i class="fa fa-plus"></i></button>
-        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <button (click)="onSubmit();config.adminResponse=false;editing=false;"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <div class="flex-display content-left line">
             <div *ngFor="let tab of model.tabs; let i=index;" cdkDrag>
                 <button  *ngIf="tab.value" class="btn-tab bg-grey" (click)="selectOption(tab)"  

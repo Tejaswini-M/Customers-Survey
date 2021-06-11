@@ -10,11 +10,7 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class MultiSelectComponent implements OnInit {
 
-  tabs=[
-    { id:'', value:''},
-    { id:'', value:''},
-    { id:'', value:''}
-  ];
+  
   tabsLength: any;
   model = {
     comp:'MultiSelectComponent',
@@ -36,21 +32,7 @@ export class MultiSelectComponent implements OnInit {
   //   });
   constructor(public config:ConfigService,private fb: FormBuilder,) { }
   public editing = false;
-  touchtime = 0;
-  public singleClick() {
-    if(!this.config.userResponse) {
-      if (this.touchtime === 0) {
-        this.touchtime = new Date().getTime();
-      } else {
-        if (new Date().getTime() - this.touchtime < 400) {
-          this.editing = true;
-          this.touchtime = 0;
-        } else {
-          this.touchtime = new Date().getTime();
-        }
-      }
-    }
-  }
+  
   ngOnInit(): void {
   //   this.parent = 
   //   this.controlContainer.control as FormGroup;

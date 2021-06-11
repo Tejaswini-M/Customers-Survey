@@ -26,6 +26,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { FilterPipe } from './filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SurveyEditDirective } from './survey-edit.directive';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ThankyouComponent,
     UserComponent,
     HomeComponent,
+    SurveyEditDirective,
     // FilterPipe
   ],
   imports: [

@@ -21,24 +21,8 @@ export class YesNoComponent implements OnInit {
   }
   @Input() data: any;
   @Output() changedData = new EventEmitter<any>();
-
+ 
   public editing = false;
-  touchtime = 0;
-  public singleClick() {
-    if(!this.config.userResponse) {
-      if (this.touchtime === 0) {
-        this.touchtime = new Date().getTime();
-      } else {
-        if (new Date().getTime() - this.touchtime < 400) {
-          this.editing = true;
-          this.touchtime = 0;
-        } else {
-          this.touchtime = new Date().getTime();
-        }
-      }
-    }
-  }
-
 
   ngOnInit(): void {
   }

@@ -35,21 +35,7 @@ export class MixedTypeComponent implements OnInit {
   tabsLength: any;
   selectedTab:any=[];
   public editing = false;
-  touchtime = 0;
-  public singleClick() {
-    if(!this.config.userResponse) {
-      if (this.touchtime === 0) {
-        this.touchtime = new Date().getTime();
-      } else {
-        if (new Date().getTime() - this.touchtime < 400) {
-          this.editing = true;
-          this.touchtime = 0;
-        } else {
-          this.touchtime = new Date().getTime();
-        }
-      }
-    }
-  }
+
   // addTable() {
   //   const obj =  { id:this.model.tabs.length+1, value:'',selected:false};
   //   this.model.tabs.push(obj);

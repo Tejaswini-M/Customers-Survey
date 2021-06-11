@@ -15,9 +15,9 @@
         <!-- <input type="text" [readonly]="this.config.userResponse" placeholder="Please enter question..." class="input-field editable" [(ngModel)] ="model.qns" name="qns" #qns="ngModel" required> -->
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
         <input type="text" name="qns" class="input-field ml-10" placeholder="Please enter question..."
-        required (focusout)="editing=false" [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
+        required [(ngModel)] ="model.qns" #qns="ngModel" *ngIf="editing">
         <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
-        <p *ngIf="!editing" (click)="singleClick()" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
+        <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
         <div class="flex-display content-left line">
             <div *ngFor= "let num of options" class="mixed">
                 <input class="btn-tab-mix radio-check" type="radio" (click)="selectOption(num)" [ngClass]="{'active':model.tab=== num}"
@@ -31,7 +31,7 @@
             <!-- <input type="text" [(ngModel)] ="model.ans" name="ans" #ans="ngModel" placeholder="Please type here..." [class.disabled]="!this.config.userResponse">                     -->
             <div *ngIf="ans.invalid && ans.touched" class="error-message">Please enter answer</div>
         </div>
-        <button  (click)="onSubmit();config.adminResponse=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
+        <button  (click)="onSubmit();config.adminResponse=false;editing=false"  *ngIf="!config.userResponse" class="save-tab">Save</button>
         <!-- <button (click)="edit();config.adminResponse=true" *ngIf="!config.userResponse" class="edit-tab">Edit</button> -->
     </div>
       
