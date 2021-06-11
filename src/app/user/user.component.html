@@ -1,6 +1,6 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
+<h3 class="center-align font-bold">{{config.userValues.title}}</h3>
 <div class="content flex-col bg-white">
-    <h3 class="center-align font-bold">{{config.userValues.title}}</h3>
     <div *ngFor="let cmp of config.userValues.list; let i=index" class="box">
         <div *ngIf="cmp.comp=='YesNoComponent'" class="each">
             <div>
@@ -177,7 +177,7 @@
             </div>
         </div>
     </div>
-    <button routerLink="/thank" *ngIf="config.userValues.list.length>0" (click)="onSubmit()">Done</button>
+    <button routerLink="/thank" *ngIf="config.userValues.list.length>0" (click)="onSubmit()">Submit</button>
     <br>
 </div>
 <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -201,4 +201,4 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div> -->
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
