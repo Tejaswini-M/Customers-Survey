@@ -13,9 +13,7 @@ const routes: Routes = [
       { path: ':id', component: QuestionComponent }
     ]
   },
-  { path: "user", component : UserComponent, children: [
-      { path: ':id', component: UserComponent }
-    ]
+  { path: "user/:id", component : UserComponent
   },
   { path: "thank", component : ThankyouComponent}
 ];
