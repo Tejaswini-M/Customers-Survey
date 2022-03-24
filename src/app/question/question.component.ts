@@ -85,7 +85,7 @@ export class QuestionComponent implements OnInit{
     }
     console.log("sort",sortedArray)
     console.log(JSON.stringify(sortedArray));
-    this.config.survey.id=this.config.survey.id+1;
+    this.config.survey.id=this.config.allComps.length+1;
     this.config.survey.list=sortedArray;
     this.config.userValues=this.config.survey
     console.log(this.config.survey);
@@ -93,7 +93,7 @@ export class QuestionComponent implements OnInit{
     
     console.log("all", this.config.allComps);
     this.config.paramID=this.config.allComps.length-1;
-    console.log(JSON.stringify(this.config.allComps));
+    // console.log(JSON.stringify(this.config.allComps));
     this.config.allValues=[];
     this.config.components.push(this.components);
     console.log( this.config.components);

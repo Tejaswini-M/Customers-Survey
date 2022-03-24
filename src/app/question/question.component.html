@@ -41,8 +41,8 @@
         </div> -->
         <div cdkDropList class="list" (cdkDropListDropped)="drop($event)" [cdkDropListData]="components">
            
-
-            <div *ngFor="let cmp of components | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; let i=index" class="box bg-white" cdkDrag [cdkDragDisabled]="config.userResponse" style="display: inline-block;">
+            <!-- | paginate : {id: 'listOfRecords',itemsPerPage:2, currentPage: page, totalItems: totalRecords}; -->
+            <div *ngFor="let cmp of components; let i=index" class="box bg-white" cdkDrag [cdkDragDisabled]="config.userResponse" style="display: inline-block;">
 
                 <div class="btn-group dropleft del-cmp" *ngIf="!config.userResponse">
                   <i class="fa fa-remove dropdown" style="font-size: large;" (click)="deleteIndex=i" dropdown-toggle="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></i>
@@ -158,10 +158,10 @@
                 </div>
             </div> 
         </div>
-        <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
+        <!-- <div *ngIf="components.length>=2" class="flex-display container" style="justify-content: flex-end;">
 
             <pagination-controls  id="listOfRecords" maxsize = "5" (pageChange)="page = $event"></pagination-controls>
-        </div>
+        </div> -->
         <div class="send" *ngIf="!config.userResponse">
             <div *ngIf="config.allValues.length!=components.length && components.length>0"  class="error-message">Please fill all selected questionarie!!!</div>
             <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse || config.survey.title=='' || config.survey.description==''" 

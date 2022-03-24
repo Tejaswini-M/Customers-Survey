@@ -32,7 +32,11 @@ export class ConfigService {
   userValues=this.survey;
   isDisable=false;
   compns:any=[];
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient) { 
+    this.getTemplateData().subscribe(data => {
+      this.allComps=data;
+    })
+  }
 
   userUrl = "/assets/data/user.json";
   templateUrl = "/assets/data/template.json";
@@ -44,4 +48,5 @@ export class ConfigService {
   getTemplateData():Observable<any> {
     return this.http.get<any[]>(this.templateUrl);
   }
+
 }

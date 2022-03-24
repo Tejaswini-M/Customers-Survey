@@ -20,11 +20,6 @@ export class HomeComponent implements OnInit {
   //title:any;
   searchText:any;
   ngOnInit(): void {
-    this.config.getTemplateData().subscribe(data => {
-      //console.log("template",data);
-      this.template=data;
-      this.config.allComps[0]=data;
-    })
   }
 
   viewDetail(index : any){

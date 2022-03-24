@@ -55,7 +55,7 @@
       <div class="col-xl-6 col-sm-12 new-survey" style="width:50%">
          <!-- <button type="button"  class="font-bold" data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;copySurvey=false;config.survey.title=''" >
             <span class="glyphicon glyphicon-plus" ></span> New Survey</button> -->
-          <button type="button" class="font-bold" routerLink="/qns" (click)="reset()" style="float: right; width: 50%;"><i class="fa fa-plus" ></i> New Survey</button>
+          <button type="button" class="font-bold" routerLink="/qns" (click)="reset()" style="float: right; width: fit-content;"><i class="fa fa-plus" ></i> New Survey</button>
       </div>
     </div>
     <div class="survey-list">
@@ -95,7 +95,7 @@
                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <!-- <li><a class="dropdown-item" href="#">Edit survey</a></li> -->
                                 <li><a class="dropdown-item"  data-toggle="modal" data-target="#myModal" (click)="closedSurvey=false;duplicateSurvey(i)">duplicate</a></li>
-                                <li><a ng-model="clicked" class="dropdown-item" *ngIf="!(i==0)" data-target="#myModal" (click)="closeSurvey(i)">delete</a></li>
+                                <li><a ng-model="clicked" class="dropdown-item" *ngIf="!(i==0)" data-target="#myModal" (click)="this.closedSurvey=true;deleteSurvey(i)">delete</a></li>
                               </ul>
                           </div>
                           </div>
