@@ -1,137 +1,539 @@
-{
+[
+    {
 
-    "id":1,
-
-    "title":"Example survey",
-
-    "description":"Demo survey , you can refer this survey",
-
-    "list":[
+        "id":1,
+    
+        "title":"Example survey-1",
+    
+        "description":"Demo survey-1, you can refer this survey",
+    
+        "list":[
+    
+            {
+    
+                "comp":"YesNoComponent",
+    
+                "qns":"Do you like this website?",
+    
+                "tabYes":{"value":"Yes","selected":false},
+                
+                "tabNo":{"value":"No","selected":false}
+                
+            },
+    
+            {
+    
+                "comp":"RatingScaleComponent",
+    
+                "qns":"How satisfied are you with your job ?",
+    
+                "ans":"",
+    
+                "ansType":"star"
+    
+            },
+    
+            {
+    
+                "comp":"OpenEndedComponent",
+    
+                "qns":"Desscribe about your skills and technologies",
+    
+                "ans":"",
+    
+                "ansType":"long"
+    
+            },
+    
+            {
+    
+                "comp":"ImageChoiceComponent",
+    
+                "qns":"Choose the image which all are suitable",
+    
+                "tabs": [
+    
+                    { "id":"1", "value":"data:image/jpeg;base64,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","name":"","selected":false},
+    
+                    { "id":"2", "value":"data:image/jpeg;base64,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","name":"","selected":false},
+    
+                    { "id":"3", "value":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvroAv9cdtirxrEdtAV6e6k2tM8k6nloc3Pg&usqp=CAU","name":"","selected":false}
+    
+                ]
+    
+            },
+    
+            {
+    
+                "comp":"MultiSelectComponent",
+    
+                "qns":"What are all the technologies you are familiar with?",
+    
+                "tabs": [
+    
+                    { "id":"1", "value":"Angular","selected":false},
+    
+                    { "id":"2", "value":"Java","selected":false},
+    
+                    { "id":"3", "value":"React","selected":false}
+    
+                ]
+    
+            },
+    
+            {
+    
+                "comp":"RankingComponent",
+    
+                "qns":"Please rank your favourite job role",
+    
+                "tabs": [
+    
+                    { "id":"1", "value":"Developer"},
+    
+                    { "id":"2", "value":"Tester"},
+    
+                    { "id":"3", "value":"Application support"}
+    
+                ]
+    
+            },
+    
+            {
+    
+                "comp":"MatrixComponent",
+    
+                "qns":"How satisfied or dissatisfied with each of the following?",
+    
+                "tabs": [
+    
+                    { "id":"1", "value":"Job role","status":null},
+    
+                    { "id":"2", "value":"Salary","status":null},
+    
+                    { "id":"3", "value":"Company atmosphere","status":null}
+    
+                ]
+    
+            },
+    
+            {
+    
+                "comp":"MixedTypeComponent",
+    
+                "qns":"How satisfied you are with your current job?",
+    
+                "tab":"",
+    
+                "ans":""
+    
+            }
+    
+        ]
+    
+        },
 
         {
 
-            "comp":"YesNoComponent",
+            "id":2,
+        
+            "title":"Example survey-2",
+        
+            "description":"Demo survey-2, you can refer this survey for webpage",
+        
+            "list":[
+        
+                {
+        
+                    "comp":"YesNoComponent",
+        
+                    "qns":"Do you like this website?",
+        
+                    "tabYes":{"value":"Yes","selected":false},
+                    
+                    "tabNo":{"value":"No","selected":false}
+                    
+                },
+        
+                {
+        
+                    "comp":"RatingScaleComponent",
+        
+                    "qns":"How satisfied are you with your job ?",
+        
+                    "ans":"",
+        
+                    "ansType":"star"
+        
+                },
+        
+                {
+        
+                    "comp":"OpenEndedComponent",
+        
+                    "qns":"Desscribe about your skills and technologies",
+        
+                    "ans":"",
+        
+                    "ansType":"long"
+        
+                },
+        
 
-            "qns":"Do you like this website?",
+        
+                {
+        
+                    "comp":"MultiSelectComponent",
+        
+                    "qns":"What are all the technologies you are familiar with?",
+        
+                    "tabs": [
+        
+                        { "id":"1", "value":"Angular","selected":false},
+        
+                        { "id":"2", "value":"Java","selected":false},
+        
+                        { "id":"3", "value":"React","selected":false}
+        
+                    ]
+        
+                },
+        
+                {
+        
+                    "comp":"RankingComponent",
+        
+                    "qns":"Please rank your favourite job role",
+        
+                    "tabs": [
+        
+                        { "id":"1", "value":"Developer"},
+        
+                        { "id":"2", "value":"Tester"},
+        
+                        { "id":"3", "value":"Application support"}
+        
+                    ]
+        
+                },
+        
+                {
+        
+                    "comp":"MatrixComponent",
+        
+                    "qns":"How satisfied or dissatisfied with each of the following?",
+        
+                    "tabs": [
+        
+                        { "id":"1", "value":"Job role","status":null},
+        
+                        { "id":"2", "value":"Salary","status":null},
+        
+                        { "id":"3", "value":"Company atmosphere","status":null}
+        
+                    ]
+        
+                },
+        
+                {
+        
+                    "comp":"MixedTypeComponent",
+        
+                    "qns":"How satisfied you are with your current job?",
+        
+                    "tab":"",
+        
+                    "ans":""
+        
+                }
+        
+            ]
+        
+            },
+            {
 
-            "tabYes":{"value":"Yes","selected":false},
+                "id":3,
             
-            "tabNo":{"value":"No","selected":false}
+                "title":"Example survey-3",
             
-        },
+                "description":"Demo survey-3 , you can refer this survey Technology",
+            
+                "list":[
+            
+                    {
+            
+                        "comp":"YesNoComponent",
+            
+                        "qns":"Do you know Angular Technology?",
+            
+                        "tabYes":{"value":"Yes","selected":false},
+                        
+                        "tabNo":{"value":"No","selected":false}
+                        
+                    },
+            
+                    {
+            
+                        "comp":"RatingScaleComponent",
+            
+                        "qns":"How satisfied are you with your job ?",
+            
+                        "ans":"",
+            
+                        "ansType":"star"
+            
+                    },
+            
+                    {
+            
+                        "comp":"OpenEndedComponent",
+            
+                        "qns":"Desscribe about your skills and technologies",
+            
+                        "ans":"",
+            
+                        "ansType":"long"
+            
+                    },            
 
-        {
+            
+                    {
+            
+                        "comp":"MultiSelectComponent",
+            
+                        "qns":"What are all the technologies you are familiar with?",
+            
+                        "tabs": [
+            
+                            { "id":"1", "value":"Angular","selected":false},
+            
+                            { "id":"2", "value":"Java","selected":false},
+            
+                            { "id":"3", "value":"React","selected":false}
+            
+                        ]
+            
+                    },
+            
+                  
+            
+                   
+            
+                    {
+            
+                        "comp":"MixedTypeComponent",
+            
+                        "qns":"How satisfied you are with your current job?",
+            
+                        "tab":"",
+            
+                        "ans":""
+            
+                    }
+            
+                ]
+            
+                },
+                {
 
-            "comp":"RatingScaleComponent",
+                    "id":4,
+                
+                    "title":"Example survey-4",
+                
+                    "description":"Demo survey-4 , you can refer this survey fir skillset",
+                
+                    "list":[
+                
+                        {
+                
+                            "comp":"YesNoComponent",
+                
+                            "qns":"Do you like this website?",
+                
+                            "tabYes":{"value":"Yes","selected":false},
+                            
+                            "tabNo":{"value":"No","selected":false}
+                            
+                        },
+                
+                      
+                
+                        {
+                
+                            "comp":"OpenEndedComponent",
+                
+                            "qns":"Desscribe about your skills and technologies",
+                
+                            "ans":"",
+                
+                            "ansType":"long"
+                
+                        },
+                
+                        {
+                
+                            "comp":"MultiSelectComponent",
+                
+                            "qns":"What are all the technologies you are familiar with?",
+                
+                            "tabs": [
+                
+                                { "id":"1", "value":"Angular","selected":false},
+                
+                                { "id":"2", "value":"Java","selected":false},
+                
+                                { "id":"3", "value":"React","selected":false}
+                
+                            ]
+                
+                        },
+                
+                        {
+                
+                            "comp":"RankingComponent",
+                
+                            "qns":"Please rank your favourite job role",
+                
+                            "tabs": [
+                
+                                { "id":"1", "value":"Developer"},
+                
+                                { "id":"2", "value":"Tester"},
+                
+                                { "id":"3", "value":"Application support"}
+                
+                            ]
+                
+                        },
+                
+                        {
+                
+                            "comp":"MatrixComponent",
+                
+                            "qns":"How satisfied or dissatisfied with each of the following?",
+                
+                            "tabs": [
+                
+                                { "id":"1", "value":"Job role","status":null},
+                
+                                { "id":"2", "value":"Salary","status":null},
+                
+                                { "id":"3", "value":"Company atmosphere","status":null}
+                
+                            ]
+                
+                        },
+                
+                        {
+                
+                            "comp":"MixedTypeComponent",
+                
+                            "qns":"How satisfied you are with your current job?",
+                
+                            "tab":"",
+                
+                            "ans":""
+                
+                        }
+                
+                    ]
+                
+                    },
+                    {
 
-            "qns":"How satisfied are you with your job ?",
-
-            "ans":"",
-
-            "ansType":"star"
-
-        },
-
-        {
-
-            "comp":"OpenEndedComponent",
-
-            "qns":"Desscribe about your skills and technologies",
-
-            "ans":"",
-
-            "ansType":"long"
-
-        },
-
-        {
-
-            "comp":"ImageChoiceComponent",
-
-            "qns":"Choose the image which all are suitable",
-
-            "tabs": [
-
-                { "id":"1", "value":"data:image/jpeg;base64,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","name":"","selected":false},
-
-                { "id":"2", "value":"data:image/jpeg;base64,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","name":"","selected":false},
-
-                { "id":"3", "value":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvroAv9cdtirxrEdtAV6e6k2tM8k6nloc3Pg&usqp=CAU","name":"","selected":false}
-
-            ]
-
-        },
-
-        {
-
-            "comp":"MultiSelectComponent",
-
-            "qns":"What are all the technologies you are familiar with?",
-
-            "tabs": [
-
-                { "id":"1", "value":"Angular","selected":false},
-
-                { "id":"2", "value":"Java","selected":false},
-
-                { "id":"3", "value":"React","selected":false}
-
-            ]
-
-        },
-
-        {
-
-            "comp":"RankingComponent",
-
-            "qns":"Please rank your favourite job role",
-
-            "tabs": [
-
-                { "id":"1", "value":"Developer"},
-
-                { "id":"2", "value":"Tester"},
-
-                { "id":"3", "value":"Application support"}
-
-            ]
-
-        },
-
-        {
-
-            "comp":"MatrixComponent",
-
-            "qns":"How satisfied or dissatisfied with each of the following?",
-
-            "tabs": [
-
-                { "id":"1", "value":"Job role","status":null},
-
-                { "id":"2", "value":"Salary","status":null},
-
-                { "id":"3", "value":"Company atmosphere","status":null}
-
-            ]
-
-        },
-
-        {
-
-            "comp":"MixedTypeComponent",
-
-            "qns":"How satisfied you are with your current job?",
-
-            "tab":"",
-
-            "ans":""
-
-        }
-
-    ]
-
-    }
-
- 
-
- 
+                        "id":5,
+                    
+                        "title":"Example survey-5",
+                    
+                        "description":"Demo survey-5 , you can refer this survey for job role",
+                    
+                        "list":[
+                    
+                           
+                    
+                            {
+                    
+                                "comp":"RatingScaleComponent",
+                    
+                                "qns":"How satisfied are you with your job ?",
+                    
+                                "ans":"",
+                    
+                                "ansType":"star"
+                    
+                            },
+                    
+                            {
+                    
+                                "comp":"OpenEndedComponent",
+                    
+                                "qns":"Desscribe about your skills and technologies",
+                    
+                                "ans":"",
+                    
+                                "ansType":"long"
+                    
+                            },
+                    
+                            {
+                    
+                                "comp":"MultiSelectComponent",
+                    
+                                "qns":"What are all the technologies you are familiar with?",
+                    
+                                "tabs": [
+                    
+                                    { "id":"1", "value":"Angular","selected":false},
+                    
+                                    { "id":"2", "value":"Java","selected":false},
+                    
+                                    { "id":"3", "value":"React","selected":false}
+                    
+                                ]
+                    
+                            },
+                    
+                            {
+                    
+                                "comp":"RankingComponent",
+                    
+                                "qns":"Please rank your favourite job role",
+                    
+                                "tabs": [
+                    
+                                    { "id":"1", "value":"Developer"},
+                    
+                                    { "id":"2", "value":"Tester"},
+                    
+                                    { "id":"3", "value":"Application support"}
+                    
+                                ]
+                    
+                            }                    
+                           
+                    
+                    
+                        ]
+                    
+                        }
+                    
+                     
+                    
+                     
+                
+                 
+                
+                 
+            
+             
+            
+             
+        
+         
+        
+         
+    
+     
+    
+     
+]
