@@ -19,7 +19,7 @@
   min-height: 35px;
   /* font-weight: 450; */
   // border-radius: 5px;
-  font-family: markPro-Bold;
+  //font-family: markPro-Bold;
   // margin: 5px;
 }
 .data {
@@ -47,10 +47,7 @@ tr:nth-child(even) .data{
 table .error-message {
   float:right;
 }
-.add-tab {
-  //  float:right;
-   background-color: #D1D7DA;
-}
+
 
 input[type=radio] {
   -moz-appearance: none;

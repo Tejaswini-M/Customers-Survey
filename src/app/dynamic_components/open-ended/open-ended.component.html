@@ -29,8 +29,8 @@
         
         <div class="line">
             <div class="text-btns ml-10" *ngIf="!config.userResponse">
-                <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" class="edit">Long Text</button>
-                <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" class="edit">Short Text</button>
+                <button (click)="model.ansType='long'"  [ngClass]="{'active':model.ansType==='long'}" style="border-radius: 5px 0 0 5px !important;" class="edit">Long Text</button>
+                <button (click)="model.ansType='short'" [ngClass]="{'active':model.ansType==='short'}" style="border-radius: 0 5px 5px 0 !important;" class="edit">Short Text</button>
                 
             </div>
             <div class="ml-10">

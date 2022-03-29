@@ -11,7 +11,7 @@
         -webkit-box-shadow: 0 0 0px 1000px #f1f4f6 inset !important;
                 box-shadow: 0 0 0px 1000px #f1f4f6 inset !important;
         transition: background-color 5000s ease-in-out 0s !important;
-        font-family: MarkPro-Bold;
+        //font-family: MarkPro-Bold;
         height:30px;
         line-height: 1.6;
     }
@@ -21,6 +21,7 @@
     }
     .survey-description {
         -webkit-text-fill-color: #ACAFB2 !important;
+        height: 40px;
     }
     input.ng-invalid.ng-touched {
         border-bottom: 1px solid  red !important;
@@ -46,14 +47,15 @@
     margin:5px 0;
     background-color:#fff;
     text-align: start;
-    border: 2px solid #00a3ad;
-    box-shadow: 1px 1px 4px #00a3ad;
+    border: 1px solid #006280;
+    border-bottom: 2px solid #00A3AD;
     span {
         margin: 0 20px;
     }
 }
 .btns button:hover {
-    background-color:#00a3ad;
+    box-shadow: 1px 1px 2px #00a3ad;
+    border: 2px solid #00a3ad;
 }
 .comps2 {
     width:80%;

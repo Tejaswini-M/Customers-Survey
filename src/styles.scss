@@ -25,7 +25,11 @@ body {
 }
 .bg-grey {
     background-color: #F1F4F6 !important;
-    box-shadow: 1px 1px 4px #00a3ad;
+    border: 1px solid #006280;
+    border-bottom: 2px solid #00A3AD;
+}
+.bg-grey:hover {
+    box-shadow: 1px 1px 2px #00a3ad;
     border: 2px solid #00a3ad;
 }
 .dflt-padding {
@@ -76,6 +80,9 @@ button {
 .flex-display {
     display:flex;
     flex-direction: row;
+}
+.fa-trash-o {
+    color: red;
 }
 .dynamic {
     flex-wrap: wrap;
@@ -155,6 +162,7 @@ input[type=radio]:before {
     box-sizing: border-box;
     font-size: 14px;
     font-family: markPro;
+    border-radius: 4px;
 }
 
 .question{
@@ -167,12 +175,20 @@ input[type=radio]:before {
 .add-tab {
     margin-top: 10px;
     margin-left:10px;
+    background-color: white;
+    border: 1px solid #acafb2;
+    border-bottom: 2px solid #acafb2;
+    height: 35px;
+    padding: 8px;
 }
 .save-tab{
     margin-top: 10px;
-    background-color: #D1D7DA;
-    border: 2px solid #acafb2;
+    background-color: white;
+    border: 1px solid #acafb2;
+    border-bottom: 2px solid #acafb2;
     float: right;
+    height: 35px;
+    padding: 8px;
 }
 .save-tab:hover{
     background-color:#acafb2;

@@ -12,7 +12,7 @@
     width: auto;
     margin: 10px;
     min-width: 150px;
-    border: 2px solid #00a3ad;
+    //border: 2px solid #00a3ad;
 }
 .active {
     background-color:#00a3ad !important;
@@ -32,8 +32,4 @@ table {
 // }
 table .error-message {
     float:right;
-}
-.add-tab {
-    //  float:right;
-     background-color: #D1D7DA;
 }

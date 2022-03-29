@@ -21,8 +21,8 @@
     <!-- <div *ngIf="qns.invalid && qns.touched" class="error-message">Please enter question</div> -->
     <p *ngIf="!editing" appSurveyEdit (editSurvey)="editing=$event" class="question font-bold ml-10" style="margin-top:17px;">{{model.qns}}</p>
     <div class="text-btns" *ngIf="!config.userResponse">
-      <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}"  class="edit">Star Rating</button>
-      <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" class="edit">Number Rating</button>
+      <button (click)="model.ansType='star'"  [ngClass]="{'active':model.ansType==='star'}" style="border-radius: 5px 0 0 5px !important;"  class="edit">Star Rating</button>
+      <button (click)="model.ansType='number'" [ngClass]="{'active':model.ansType==='number'}" style="border-radius: 0 5px 5px 0 !important;" class="edit">Number Rating</button>
       
     </div>
     <div class="flex-display content-left">

@@ -50,8 +50,9 @@
                         <span class="m-4">Are you sure?</span>
                         <div class="dropdown-divider"></div>
                         <div>
-                           <i class="fa fa-check float-right mr-2" (click)="deleteComponent(deleteIndex)" style="font-size: large;color:#7EC848">delete </i>
-                           <i class="fa fa-times float-right mr-2" style="font-size: large; color:#D93A1B">cancel</i>
+                            <i class="fa fa-times  ml-2" style="font-size: large; color:#D93A1B">cancel</i>
+                            <span class=" ml-2">|</span>
+                            <i class="fa fa-check  ml-2" (click)="deleteComponent(deleteIndex)" style="font-size: large;color:#7EC848">delete </i>
                         </div>
                     </div>
                 </div> 
@@ -165,7 +166,7 @@
         <div class="send" *ngIf="!config.userResponse">
             <div *ngIf="config.allValues.length!=components.length && components.length>0"  class="error-message">Please fill all selected questionarie!!!</div>
             <button [class.disabled]="(config.allValues.length!=components.length && components.length>0) || config.adminResponse || config.survey.title=='' || config.survey.description==''" 
-                id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Submit</button>
+                id="listOfRecords" (click)="onSave()"  *ngIf="components.length>0">Preview</button>
         </div>
         <div class="send" *ngIf="config.userResponse" >
             <button routerLink="/thank" *ngIf="config.survey.list.length>0" (click)="onSubmit()" id="listOfRecords">Done</button>
